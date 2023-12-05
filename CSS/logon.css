@@ -92,7 +92,7 @@ body {
 
 }
 
-.wrapper .remember-forget {
+.wrapper .remember-forgot {
 
     display: flex;
     justify-content: space-between;
@@ -100,13 +100,13 @@ body {
     margin: -15px 0 15px;
 }
 
-.remember-forget label input {
+.remember-forgot label input {
     accent-color: #fff;
     margin-right: 3px;
 
 }
 
-.remember-forget a {
+.remember-forgot a {
 
     color: #fff;
     text-decoration: none;
