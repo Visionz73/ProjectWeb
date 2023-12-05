@@ -91,7 +91,21 @@ social.media {
 
 .home-content {
     font-size: 16px;
-    margin: 15px 0 30px;
+    margin: -229px 0 30px;
+    margin-right: 500px;
+}
+
+.home-content h1 {
+    font-size: 60px;
+}
+
+.home-content h3 {
+    font-size: 20px;
+}
+
+.home-content p {
+    font-size: 16px;
+    padding: 10px 5px 30px;
 }
 
 .btn {
@@ -114,17 +128,7 @@ social.media {
     color: #1743e3;
 }
 
-.home-content h1 {
-    font-size: 30px;
-}
 
-.home-content h3 {
-    font-size: 20px;
-}
-
-.home-content p {
-    font-size: 16px;
-}
 
 .home-img{
     position: relative;
