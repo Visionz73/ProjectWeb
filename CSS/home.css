@@ -63,17 +63,18 @@ body {
     border: 2px solid transparent;
     text-decoration: none;
     transform: rotate(45deg);
-    transition: .5s;
+    transition: .8s;
+    
 }
 
 .social-media a:hover {
-    border-color: red;
-
+    border-color: #1743e3;
+    backdrop-filter: blur(10px);
 }
 
 .social-media a i {
     font-size: 24px;
-    color:red;
+    color:#222;
     transform: rotate(-45deg);
 
 }
