@@ -79,11 +79,14 @@ social.media {
 }
 
 .home {
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 50px 8% 0;
+    overflow: hidden;
 }
 
 .home-content {
@@ -109,4 +112,28 @@ social.media {
 .btn:hover {
     background: transparent;
     color: #1743e3;
+}
+
+.home-img{
+    position: relative;
+    right: -7%;
+    width: 450px;
+    height: 450px;
+    transform: rotate(45deg);
+
+}
+.home-img .rhombus {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #eaeaea;
+    border: 25px solid #1743e3;
+}
+
+.home-img .rhombus img {
+    position: absolute;
+    top: 110px;
+    left: -250px;
+    max-width: 750px;
+    transform: rotate(-45deg);
 }
