@@ -114,6 +114,18 @@ social.media {
     color: #1743e3;
 }
 
+.home-content h1 {
+    font-size: 30px;
+}
+
+.home-content h3 {
+    font-size: 20px;
+}
+
+.home-content p {
+    font-size: 16px;
+}
+
 .home-img{
     position: relative;
     right: -7%;
