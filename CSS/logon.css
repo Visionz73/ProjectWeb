@@ -86,7 +86,7 @@ body {
 
 .input-box i {
     position: absolute;
-    right: 20px;
+    right: 60px;
     transform: translateY(120%);
     
 
@@ -112,7 +112,7 @@ body {
     text-decoration: none;
 }
 
-.remember-forget a:hover {
+.remember-forgot a:hover {
     text-decoration: underline;
 }
 
