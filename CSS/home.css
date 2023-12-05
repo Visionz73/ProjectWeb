@@ -122,18 +122,12 @@ social.media {
     transform: rotate(45deg);
 
 }
-.home-img .rhombus {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #eaeaea;
-    border: 25px solid #1743e3;
-}
+
 
 .home-img .rhombus img {
     position: absolute;
-    top: 110px;
-    left: -250px;
-    max-width: 750px;
+    top: 76px;
+    left: -613px;
+    max-width: 795px;
     transform: rotate(-45deg);
 }
