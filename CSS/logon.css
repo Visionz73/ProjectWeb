@@ -7,23 +7,71 @@
 
 
 
-header h1 {
-    font-size: 3.5em;
-    color: #2fbffe;
-    margin-top: 5%;
-    padding-top: 0%;
-    margin-right: 37%;
-    padding-left: 4%;
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 8%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
 }
 
-header h3 {
-    font-size: 0.7em;
-    color: #70708f;
-    text-align: left;
-    margin-left: 0%;
-    margin-right: 59%;
-    line-height: 1.7;
-    padding-left: 6%;
+.logo {
+    font-size: 25px;
+    color:#222;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 20px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #1743e3;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    height: 40px;
+    
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid transparent;
+    text-decoration: none;
+    transform: rotate(45deg);
+    transition: .8s;
+    
+}
+
+.social-media a:hover {
+    border-color: #1743e3;
+    backdrop-filter: blur(10px);
+}
+
+.social-media a i {
+    font-size: 24px;
+    color:#222;
+    transform: rotate(-45deg);
+
 }
 
 * {
