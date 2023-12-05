@@ -45,7 +45,7 @@ body {
     color: #1743e3;
 }
 
-social.media {
+.social-media {
     display: flex;
     justify-content: space-between;
     width: 150px;
