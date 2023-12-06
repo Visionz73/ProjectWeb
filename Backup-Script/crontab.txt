@@ -1,1 +1,2 @@
+#Führt das Backup automatisch jeden Montag um 18 Uhr aus
 0 18 * * 1 /home/backup/backup.sh
