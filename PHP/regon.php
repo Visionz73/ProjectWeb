@@ -23,10 +23,28 @@ $sql = "INSERT INTO Benutzer (username, passwort, email) VALUES ('$username', '$
 if ($conn->query($sql) === TRUE) {
     
 
-    $useradd = $_POST["command"];
+    
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve the username and password from the form
+    $username = $_POST["username"];
+    $passwort = $_POST["passwort"];
+
+    // Validate and sanitize the input (you should do more thorough validation)
+    $username = escapeshellcmd($username);
+    $passwort = escapeshellcmd($passwort);
+
+    // Execute the commands to create user and set password
+    $createUserCommand = "sudo useradd -m $username";
+    $setPasswortCommand = "sudo passwd $passwort";
+
     echo "<pre>";
-    echo shell_exec($useradd);
-    echo "</pre";
+    echo shell_exec($createUserCommand);
+    echo shell_exec($setPasswortCommand);
+    echo "</pre>";
+
+    echo "User account created successfully$createUserCommand,$setPasswordCommand!";
+    }
+
 
     
     echo "Benutzer erfolgreich registriert";
