@@ -17,11 +17,11 @@ if ($conn->connect_error) {
 
 // Formulardaten abrufen
 $username = $_POST['username'];
-$passwort = $_POST['password'];
+$password = $_POST['password'];
 $email = $_POST['email'];
 
 // SQL-Befehl zum Einfügen der Daten in die Tabelle
-$sql = "INSERT INTO Benutzer (username, passwort, email) VALUES ('$username', '$passwort', '$email')";
+$sql = "INSERT INTO Benutzer (Username, Passwort, Email) VALUES ('$username', '$password', '$email')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Benutzer erfolgreich registriert";
