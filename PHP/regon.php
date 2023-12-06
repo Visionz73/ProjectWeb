@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 
 // Formulardaten abrufen
 $username = $_POST['username'];
-$password = $_POST['passwort'];
+$passwort = $_POST['passwort'];
 $email = $_POST['email'];
 
 // SQL-Befehl zum Einfügen der Daten in die Tabelle
