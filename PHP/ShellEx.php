@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<form action="shellEx.php" method="post">
+<form action="ShellEx.php" method="post">
 command? <input type="text" name="command">
 <input type="submit>
 </format>  
