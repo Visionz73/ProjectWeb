@@ -12,21 +12,18 @@ if ($conn->connect_error) {
     die("Verbindung fehlgeschlagen: " . $conn->connect_error);
 }
 
-// SQL-Befehl zum Abrufen der Daten
-$sql = "SELECT username, passwort, email FROM Benutzer";
-$result = $conn->query($sql);
+// Formulardaten abrufen
+$username = $_POST['username'];
+$passwort = $_POST['password']; // Angepasst von 'passwort' zu 'password'
+$email = $_POST['email'];
 
-// Überprüfen, ob Ergebnisse vorhanden sind
-if ($result->num_rows > 0) {
-    // Ergebnisse in einer Schleife ausgeben
-    while ($row = $result->fetch_assoc()) {
-        echo "Username: " . $row["username"] . "<br>";
-        echo "Passwort: " . $row["passwort"] . "<br>";
-        echo "Email: " . $row["email"] . "<br>";
-        echo "<hr>"; // Trennlinie zwischen den Datensätzen
-    }
+// SQL-Befehl zum Einfügen der Daten in die Tabelle
+$sql = "INSERT INTO Benutzer (username, passwort, email) VALUES ('$username', '$passwort', '$email')"; // Angepasst zu Kleinschreibung
+
+if ($conn->query($sql) === TRUE) {
+    echo "Benutzer erfolgreich registriert";
 } else {
-    echo "Keine Ergebnisse gefunden";
+    echo "Fehler bei der Registrierung: " . $conn->error;
 }
 
 $conn->close();
