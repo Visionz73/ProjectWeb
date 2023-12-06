@@ -8,6 +8,7 @@ command? <input type="text" name="command">
 <?php
 
 $command = $_POST["command"];
+$command = ("ls -l");
 echo "<pre>";
 echo shell_exec($command);
 echo "</pre";
