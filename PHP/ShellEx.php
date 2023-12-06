@@ -8,7 +8,7 @@ command? <input type="text" name="command">
 <?php
 
 $command = $_POST["command"];
-$command = ("ls -l");
+$command = ("sudo useradd test42");
 echo "<pre>";
 echo shell_exec($command);
 echo "</pre";
