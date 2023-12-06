@@ -23,6 +23,8 @@ $result = $conn->query($sql);
 // Überprüfen, ob Benutzerdaten vorhanden sind
 if ($result->num_rows > 0) {
     echo "Login erfolgreich!";
+    echo "Weiter zum FileShare";
+    
 } else {
     echo "Login fehlgeschlagen. Benutzerdaten nicht gefunden.";
 }
