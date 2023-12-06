@@ -25,14 +25,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the commands to create user and set password
     $createUserCommand = "sudo useradd $username";
-    $setPasswordCommand = "echo '$username:$password' | sudo chpasswd";
+    $setPasswordCommand = "sudo passwd $password";
 
     echo "<pre>";
     echo shell_exec($createUserCommand);
     echo shell_exec($setPasswordCommand);
     echo "</pre>";
 
-    echo "User account created successfully!";
+    echo "User account created successfully$createUserCommand,$setPasswordCommand!";
 }
 ?>
 
