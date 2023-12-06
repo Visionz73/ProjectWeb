@@ -12,23 +12,5 @@ if ($conn->connect_error) {
     die("Verbindung fehlgeschlagen: " . $conn->connect_error);
 }
 
-
-
-
-// Formulardaten abrufen
-$username = $_POST['username'];
-$password = $_POST['password'];
-$email = $_POST['email'];
-
-// SQL-Befehl zum Einfügen der Daten in die Tabelle
-$sql = "INSERT INTO Benutzer (Username, Passwort, Email) VALUES ('$username', '$password', '$email')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Benutzer erfolgreich registriert";
-} else {
-    echo "Fehler bei der Registrierung: " . $conn->error;
-}
-
-// Verbindung schließen
 $conn->close();
 ?>
