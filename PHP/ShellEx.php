@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = escapeshellcmd($password);
 
     // Execute the commands to create user and set password
-    $createUserCommand = "sudo useradd $username";
+    $createUserCommand = "sudo adduser $username";
     $setPasswordCommand = "sudo passwd $password";
 
     echo "<pre>";
