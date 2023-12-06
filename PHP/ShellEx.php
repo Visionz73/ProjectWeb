@@ -20,9 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Validate and sanitize the input (you should do more thorough validation)
-    $username = escapeshellcmd($username);
-    $password = escapeshellcmd($password);
+    
 
     // Execute the commands to create user and set password
     $createUserCommand = "sudo adduser $username";
