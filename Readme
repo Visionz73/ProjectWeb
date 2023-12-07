@@ -11,6 +11,7 @@ PHP (Vincent & Tammo)
 
 Pictures
 
+<<<<<<< Updated upstream
 
 Datenbank (Vincent & Tammo)
 
@@ -21,3 +22,6 @@ Backup Script (Mirko)
 
 Tools
     MYSQL,PHPMYADMIN, NGINX
+=======
+Tammo was hier
+>>>>>>> Stashed changes
