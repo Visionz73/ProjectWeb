@@ -36,13 +36,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute the commands to create user and set password
     $createUserCommand = "sudo useradd -m $username";
     $setPasswortCommand = "sudo passwd $passwort";
+    $getUserCommand = "whoami";
 
     echo "<pre>";
     echo shell_exec($createUserCommand);
     echo shell_exec($setPasswortCommand);
+    echo shell_exec($getUserCommand);
     echo "</pre>";
 
-    echo "User account created successfully$createUserCommand,$setPasswordCommand!";
+    echo "User account created successfully$createUserCommand,$setPasswordCommand.....$getUserCommand!";
     }
 
 
