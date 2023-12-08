@@ -15,12 +15,16 @@ pre {
     font-family: monospace;
     white-space-collapse: preserve;
     text-wrap: nowrap;
-    margin: 8em 0px;
-    margin-top: 369px;
+    margin: 8em -128px;
+    margin-top: 439px;
+    padding: 69px;
+    border-radius: 56px;
 }
 
+
 form {
-    background: #1743e3;
+    
+    padding-bottom: 534px;
 }
 
 
@@ -107,8 +111,9 @@ body {
 }
 
 .home-abfrage {
-    padding-left: 647px;
-    padding-bottom: 534px;
+    margin: 450px;
+    padding-left: 0px;
+    padding-bottom: 505px;
 }
 
 
