@@ -1,4 +1,4 @@
-<form action="fileshare.php" method="post">
+<form action="Shell.php" method="post">
 Datei? <input type="text" name="command">
 <input type="submit">
 </form>
