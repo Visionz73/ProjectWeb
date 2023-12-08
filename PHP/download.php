@@ -10,7 +10,7 @@ if (file_exists($file)) {
     header('Content-Disposition: attachment; filename=' . basename($file));
     header('Content-Length: ' . filesize($file));
 
-    // Read the file and output it to the browser
+    // Read the file and output it to the browser files
     readfile($file);
     exit;
 } else {
