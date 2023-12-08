@@ -105,16 +105,18 @@ body {
 }
 
 .home-abfrage {
-    background: #1743e3;
+    padding-left: 647px;
+    padding-bottom: 534px;
 }
 
 
 .home-content {
     font-size: 16px;
-    margin: 538px;
-    margin-top: 380px;
-    padding: 25px;
-    position: fixed;
+    margin-top: -215px;
+    margin-right: 46px;
+    position: absolute;
+    padding-right: 188px;
+    padding-left: 558px;
 }
 
 .home-content h1 {
