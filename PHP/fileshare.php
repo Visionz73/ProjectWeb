@@ -12,10 +12,10 @@ Datei? <input type="text" name="command">
 <?php
 $command = $_POST["command"];
 
-
+$file_user = "admin_rv";
 echo "<pre>";
-echo shell_exec("cd home/admin_rv ; ls");
-echo shell_exec("cd home/admin_rv " .$command);
+echo shell_exec("cd home/ $file_user ; ls");
+echo shell_exec("cd home/ $file_user " .$command);
 echo "</pre>";
 
 ?>
