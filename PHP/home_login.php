@@ -36,8 +36,8 @@
 <div class="home-img">
         <div class="rhombus">
             <img src='../Pictures/back-bg.png' alt="">
-        </div>
-    
+        </div>    
+</div>
 
     <div class="home-content">
 
@@ -59,7 +59,7 @@
                 ?>
     </div>
 
-</div>
+
     
 </section>
 
