@@ -1,5 +1,5 @@
 <?php
-$file = "logon.php";
+$file = 'test.txt';
 
 // Check if the file exists
 if (file_exists($file)) {
