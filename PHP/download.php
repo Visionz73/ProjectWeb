@@ -1,18 +1,11 @@
 <!DOCTYPE html>
-<form action="download.php" method="post">
-Shell Command? <input type="text" name="command">
-<input type="submit">
-</form>
-
-<!DOCTYPE html>
-<form action="download.php" method="post">
-Datei? <input type="text" name="filename">
+<form action="fileshare.php" method="post">
+Datei? <input type="text" name="command">
 <input type="submit">
 </form>
 
 <?php
-$command = $_POST["command"];
-$file = $_POST["filename"];
+$file = $_POST["command"];
 
 
 echo "<pre>";
