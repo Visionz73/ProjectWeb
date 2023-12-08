@@ -4,7 +4,7 @@ Command? <input type="text" name="command">
 </form>
 
 <form action="fileshare.php" method="post">
-Datei? <input type="text" name="data_command">
+Insert Datei? <input type="text" name="data_command">
 <input type="submit">
 </form>
 
