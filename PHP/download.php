@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<form action="fileshare.php" method="post">
-Datei schwöre sag an ich lad runter <input type="text" name="command">
-<input type="submit">
-</form>
 
 <?php
-$file = $_POST["command"];
 
-
+$file = "test.txt";
 
 // Check if the file exists
 if (file_exists($file)) {
@@ -16,7 +10,7 @@ if (file_exists($file)) {
     header('Content-Disposition: attachment; filename=' . basename($file));
     header('Content-Length: ' . filesize($file));
 
-    // Read the file and output it to the browser 
+    // Read the file and output it to the browser filescccscscscscscscsccas
     readfile($file);
     exit;
 } else {
