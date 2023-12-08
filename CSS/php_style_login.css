@@ -1,0 +1,9 @@
+
+
+pre {
+    display: block;
+    font-family: monospace;
+    white-space-collapse: preserve;
+    text-wrap: nowrap;
+    margin: 2em 0px;
+}
