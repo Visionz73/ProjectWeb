@@ -37,7 +37,7 @@
         <div class="rhombus">
             <img src='../Pictures/back-bg.png' alt="">
         </div>
-    </div>
+    
 
     <div class="home-content">
 
@@ -57,8 +57,9 @@
                     echo "</pre>";
 
                 ?>
-
     </div>
+
+</div>
     
 </section>
 
