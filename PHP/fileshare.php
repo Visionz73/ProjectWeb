@@ -1,10 +1,10 @@
-<form action="Shell.php" method="post">
+<form action="fileshare.php" method="post">
 Datei? <input type="text" name="command">
 <input type="submit">
 </form>
 
 <?php
-$command = $_POST["ls -l"];
+$command = $_POST["cd admin"];
 
 
 echo "<pre>";
