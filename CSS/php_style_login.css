@@ -106,8 +106,10 @@ body {
 
 .home-content {
     font-size: 16px;
-    margin: -229px 0 30px;
-    margin-right: 500px;
+    margin: 538px;
+    margin-top: 380px;
+    padding: 25px;
+    position: fixed;
 }
 
 .home-content h1 {
