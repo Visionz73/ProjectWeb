@@ -1,5 +1,5 @@
 <?php
-$file = 'test.txt';
+$file = $data_command;
 
 // Check if the file exists
 if (file_exists($file)) {
