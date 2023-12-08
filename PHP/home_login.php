@@ -34,7 +34,11 @@
 <section class="home">
     <div class="home-content">
 
-
+                <form action="../PHP/home_login.php" method="post">
+                Datei? <input type="text" name="command">
+                <input type="submit">
+                </form>
+                
                 <?php
 
                     $command = $_POST["command"];
