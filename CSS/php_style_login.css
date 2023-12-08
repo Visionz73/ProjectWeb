@@ -10,11 +10,13 @@
 }
 
 pre {
+    background: #ffffffdc;
     display: block;
     font-family: monospace;
     white-space-collapse: preserve;
     text-wrap: nowrap;
-    margin: 2em 0px;
+    margin: 8em 0px;
+    margin-top: 369px;
 }
 
 form {
