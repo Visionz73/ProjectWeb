@@ -32,13 +32,20 @@
 </header>
 
 <section class="home">
+
+<div class="home-img">
+        <div class="rhombus">
+            <img src='../Pictures/back-bg.png' alt="">
+        </div>
+    </div>
+
     <div class="home-content">
 
                 <form action="../PHP/home_login.php" method="post">
                 Datei? <input type="text" name="command">
                 <input type="submit">
                 </form>
-                
+
                 <?php
 
                     $command = $_POST["command"];
@@ -51,15 +58,8 @@
 
                 ?>
 
-
     </div>
     
-    <div class="home-img">
-        <div class="rhombus">
-            <img src='../Pictures/back-bg.png' alt="">
-        </div>
-    </div>
-
 </section>
 
 </body>
