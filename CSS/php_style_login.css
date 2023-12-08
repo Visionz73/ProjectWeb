@@ -15,12 +15,16 @@ pre {
     font-family: monospace;
     white-space-collapse: preserve;
     text-wrap: nowrap;
-    margin: 8em 0px;
-    margin-top: 369px;
+    margin: 8em -128px;
+    margin-top: 439px;
+    padding: 69px;
+    border-radius: 56px;
 }
 
+
 form {
-    background: #1743e3;
+    
+    padding-bottom: 534px;
 }
 
 
