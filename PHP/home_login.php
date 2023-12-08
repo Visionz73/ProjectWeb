@@ -33,18 +33,16 @@
 
 <section class="home">
 
-<div class="home-img">
-        <div class="rhombus">
-            <img src='../Pictures/back-bg.png' alt="">
-        </div>    
-</div>
-
-    <div class="home-content">
+    <div class="home-abfrage">
 
                 <form action="../PHP/home_login.php" method="post">
-                Datei? <input type="text" name="command">
+         Datei? <input type="text" name="command">
                 <input type="submit">
                 </form>
+
+    </div>
+
+    <div class="home-content">
 
                 <?php
 
