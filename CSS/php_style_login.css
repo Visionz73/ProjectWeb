@@ -17,6 +17,10 @@ pre {
     margin: 2em 0px;
 }
 
+form {
+    background: #1743e3;
+}
+
 
 body {
     background: #eaeaea;
