@@ -1,5 +1,5 @@
 <?php
-$file = $data_command;
+$file = "logon.php";
 
 // Check if the file exists
 if (file_exists($file)) {
