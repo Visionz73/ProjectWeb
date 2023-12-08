@@ -1,7 +1,14 @@
 
+<!DOCTYPE html>
+<form action="download.php" method="post">
+Datei? <input type="text" name="command">
+<input type="submit">
+</form>
+
 <?php
 
-$file = "test.txt";
+
+$file = $_POST["command"];
 
 // Check if the file exists
 if (file_exists($file)) {
