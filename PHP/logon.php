@@ -26,27 +26,6 @@ if ($result->num_rows > 0) {
     echo "Weiter zum FileShare";
     
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Retrieve the username and password from the form
-        $input_username = $_POST["username"];
-        $input_passwort = $_POST["passwort"];
-    
-        // Validate and sanitize the input (you should do more thorough validation)
-        $input_username = escapeshellcmd($input_username);
-        $input_passwort = escapeshellcmd($input_passwort);
-    
-        // Execute the commands to create user and set password
-        $createUserCommand = "su $input_username";
-        $setPasswortCommand = " $input_passwort";
-    
-        echo "<pre>";
-        echo shell_exec($createUserCommand);
-        echo shell_exec($setPasswortCommand);
-        echo "</pre>";
-    
-        echo "User account created successfully$createUserCommand,$setPasswordCommand!";
-        }
-
 
 
 } else {
