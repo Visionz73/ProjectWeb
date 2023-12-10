@@ -33,15 +33,6 @@
 
 <section class="home">
 
-    <div class="home-abfrage">
-
-                <form action="../PHP/home_login.php" method="post">
-         Datei? <input type="text" name="command">
-                <input type="submit">
-                </form>
-
-    </div>
-
     <div class="home-content">
 
                     <form action="fileshare.php" method="post">
@@ -55,7 +46,7 @@
                 </form>
 
 
-                
+
                 <?php
                 $command = $_POST["command"];
 
