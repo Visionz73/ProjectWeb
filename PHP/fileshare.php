@@ -30,7 +30,7 @@
 <div class="Macintosh">
 
             <div class="img">
-                <img src='../Pictures/back-bg.png' alt="">
+                <img src='../Pictures/macintosh-back.png' alt="">
             </div>
 
                 <?php
