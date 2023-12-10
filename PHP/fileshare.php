@@ -16,35 +16,48 @@
 
 
 
-                <form action="fileshare.php" method="post">
-                Shell <input type="text" name="command" placeholder="Hey Give me a Shell Command">
-                <input type="submit">
-                </form>
-
-                <form action="download.php" method="post">
-                Datei <input type="text" name="command" placeholder="Now lets Download -> Example.txt">
-                <input type="submit">
-                </form>
-
-
-<div class="Macintosh">
-
-            <div class="img">
                 
-            </div>
 
-                <?php
-                $command = $_POST["command"];
 
-                $file_user = "admin_rv";
-                echo "<pre>";
-                echo shell_exec("cd home/$file_user ; ls");
-                echo shell_exec("$command");
-                echo "</pre>";
+<div class="playground_fileshare">
 
-                ?>
+    <div class="forms">
 
+        <form action="fileshare.php" method="post">
+        Shell <input type="text" name="command" placeholder="Hey Give me a Shell Command">
+        <input type="submit">
+        </form>
+
+        <form action="download.php" method="post">
+        Datei <input type="text" name="command" placeholder="Now lets Download -> Example.txt">
+        <input type="submit">
+        </form>
+
+    </div>
+
+    <div class="ausgabe">
+
+        <?php
+        $command = $_POST["command"];
+
+        $file_user = "admin_rv";
+        echo "<pre>";
+        echo shell_exec("cd home/$file_user ; ls");
+        echo shell_exec("$command");
+        echo "</pre>";
+
+        ?>
+
+    </div>
+
+    <div class="img">
+
+        <img src='../Pictures/back-bg.png' alt="">
+
+    </div>
 
 </div>
+
+
 </body>
 </html>
