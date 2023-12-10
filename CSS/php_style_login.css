@@ -10,7 +10,7 @@
 }
 
 pre {
-    background: #ffffffdc;
+           /* background: #ffffffdc; */
     display: flex;
     font-family: monospace;
     white-space-collapse: preserve;
@@ -20,8 +20,10 @@ pre {
     align-content: center;
     justify-content: center;
     align-items: center;
-    margin: 48px 200px 30px 200px;
-    padding: 100px;
+    margin: -390px 629px 318px 612px;
+    padding: 76px 5px 106px 0px;
+    backdrop-filter: blur(10px);
+    color: #63d95d87;
    
     
 }
@@ -93,8 +95,12 @@ input[type="submit" i]:hover {
 
 .Macintosh {
     
-    background: #222;
+           /* background: #222; */
     background: url(../Pictures/macintosh-back.png) no-repeat;
+    background-position: center;
+    background-size: 45%;
+    padding: 483px 5px 199px 5px;
+    margin: 5px 5px 5px 5px;
 }
 
 
