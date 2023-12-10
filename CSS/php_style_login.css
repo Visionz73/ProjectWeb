@@ -97,12 +97,7 @@ input[type="submit" i]:hover {
 
 .playground_fileshare {
     
-           /* background: #222; */
-    background: url(../Pictures/macintosh-back.png) no-repeat;
-    background-position: center;
-    background-size: 45%;
-    padding: 483px 5px 199px 5px;
-    margin: 5px 5px 5px 5px;
+    background-color: #222;
 }
 
 
