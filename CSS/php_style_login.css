@@ -11,23 +11,36 @@
 
 pre {
     background: #ffffffdc;
-    display: block;
+    display: flex;
     font-family: monospace;
     white-space-collapse: preserve;
     text-wrap: nowrap;
-    margin: 8em -128px;
-    margin-top: 439px;
-    padding: 69px;
     border-radius: 56px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 48px 200px 30px 200px;
+    padding: 100px;
 }
 
 form {
     background: #bec9d985;
-    padding: 10px;
+    margin: 20px 400px 20px 400px;
+    padding: 20px;
     border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
-
+input[type="text" i] {
+    writing-mode: horizontal-tb !important;
+    padding-block: 1px;
+    padding-inline: 2px;
+}
 
 
 body {
