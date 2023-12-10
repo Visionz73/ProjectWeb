@@ -50,10 +50,10 @@
 
     </div>
 
-    <div class="img">
+    <div class="mac">
 
         <div>
-           
+           <h1>Hello</h1>
         </div>
 
     </div>
