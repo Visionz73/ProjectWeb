@@ -15,12 +15,12 @@
 
 
                 <form action="fileshare.php" method="post">
-                shell? <input type="text" name="command">
+                shell? <input type="text" name="command" placeholder="verzeichnis">
                 <input type="submit">
                 </form>
 
                 <form action="download.php" method="post">
-                Datei? <input type="text" name="command">
+                Datei? <input type="text" name="command" placeholder="Download Datei">
                 <input type="submit">
                 </form>
 

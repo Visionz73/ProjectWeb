@@ -49,6 +49,11 @@ input[type="text" i] {
     border: 0px;
 }
 
+input[type="text" i]::placeholder
+{
+    color: #3f3f3f;
+}
+
 input[type="submit" i] {
     align-items: center;
     background: #f5f5fa;
