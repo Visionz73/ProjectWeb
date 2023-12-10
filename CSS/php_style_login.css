@@ -9,7 +9,7 @@
 
 }
 
-.Macintosh .pre {
+.pre {
     background: #ffffffdc;
     display: flex;
     font-family: monospace;
@@ -94,9 +94,11 @@ input[type="submit" i]:hover {
 .Macintosh {
     
     background: #222;
-    background-image: url("../Pictures/macintosh-back.png");
-    background-repeat: no-repeat;
-    background-position: center;
+    
+}
+
+.Macintosh .img {
+    background: fixed;
 }
 
 body {
