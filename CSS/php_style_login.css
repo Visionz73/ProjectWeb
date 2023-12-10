@@ -41,17 +41,18 @@ input[type="text" i] {
     padding-block: 1px;
     padding-inline: 2px;
     margin: 0px 20px 0px 20px;
-    padding: 5px 40px 1px 38px;
-    margin: 1px 30px 1px 61px;
+    padding: 5px 129px 8px 12px;
+    margin: 1px 40px 1px 61px;
     border-radius: 5px;
     background: #ffffff7a;
     border-color: #fff;
     border: 0px;
 }
 
+
 input[type="text" i]::placeholder
 {
-    color: #3f3f3f;
+    color: #c0c0c0;
 }
 
 input[type="submit" i] {
