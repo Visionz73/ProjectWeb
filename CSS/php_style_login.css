@@ -73,6 +73,10 @@ input[type="submit" i] {
   word-spacing: normal;
 }
 
+input[type="submit" i]:hover {
+    background: #222;
+}
+
 
 body {
     background: #eaeaea;
