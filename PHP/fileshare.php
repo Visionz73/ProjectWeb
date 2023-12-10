@@ -15,16 +15,19 @@
 
 
                 <form action="fileshare.php" method="post">
-                shell? <input type="text" name="command" placeholder="Hey Give me a Shell Command">
+                Shell <input type="text" name="command" placeholder="Hey Give me a Shell Command">
                 <input type="submit">
                 </form>
 
                 <form action="download.php" method="post">
-                Datei? <input type="text" name="command" placeholder="Now lets Download -> Example.txt">
+                Datei <input type="text" name="command" placeholder="Now lets Download -> Example.txt">
                 <input type="submit">
                 </form>
 
 
+<div class="Macintosh">
+
+        <img src='../Pictures/macintosh-back.png' alt="">
 
                 <?php
                 $command = $_POST["command"];
@@ -36,4 +39,6 @@
                 echo "</pre>";
 
                 ?>
+
+</div>
 
