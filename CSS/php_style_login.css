@@ -94,16 +94,14 @@ input[type="submit" i]:hover {
 .Macintosh {
     
     background: #222;
-    
+    background: url(../Pictures/macintosh-back.png) no-repeat;
 }
 
-img {
-    background: fixed;
-}
+
 
 .Macintosh .img {
     background: fixed;
-    background: url(../Pictures/macintosh-back.png) no-repeat;
+    
 }
 
 body {
