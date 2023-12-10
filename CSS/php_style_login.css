@@ -103,6 +103,7 @@ img {
 
 .Macintosh .img {
     background: fixed;
+    background: url(../Pictures/macintosh-back.png) no-repeat;
 }
 
 body {
