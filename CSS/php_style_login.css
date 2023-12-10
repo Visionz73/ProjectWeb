@@ -101,12 +101,6 @@ input[type="submit" i]:hover {
 }
 
 
-
-.playground_fileshare .img {
-    background: fixed;
-    
-}
-
 .playground_fileshare .forms {
     background: #1743e3;
 }
@@ -117,6 +111,7 @@ input[type="submit" i]:hover {
 
 .playground_fileshare .img {
     background: #a9aaaa;
+    background: url(../Pictures/macintosh-back.png) no-repeat;
 }
 
 
