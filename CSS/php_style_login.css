@@ -40,6 +40,29 @@ input[type="text" i] {
     writing-mode: horizontal-tb !important;
     padding-block: 1px;
     padding-inline: 2px;
+    margin: 0px 20px 0px 20px;
+    padding: 4px;
+    border-radius: 5px;
+    background: #ffffff7a;
+}
+
+input[type="submit" i] {
+    appearance: auto;
+    user-select: none;
+    white-space-collapse: preserve;
+    text-wrap: nowrap;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    color: buttontext;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
 }
 
 
