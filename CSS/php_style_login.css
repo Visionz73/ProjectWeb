@@ -10,7 +10,7 @@
 }
 
 pre {
-           /* background: #ffffffdc; */
+         /* background: #ffffffdc; */
     display: flex;
     font-family: monospace;
     white-space-collapse: preserve;
@@ -20,10 +20,12 @@ pre {
     align-content: center;
     justify-content: center;
     align-items: center;
-    margin: -390px 629px 318px 612px;
-    padding: 76px 5px 106px 0px;
+    margin: -401px 629px 318px 612px;
+    padding: 106px 5px 106px 0px;
     backdrop-filter: blur(10px);
+    max-width: 5000px;
     color: #63d95d87;
+    max-height: 5000px;
    
     
 }
