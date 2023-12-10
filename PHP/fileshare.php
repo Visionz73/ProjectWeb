@@ -9,7 +9,9 @@
     <link rel="stylesheet"  href="../CSS/php_style_login.css">  <!--Verknüpfung der CSS-Datei -->
 </head>
 
-
+<header>
+</header>
+<body>
 
 
 
@@ -40,5 +42,7 @@
 
                 ?>
 
-</div>
 
+</div>
+</body>
+</html>
