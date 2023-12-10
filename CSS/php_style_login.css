@@ -63,6 +63,9 @@ input[type="submit" i] {
     border-style: outset;
     border-color: buttonborder;
     border-image: initial;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 10px;
 }
 
 
