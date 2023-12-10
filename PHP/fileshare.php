@@ -27,7 +27,7 @@
 
 <div class="Macintosh">
 
-        <img src='../Pictures/macintosh-back.png' alt="">
+        
 
                 <?php
                 $command = $_POST["command"];
