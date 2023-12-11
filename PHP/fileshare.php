@@ -53,6 +53,12 @@
 
         </div>
 
+        <div class="current-user">
+            <?php
+                    $current_user = "admin_rv";
+                    echo "$current_user";
+            ?>
+        </div>
 
 
 
