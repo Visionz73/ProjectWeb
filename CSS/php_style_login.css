@@ -32,7 +32,6 @@ pre {
 
 form {
     background: #bec9d985;
-    margin: 20px 600px 20px 600px;
     padding: 20px;
     border-radius: 10px;
     display: flex;
@@ -41,6 +40,7 @@ form {
     justify-content: center;
     align-items: center;
     font-family: monospace;
+    margin: 5px 5px 5px 5px;
 }
 
 input[type="text" i] {
@@ -99,22 +99,23 @@ input[type="submit" i]:hover {
     
     background-color: #222;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
-    justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    justify-content: space-evenly;
 }
 
 
 .playground_fileshare .forms {
     display: flex;
     /* background: #1743e3; */
-    flex-direction: row;
+    flex-direction: column;
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
+    width: 500px;
 }
 
 .playground_fileshare .ausgabe {
