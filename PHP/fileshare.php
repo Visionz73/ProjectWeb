@@ -48,15 +48,19 @@
 
         ?>
 
-    </div>
 
-    <div class="mac">
+        <div class="mac">
 
-        <div>
-           <h3>test</h3>
+            <div>
+                <h3>test</h3>
+            </div>
+
         </div>
 
+
     </div>
+
+    
 
 </div>
 
