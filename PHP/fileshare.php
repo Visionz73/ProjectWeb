@@ -24,9 +24,17 @@
     <div class="forms">
 
         <div class="titel">
+
             <div>
                 <h3>FileShare</h3>
             </div>
+
+                <div class="loader">
+                <div class="inner one"></div>
+                <div class="inner two"></div>
+                <div class="inner three"></div>
+                </div>
+
         </div>
 
 
