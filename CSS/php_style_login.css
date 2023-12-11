@@ -10,7 +10,7 @@
 }
 
 pre {
-         /* background: #ffffffdc; */
+    background: #0000007d;
     display: flex;
     font-family: monospace;
     white-space-collapse: preserve;
@@ -20,12 +20,12 @@ pre {
     align-content: center;
     justify-content: center;
     align-items: center;
-    margin: -401px 629px 318px 612px;
-    padding: 106px 5px 106px 0px;
+    /* margin: -401px 629px 318px 612px; */
+    padding: 60px 175px 74px 175px;
+    /* margin: 31px 7px 55px 1px; */
     backdrop-filter: blur(10px);
-    max-width: 5000px;
     color: #63d95d87;
-    max-height: 5000px;
+    font-size: 12px;
    
     
 }
@@ -107,6 +107,17 @@ input[type="submit" i]:hover {
 
 .playground_fileshare .ausgabe {
     background: #5e6da5;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    background: url(../Pictures/macintosh-back.png) no-repeat;
+    background-size: 100%;
+    padding: 13px 80px 194px 64px;
+    height: 1000px;
+    width: 648px;
 }
 
 .playground_fileshare .mac {
