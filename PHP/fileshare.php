@@ -26,7 +26,7 @@
         <div class="titel">
 
             <div>
-                <h3>FileShare</h3>
+                <h3>FileShare/Home ...</h3>
             </div>
 
                 <div class="loader">

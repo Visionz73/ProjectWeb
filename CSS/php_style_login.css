@@ -122,6 +122,9 @@ input[type="submit" i]:hover {
     background: #69696d;
     padding: 5px 110px 5px 5px;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .playground_fileshare .forms .titel h3 {
@@ -151,13 +154,14 @@ input[type="submit" i]:hover {
 
 
 .loader {
-    position: absolute;
     top: calc(50% - 32px);
     left: calc(50% - 32px);
     width: 64px;
     height: 64px;
     border-radius: 50%;
     perspective: 800px;
+    padding: 20px;
+    margin: 20px;
   }
   
   .inner {
