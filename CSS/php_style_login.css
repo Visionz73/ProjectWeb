@@ -16,16 +16,16 @@ pre {
     white-space-collapse: preserve;
     text-wrap: nowrap;
     border-radius: 56px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-content: center;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    /* margin: -401px 629px 318px 612px; */
-    padding: 60px 175px 74px 175px;
-    /* margin: 31px 7px 55px 1px; */
+    padding: 60px 175px 238px 175px;
+    margin: 3px 16px 0px 20px;
     backdrop-filter: blur(10px);
     color: #63d95d87;
     font-size: 12px;
+    flex-direction: column;
    
     
 }
@@ -98,26 +98,37 @@ input[type="submit" i]:hover {
 .playground_fileshare {
     
     background-color: #222;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .playground_fileshare .forms {
-    background: #1743e3;
+    display: flex;
+    /* background: #1743e3; */
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .playground_fileshare .ausgabe {
-    background: #5e6da5;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-content: center;
-    justify-content: space-around;
-    align-items: center;
+    /* align-items: center; */
     background: url(../Pictures/macintosh-back.png) no-repeat;
     background-size: 100%;
-    padding: 13px 80px 194px 64px;
+    padding: 115px 80px 47px 64px;
     height: 1000px;
     width: 648px;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .playground_fileshare .mac {
