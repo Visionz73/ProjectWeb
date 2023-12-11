@@ -110,7 +110,7 @@ input[type="submit" i]:hover {
 
 .playground_fileshare .forms {
     display: flex;
-    background: linear-gradient(104deg, #ebe5c3b8, #4746158f);
+    /*background: linear-gradient(104deg, #ebe5c3b8, #4746158f);*/
     flex-direction: column;
     align-content: center;
     align-items: center;
@@ -124,7 +124,7 @@ input[type="submit" i]:hover {
 }
 
 .playground_fileshare .forms .titel {
-    background: linear-gradient(178deg, #c1b98d, #ffffffc7);
+    /*background: linear-gradient(178deg, #c1b98d, #ffffffc7);*/
     padding: 8px 11px 11px 32px;
     border-radius: 10px;
     display: flex;
