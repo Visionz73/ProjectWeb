@@ -118,6 +118,10 @@ input[type="submit" i]:hover {
     width: 500px;
 }
 
+.playground_fileshare .forms .titel {
+    background: #17e343;
+}
+
 .playground_fileshare .ausgabe {
     display: flex;
     flex-wrap: nowrap;
@@ -137,9 +141,7 @@ input[type="submit" i]:hover {
     background: url(../Pictures/macintosh-back.png) no-repeat;
 }
 
-.playground_fileshare .titel {
-    background: #17e343;
-}
+
 
 body {
     background: #eaeaea;
