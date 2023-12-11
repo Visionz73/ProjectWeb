@@ -222,7 +222,7 @@ input[type="submit" i]:hover {
 
 
 
-body {
+  body {
     background: #eaeaea;
 }
 
@@ -304,20 +304,10 @@ body {
     overflow: hidden;
 }
 
-.home-abfrage {
-    margin: 450px;
-    padding-left: 0px;
-    padding-bottom: 505px;
-}
-
-
 .home-content {
     font-size: 16px;
-    margin-top: -215px;
-    margin-right: 46px;
-    position: absolute;
-    padding-right: 188px;
-    padding-left: 558px;
+    margin: -229px 0 30px;
+    margin-right: 500px;
 }
 
 .home-content h1 {
@@ -372,6 +362,3 @@ body {
     max-width: 795px;
     transform: rotate(-45deg);
 }
-
-
-
