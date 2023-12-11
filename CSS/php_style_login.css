@@ -15,14 +15,14 @@ pre {
     font-family: monospace;
     white-space-collapse: preserve;
     text-wrap: nowrap;
-    border-radius: 56px;
+    border-radius: 33px;
     flex-wrap: nowrap;
     align-content: center;
     justify-content: space-evenly;
     align-items: center;
     padding: 41px 175px 43px 175px;
     margin: 3px 16px 87px 20px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(7px);
     color: #63d95d87;
     font-size: 12px;
     flex-direction: column;
@@ -136,6 +136,9 @@ input[type="submit" i]:hover {
     background: url(../Pictures/macintosh-back.png) no-repeat;
 }
 
+.playground_fileshare .titel {
+    background: #17e343;
+}
 
 body {
     background: #eaeaea;
