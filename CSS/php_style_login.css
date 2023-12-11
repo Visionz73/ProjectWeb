@@ -20,8 +20,8 @@ pre {
     align-content: center;
     justify-content: space-evenly;
     align-items: center;
-    padding: 60px 175px 238px 175px;
-    margin: 3px 16px 0px 20px;
+    padding: 41px 175px 43px 175px;
+    margin: 3px 16px 87px 20px;
     backdrop-filter: blur(10px);
     color: #63d95d87;
     font-size: 12px;
@@ -124,7 +124,7 @@ input[type="submit" i]:hover {
     /* align-items: center; */
     background: url(../Pictures/macintosh-back.png) no-repeat;
     background-size: 100%;
-    padding: 115px 80px 47px 64px;
+    padding: 115px 80px 22px 64px;
     height: 1000px;
     width: 648px;
     justify-content: space-between;
