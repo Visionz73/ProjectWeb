@@ -139,6 +139,10 @@ input[type="submit" i]:hover {
     color: #4b4545;
 }
 
+.playground_fileshare .forms .current-user {
+    background: #1743e3;
+}
+
 .playground_fileshare .ausgabe {
     display: flex;
     flex-wrap: nowrap;
