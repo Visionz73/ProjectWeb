@@ -13,17 +13,18 @@ $conn=mysqli_connect ($host,$user, $pass, $db);
 $query="SELECT * from users where
 username="$username" and password= "$password"";
 if(mysqli_num_rows ($result) ==1)
-{
-    session_start();
-    $_SESSION["Auth"]="true";
-    header("Location:home.html");
-}
 
-else 
-{ 
-    echo "wrong username or password";
-}
+    {
+        session_start();
+        $_SESSION["Auth"]="true";
+        header("Location:home.html");
+    }
 
+    else 
+    { 
+        echo "wrong username or password";
+    }
+}
 
 
 ?>
