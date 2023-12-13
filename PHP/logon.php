@@ -7,8 +7,8 @@ $pass="neues-passwort";
 $db="Auth";
 
 $username=$_POST ["username"];
-$password=$_POST['password'];
-$conn=mysqli_connect ($host,$user, $pass, $db);
+$password=$_POST["password"];
+$conn=mysqli_connect ($host, $user, $pass, $db);
 
 $query="SELECT * from users where
 username="$username" and password= "$password"";
