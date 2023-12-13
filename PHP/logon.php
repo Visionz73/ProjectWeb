@@ -1,52 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+if ($_POST)
+{
+$host="localhost";
+$user="root";
+$pass="neues-passwort";
+$db="Auth";
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="../CSS/home.css"> <!-- Verknüpfung der CSS-Datei -->
-</head>
+$username=$_POST ["username"];
+$password=$_POST['password'];
+$conn=mysqli_connect ($host,$user, $pass, $db);
 
-<body>
+$query="SELECT * from users where
+username="$username" and password= "$password"";
+if(mysqli_num_rows ($result) ==1)
 
-    <header class="header">
-        <a href="#" class="logo">OwnCloud<i class='bx bx-cloud' ></i> </a>
+    {
+        session_start();
+        $_SESSION["Auth"]="true";
+        header("Location:home.html");
+    }
 
-        <nav class="navbar">
-            <a href="../html/home.html" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="#">Review</a>
-            <a href="../html/regon.html">Sign Up</a>
-            <a href="../html/logon.html">Login</a>
-            <a href="../PHP/fileshare.php">FileShare</a>
-        </nav>
+    else 
+    { 
+        echo "wrong username or password";
+    }
+}
 
-        <div class="social-media">
-            <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
-            <a href="#"><i class='bx bxl-meta' ></i></a>
-            <a href="#"><i class='bx bxl-reddit' ></i></a>
-        </div>
-    </header>
 
-    <section class="home">
-        <div class="home-content">
-            <h1>Herzlich Willkommen!</h1>
-            <h3>Deine Daten sind bei uns Sicher!</h3>
-            <p>Speichere deine Daten jetzt auf deiner eigenen Cloud!</p>
-            <a href="../PHP/fileshare.php" class="btn">Sign up now!</a>
-        </div>
-        
-        <div class="home-img">
-            <div class="rhombus">
-                <img src='../Pictures/back-bg.png' alt="">
-            </div>
-        </div>
+?>
 
-    </section>
 
-</body>
+
 
 
 
