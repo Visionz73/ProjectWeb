@@ -132,19 +132,11 @@ body {
 
 
 .home-img{
-    position: relative;
-    right: -7%;
-    width: 450px;
-    height: 450px;
-    transform: rotate(45deg);
+    background: fixed;
 
 }
 
 
 .home-img .rhombus img {
     position: absolute;
-    top: 76px;
-    left: -613px;
-    max-width: 795px;
-    transform: rotate(-45deg);
 }
