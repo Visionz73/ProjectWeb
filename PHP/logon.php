@@ -1,41 +1,4 @@
 <?php
-if ($_POST)
-{
-$host="localhost";
-$user="root";
-$pass="neues-passwort";
-$db="Auth";
-
-$username=$_POST ["username"];
-$password=$_POST["password"];
-$conn=mysqli_connect ($host, $user, $pass, $db);
-
-$query="SELECT * from users where
-username="$username" and password= "$password"";
-if(mysqli_num_rows ($result) ==1)
-
-    {
-        session_start();
-        $_SESSION["Auth"]="true";
-        header("Location:home.html");
-    }
-
-    else 
-    { 
-        echo "wrong username or password";
-    }
-}
-
-
-?>
-
-
-
-
-
-
-
-<?php
 // Verbindung zur Datenbank herstellen
 $servername = "localhost";
 $username = "root";
