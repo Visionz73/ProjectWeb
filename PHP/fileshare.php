@@ -10,6 +10,12 @@
 </head>
 
 <body>
+<?php
+            session_start();
+            $user = $_SESSION["user"];
+                    
+                   
+            ?>
 
     <header class="header">
         <a href="#" class="logo">OwnCloud<i class='bx bx-cloud' ></i> </a>
@@ -56,9 +62,8 @@
 
         <div class="current-user">
             <?php
-                    $current_user = "admin_rv"; /* GET FÜR USER INFOS*/
-                    echo "You logged in as $current_user";
-            ?>
+        echo "You logged in as $user";
+        ?>
         </div>
 
 
@@ -78,12 +83,15 @@
     <div class="ausgabe">
 
         <?php
+       
         $command = $_POST["command"];
+        $user = $_SESSION["user"];
 
-        $file_user = "admin_rv";
+        $file_user = $user;
         echo "<pre>";
-        echo shell_exec("cd home/$file_user ; .$command ; ls");
-        //echo shell_exec("$command");
+        // echo shell_exec("cd home/$file_user ; ls");
+        echo shell_exec("cd home/$file_user ; ls");
+        echo shell_exec("$command");
         echo "</pre>";
 
         ?>
