@@ -1,9 +1,9 @@
 <?php
 // Verbindung zur Datenbank herstellen
 $servername = "localhost";
-$username = "admin_vin";
-$password = "12345";
-$dbname = "benutzerdatenbank";
+$username = "root";
+$password = "neues-passwort";
+$dbname = "BenutzerDatenbank";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
