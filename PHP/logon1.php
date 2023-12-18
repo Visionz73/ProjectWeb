@@ -20,7 +20,10 @@ echo "Connected successfully";
 
     echo "$input_username";
     echo "$input_passwort";
-// Perform database operations here
+
+    
+    $sql = "SELECT * FROM Benutzer WHERE Benutzername = '$input_username'";
+    $result = $conn->query($sql);
 
 // Close connection
 $conn->close();
