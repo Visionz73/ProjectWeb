@@ -1,9 +1,9 @@
 <?php
 // Verbindung zur Datenbank herstellen
 $servername = "localhost";
-$username = "root";
-$password = "neues-passwort";
-$dbname = "BenutzerDatenbank";
+$username = "admin_vin";
+$password = "12345";
+$dbname = "benutzerdatenbank";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -18,7 +18,7 @@ $passwort = $_POST['passwort'];
 $email = $_POST['email'];
 
 // SQL-Befehl zum Einfügen der Daten in die Tabelle
-$sql = "INSERT INTO Benutzer (username, passwort, email) VALUES ('$username', '$passwort', '$email')"; 
+$sql = "INSERT INTO Benutzer (Benutzername, Passwort, Email) VALUES ('$username', '$passwort', '$email')"; 
 
 if ($conn->query($sql) === TRUE) {
     
