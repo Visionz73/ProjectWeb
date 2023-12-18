@@ -15,10 +15,11 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 
     $input_username = $_POST["username"];
-    $input_password = $_POST["passwort"];
+    $input_passwort = $_POST["passwort"];
 
 
     echo "$input_username";
+    echo "$input_passwort";
 // Perform database operations here
 
 // Close connection
