@@ -11,7 +11,7 @@ $benutzername = $_POST["username"];
 $passwort = $_POST["passwort"];
 
 
-if($coonector->login($benutzername, $passwort) == true){
+if($connector->login($benutzername, $passwort) == true){
     session_start();
     $_SESSION['user'] =  $benutzername;
     header("Location: ../html/home_login.html");   
