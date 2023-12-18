@@ -8,11 +8,16 @@ $dbname = "BenutzerDatenbank";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if($connector->login($benutzername, $passwort) == true){
+    session_start();
+    $_SESSION['user'] =  $benutzername;
+    header("Location: ../html/home_login.html");   
 }
 
-echo "Connected successfully";
+
+ else {
+    echo "Login fehlgeschlagen. Benutzerdaten nicht gefunden.";
+}
 
 // Perform database operations here
 
