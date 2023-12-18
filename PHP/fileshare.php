@@ -10,11 +10,9 @@
 </head>
 
 <body>
-<?php
+            <?php
             session_start();
-            $user = $_SESSION["user"];
-                    
-                   
+            $user = $_SESSION["user"];     
             ?>
 
     <header class="header">
