@@ -1,26 +1,44 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "neues-passwort";
-$dbname = "BenutzerDatenbank";
+session_start();
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Datenbankverbindung
+    $servername = "localhost";
+    $username = "root";
+    $password = "neues-passwort";
+    $dbname = "BenutzerDatenbank";
 
-// Check connection
-if($connector->login($benutzername, $passwort) == true){
-    session_start();
-    $_SESSION['user'] =  $benutzername;
-    header("Location: ../html/home_login.html");   
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Benutzereingaben
+    $input_username = $_POST["username"];
+    $input_passwort = $_POST["passwort"];
+
+    // SQL-Abfrage
+    $sql = "SELECT * FROM Benutzer WHERE Benutzername = '$input_username'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows == 1) {
+        // Benutzer gefunden, überprüfe das Passwort
+        $row = $result->fetch_assoc();
+        $stored_passwort = $row['Passwort'];
+
+        if (password_verify($input_passwort, $stored_passwort)) {
+            // Passwort ist korrekt, leite weiter oder führe weitere Aktionen aus
+            $_SESSION['user'] = $input_username;
+            header("Location: logon.html");
+            exit();
+        } else {
+            echo "Falsches Passwort";
+        }
+    } else {
+        echo "Benutzer nicht gefunden";
+    }
+
+    $conn->close();
 }
-
-
- else {
-    echo "Login fehlgeschlagen. Benutzerdaten nicht gefunden.";
-}
-
-// Perform database operations here
-
-// Close connection
-$conn->close();
 ?>
