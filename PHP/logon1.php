@@ -1,27 +1,21 @@
 <?php
-
-// Verbindung zur Datenbank herstellen
 $servername = "localhost";
 $username = "root";
 $password = "neues-passwort";
 $dbname = "BenutzerDatenbank";
 
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-$benutzername = $_POST["username"];
-$passwort = $_POST["passwort"];
-
-
-if($connector->login($benutzername, $passwort) == true){
-    session_start();
-    $_SESSION['user'] =  $benutzername;
-    header("Location: ../html/home_login.html");   
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
+echo "Connected successfully";
 
- else {
-    echo "Login fehlgeschlagen. Benutzerdaten nicht gefunden.";
-}
+// Perform database operations here
 
-// // Verbindung schließen
-// $conn->close();
+// Close connection
+$conn->close();
 ?>
