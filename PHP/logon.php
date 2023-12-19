@@ -1,5 +1,5 @@
 <?php
-require_once('Authentication.php');
+require_once('../PHP/Authentication.php');
 // Verbindung zur Datenbank herstellen
 $servername = "localhost";
 $username = "root";

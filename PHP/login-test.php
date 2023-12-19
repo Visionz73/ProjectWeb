@@ -37,6 +37,14 @@
 
         <?php
             print_r($_POST);
+            if (isset($_POST["submit"])) {
+                $username =$_POST["username"];
+                $passwort =$_POST["passwort"];
+
+                $passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
+
+                require_once "datacon.php";
+            }
         ?>
         <form action="../PHP/login-test.php" method="post">
             <h1>Login</h1>
@@ -54,7 +62,7 @@
                 <a href="#">Forgot Password?</a>
             </div>
 
-            <button type="submit" class="btn">Login</button>
+            <button type="submit" name = "submit" class="btn">Login</button>
 
             <div class="register-link">
                 <p>Dont have an account? <a href="../html/regon.html">Register</a></p>
