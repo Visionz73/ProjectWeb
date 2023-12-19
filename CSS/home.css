@@ -91,9 +91,10 @@ body {
 }
 
 .home-content {
+    
     font-size: 16px;
     margin: -229px 0 30px;
-    margin-right: 500px;
+    margin-right: 50px;
 }
 
 .home-content h1 {
@@ -138,5 +139,7 @@ body {
 
 
 .home-img .rhombus img {
-    position: absolute;
+        /* position: absolute; */
+        height: 10%;
+        width: 100%;
 }
