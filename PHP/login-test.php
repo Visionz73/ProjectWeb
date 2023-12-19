@@ -8,12 +8,14 @@
     <link rel="stylesheet" type="text/css" href="../CSS/logon.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+    
+
+
 </head>
 
 
 
 <body>
-
 
     <header class="header">
         <a href="#" class="logo">OwnCloud<i class='bx bx-cloud' ></i> </a>
@@ -35,19 +37,22 @@
 
     <div class="wrapper">
 
-        <?php
+            <?php
             print_r($_POST);
+
             if (isset($_POST["submit"])) {
                 $username =$_POST["username"];
                 $passwort =$_POST["passwort"];
+                $email =$_POST["email"];
 
                 $passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
 
                 require_once "datacon.php";
             }
-        ?>
-        <form action="../PHP/login-test.php" method="post">
-            <h1>Login</h1>
+            ?>
+
+        <form action="../PHP/regon.php" method="post">
+            <h1>Sign Up</h1>
             <div class= "input-box">
                 <input type="text" name="username" placeholder="Username" required>
                 <i class='bx bxs-user'></i> 
@@ -56,16 +61,17 @@
                 <input type="password" name="passwort" placeholder="password" required>
                 <i class='bx bxs-lock-alt' ></i>
             </div>
-
-            <div class="remember-forgot">
-                <label><input type="checkbox"> Remember me</label>
-                <a href="#">Forgot Password?</a>
+            <div class="input-box">
+                <input type="text" name="email" placeholder="Mail" required>
+                <i class='bx bxs-envelope' ></i>
             </div>
 
-            <button type="submit" name = "submit" class="btn">Login</button>
+            
+
+            <button type="submit" class="btn">Sign Up</button>
 
             <div class="register-link">
-                <p>Dont have an account? <a href="../html/regon.html">Register</a></p>
+                <p>Already have an account? <a href="../html/logon.html">Login</a></p>
             </div>
 
         </form>
