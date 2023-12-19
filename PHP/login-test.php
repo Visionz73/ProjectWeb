@@ -41,9 +41,9 @@
             print_r($_POST);
 
             if (isset($_POST["submit"])) {
-                $username =$_POST["username"];
-                $passwort =$_POST["passwort"];
-                $email =$_POST["email"];
+                $username = $_POST["username"];
+                $passwort = $_POST["passwort"];
+                $email = $_POST["email"];
 
                 $passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
 
@@ -51,7 +51,7 @@
             }
             ?>
 
-        <form action="../PHP/regon.php" method="post">
+        <form action="../PHP/login-test.php" method="post">
             <h1>Sign Up</h1>
             <div class= "input-box">
                 <input type="text" name="username" placeholder="Username" required>
