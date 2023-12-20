@@ -57,13 +57,13 @@
                 if (isset($_SESSION["user"])) {
                     // for logged in 
                 
-                    echo "<welcome>";
+                    echo "<pre>";
                     echo ("Welcome $user to OwnCloud!");
-                    echo "</welcome>";
+                    echo "</pre>";
                 ?>
                     <h3>Your Data? Your Storage!</h3>
                     <p>klicke auf " Fileserver " um deine eigenen Dateien zu Verwalten</p>
-                    <a href="../PHP/fileshare.php" class="btn">Sign up now!</a>
+                    <a href="../PHP/fileshare.php" class="btn">FileServer</a>
                 <?php
                 } else {
                     // for not be logged in 
