@@ -95,17 +95,25 @@ body {
 .home-content {
     
     font-size: 16px;
-    margin: -229px 0 30px;
+    display: flex;
     margin: 5px;
-    padding: 5px 5px 169px 1px;
+    padding: 5px 0px 169px 1px;
+    height: 60%;
+    width: 200%;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .home-content h1 {
-    font-size: 60px;
+    font-size: 50px;
+    margin: 5px 5px 21px 0px;
 }
 
 .home-content h3 {
     font-size: 20px;
+    margin: 5px 5px 5px 5px;
 }
 
 .home-content p {
@@ -126,6 +134,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: .5s;
+    margin: 5px 5px 13px 5px;
 }
 
 .btn:hover {
