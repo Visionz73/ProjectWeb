@@ -48,6 +48,10 @@
                 $passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
 
                 require_once "datacon.php";
+                $sql = "INSERT INTO users (username, passwort, email) VALUES ( ?, ?, ? )";
+                $stmt = mysqli_stmt_init($conn);
+                $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
+                if ($prepareStmt);
             }
             ?>
 
