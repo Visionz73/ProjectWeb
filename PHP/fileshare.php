@@ -56,10 +56,6 @@
 
         <div class="social-media">
 
-            <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
-            <a href="#"><i class='bx bxl-meta' ></i></a>
-            <a href="#"><i class='bx bxl-reddit' ></i></a>
-
                     <?php
                         session_start();
                         if(isset($_SESSION["user"])) {
