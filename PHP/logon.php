@@ -1,5 +1,5 @@
 <?php
-require_once('../PHP/Authentication.php');
+require_once('Authentication.php');
 // Verbindung zur Datenbank herstellen
 $servername = "localhost";
 $username = "root";
@@ -23,5 +23,5 @@ if($coonector->login($benutzername, $passwort) == true){
 }
 
 // // Verbindung schließen
-// $conn->close();
+$coonector->close();
 ?>
