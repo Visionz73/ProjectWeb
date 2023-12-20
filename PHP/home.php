@@ -45,6 +45,7 @@
 
                     <?php
                         session_start();
+                        echo ("$user");
                         if(isset($_SESSION["user"])) {
                     ?>
                             <a href=""><i class='bx bxs-invader'></i><?php echo ("$user");?></a>
