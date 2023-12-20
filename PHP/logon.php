@@ -14,7 +14,7 @@ $connector = new Authentication($servername, $username, $password, $dbname);
 if($connector->login($benutzername, $passwort) == true){
     session_start();
     $_SESSION['user'] =  $benutzername;
-    header("Location: ../PHP/home_login.php");
+    header("Location: ../PHP/home.php");
 }
 
 

@@ -21,7 +21,9 @@
             <a href="../html/regon.html">Sign Up</a>
             <a href="../html/logon.html">Login</a>
             <a href="../PHP/logout.php">Logout</a>
+
             <?php
+            print_r($_SESSION);
             if(isset($_SESSION["user"])) {
 
             }
