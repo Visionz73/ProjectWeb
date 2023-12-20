@@ -126,7 +126,7 @@
         $file_user = $user;
         echo "<pre>";
         // echo shell_exec("cd home/$file_user ; ls");
-        $command = "ls";
+        echo shell_exec("ls");
         echo shell_exec("ls $command");
         //echo shell_exec("$command");
         echo "</pre>";
