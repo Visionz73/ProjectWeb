@@ -22,14 +22,14 @@
             <a href="../html/logon.html">Login</a>
 
             <?php
-                if(isset($_SESSION[user]))
-                {
+                if(isset($_SESSION["user"]))
+                {?>
                     <a href="../PHP/fileshare.php">FileShare</a>
                     <a href="../PHP/logout.php">Logout</a>
-                }
-                else {
+                <?}
+                else {?>
                     echo("no user in SESSION") //TEST PHASE
-                }
+                <?}?>
             ?>
             
 
