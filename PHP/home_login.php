@@ -33,12 +33,8 @@ if(!isset($_SESSION["user"])){
         <a href="#">Review</a>
         <a href="../html/regon.html">Sign Up</a>
         <a href="../html/logon.html">Login</a>
-       
-       <?php
-            if(isset($_SESSION["user"])) {?>
-                <a href="../html/logon.html">Login</a>
-            <?}?>
-        ?>
+        <a href="../html/logout.php">logout</a>
+
     </nav>
 
     <div class="social-media">
