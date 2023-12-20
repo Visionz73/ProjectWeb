@@ -7,7 +7,8 @@ session_start();
 session_destroy();
 
 // Umleitung zur Anmeldeseite oder einer anderen Seite
-header("Location: login.html"); 
+
+header("Location: ../html/logon.html"); 
 exit();
 
 ?>
