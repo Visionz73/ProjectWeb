@@ -24,7 +24,7 @@
             <a href="#">Review</a>
             <a href="../html/regon.html">Sign Up</a>
             <a href="../html/logon.html">Login</a>
-            <a href="../PHP/fileshare.php">FileShare</a>
+           
 
             <?php
                     session_start();
