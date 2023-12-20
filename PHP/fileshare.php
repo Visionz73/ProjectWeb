@@ -55,20 +55,10 @@
         </nav>
 
         <div class="social-media">
-        <?php
-                    session_start();
-                    if(isset($_SESSION["user"])) {
-                    ?>
-                        <a href="#"><i class='bx bxs-invader'></i><?php echo ("$user")?></a>
-                    <?php
-                    } 
-                    else {
-                        echo("failed");
-                    }
-                    ?>
+        
                     
             
-
+            <a href="#"><i class='bx bxs-invader'></i><?php echo ("$user")?></a>
             <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
             <a href="#"><i class='bx bxl-meta' ></i></a>
             <a href="#"><i class='bx bxl-reddit' ></i></a>
