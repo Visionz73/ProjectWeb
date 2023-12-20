@@ -13,8 +13,8 @@ $username_Web = $_POST['username'];
 $passwort_Web = $_POST['passwort']; 
 $email_Web = $_POST['email'];
 
-$coonector = new Authentication($servername, $username, $password, $dbname);
-if ($coonector->register($username_Web, $passwort_Web, $email_Web) == true){
+$connector = new Authentication($servername, $username, $password, $dbname);
+$connector->register($username_Web, $passwort_Web, $email_Web);
 // SQL-Befehl zum Einfügen der Daten in die Tabelle
 
 
@@ -46,12 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // echo "Benutzer erfolgreich registriert";
 else {
-    echo "Fehler bei der Registrierung: " . $conn->error;
-}
-}
-else{
-    echo "Benutzer konnte nicht registriert werden";
+    echo "Fehler bei der Registrierung: ";
 }
 
-$conn->close();
+
+$connector->close();
 ?>
