@@ -57,10 +57,12 @@
                 if (isset($_SESSION["user"])) {
                     // for logged in 
                 
-                    echo ("Welcome $user to OwnCloud!");
+                    echo "<welcome>";
+                    ("Welcome $user to OwnCloud!");
+                    echo "</welcome>";
                 ?>
                     <h3>Your Data? Your Storage!</h3>
-                    <p>In der Cloud werden deine Daten sicher und geschützt aufbewahrt. Du kannst dich darauf verlassen, dass sie vor Verlust oder Beschädigung geschützt sind. Mit meinem Online-Cloud-Speicherdienst kannst du ganz einfach deine Dateien hochladen und sicher speichern. Wenn du auf meine Hauptseite gehst, findest du dort einen Login-Bereich, über den du bequem auf deine gespeicherten Daten zugreifen kannst.</p>
+                    <p>klicke auf " Fileserver " um deine eigenen Dateien zu Verwalten</p>
                     <a href="../PHP/fileshare.php" class="btn">Sign up now!</a>
                 <?php
                 } else {
