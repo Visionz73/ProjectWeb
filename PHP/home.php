@@ -27,18 +27,10 @@
                     <a href="../PHP/fileshare.php">FileShare</a>
                     <a href="../PHP/logout.php">Logout</a>
                 <?}
-                else {
-                    echo("no user in SESSION"); //TEST PHASE
+                else {?>
+                   <? echo("no user in SESSION"); //TEST PHASE
                 }?>
-            ?>
-            
-
-            <?php
-            print_r($_SESSION);
-            if(isset($_SESSION["user"])) {
-
-            }
-            ?>
+        
 
         </nav>
 
