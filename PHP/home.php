@@ -56,11 +56,11 @@
 
                 if (isset($_SESSION["user"])) {
                     // for logged in 
-                
-                    echo "<pre>";
-                    echo ("Welcome $user to OwnCloud!");
-                    echo "</pre>";
                 ?>
+                    
+                    <h1>Welcome to OwnCloud! <?php echo ("$user");?></h1>
+                    
+                
                     <h3>Your Data? Your Storage!</h3>
                     <p>klicke auf " Fileserver " um deine eigenen Dateien zu Verwalten</p>
                     <a href="../PHP/fileshare.php" class="btn">FileServer</a>
