@@ -14,7 +14,7 @@ $coonector = new Authentication($servername, $username, $password, $dbname);
 if($coonector->login($benutzername, $passwort) == true){
     session_start();
     $_SESSION['user'] =  $benutzername;
-    header("Location: ../html/home_login.html");   
+    header("Location: ../html/home_login.html");
 }
 
 

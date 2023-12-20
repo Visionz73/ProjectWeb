@@ -13,12 +13,12 @@ class Authentication {
 
     public function login($username, $password) {
         $username = $this->conn->real_escape_string($username);
-        $sql = "SELECT * FROM Benutzer WHERE Benutzername = '$username'";// AND password = '$password'";
+        $sql = "SELECT * FROM Benutzer WHERE username = '$username'";// AND password = '$password'";
         $result = $this->conn->query($sql);
 
         if ($result->num_rows == 1) {
             $row = $result->fetch_assoc();
-            // var_dump($row);
+            var_dump($row);
             $hash = $row['Passwort'];
             if($password == $hash){
                 return true;
