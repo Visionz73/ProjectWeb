@@ -21,15 +21,11 @@
             <a href="../html/regon.html">Sign Up</a>
             <a href="../html/logon.html">Login</a>
 
-            <?php
-                if(isset($_SESSION["user"]))
-                {?>
+            
                     <a href="../PHP/fileshare.php">FileShare</a>
                     <a href="../PHP/logout.php">Logout</a>
-                <?}
-                else {?>
-                   <? echo("no user in SESSION"); //TEST PHASE
-                }?>
+                
+                
         
 
         </nav>
