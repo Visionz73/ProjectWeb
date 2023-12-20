@@ -10,8 +10,8 @@ $dbname = "BenutzerDatenbank";
 $benutzername = $_POST["username"];
 $passwort = $_POST["passwort"];
 
-$coonector = new Authentication($servername, $username, $password, $dbname);
-if($coonector->login($benutzername, $passwort) == true){
+$connector = new Authentication($servername, $username, $password, $dbname);
+if($connector->login($benutzername, $passwort) == true){
     session_start();
     $_SESSION['user'] =  $benutzername;
     header("Location: ../html/home_login.html");
@@ -23,5 +23,5 @@ else {
 }
 
 // // Verbindung schließen
-$coonector->close();
+$connector->close();
 ?>
