@@ -1,4 +1,5 @@
 <?php
+
 // Starten der Sitzung
 session_start();
 
@@ -8,4 +9,5 @@ session_destroy();
 // Umleitung zur Anmeldeseite oder einer anderen Seite
 header("Location: login.html"); 
 exit();
+
 ?>
