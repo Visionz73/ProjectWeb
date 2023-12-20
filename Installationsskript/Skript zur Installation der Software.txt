@@ -1,22 +1,20 @@
-#!/bin/bash
-
 # Update und Upgrade des Systems
 sudo apt update
 sudo apt upgrade -y
 
-# Installation von NGINX
+# Installation NGINX
 sudo apt install nginx -y
 
-# Installation von MySQL
-sudo apt install mysql-server -y
+# Installation MySQL statt MariaDB
+sudo apt-get install mysql-server -y
 
-# Installation von PHP und verwandten Modulen
+# PHP und verwandte Module
 sudo apt install php php-fpm php-mysql -y
 
-# MySQL sichern und root-Passwort festlegen
+# Installation MySQL (falls notwendig)
 sudo mysql_secure_installation
 
-# Installation von PHPMyAdmin
+# Installation PHPMyAdmin
 sudo apt install phpmyadmin -y
 
 # NGINX-Konfiguration für PHPMyAdmin
