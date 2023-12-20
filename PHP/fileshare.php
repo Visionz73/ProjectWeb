@@ -62,6 +62,9 @@
                         <a href="#"><i class='bx bxs-invader'></i><?php echo ("$user")?></a>
                     <?php
                     } 
+                    else {
+                        echo("failed");
+                    }
                     ?>
                     
             
