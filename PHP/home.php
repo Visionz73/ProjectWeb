@@ -47,7 +47,7 @@
                         session_start();
                         if(isset($_SESSION["user"])) {
                     ?>
-                            <a href="../PHP/profile.php"><i class='bx bxs-invader'></i>TEST<?php echo ("$user")?></a>
+                            <a href=""><i class='bx bxs-invader'></i><?php echo ("$user");?></a>
                     <?php
                         } 
                         
