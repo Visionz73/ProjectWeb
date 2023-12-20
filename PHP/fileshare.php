@@ -1,13 +1,14 @@
 <?php
-                    session_start();
-                    if(!isset($_SESSION["user"])) {
+    session_start();
+
+        if(!isset($_SESSION["user"])) {
                     
-                        header("Location: ../html/logon.html");
-                    <?
-                    } 
+            header("Location: ../html/logon.html");
+                    
+        } 
                     
                     
-                ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
