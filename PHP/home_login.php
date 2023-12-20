@@ -1,9 +1,10 @@
 <?php
 session_start();
-if(!$_SESSION["Auth"])
+if(!isset($_SESSION["user"])){
 
-     header("location:logon.html")
+     header("location:logon.html");
 
+}
 ?>
 
 
@@ -32,6 +33,12 @@ if(!$_SESSION["Auth"])
         <a href="#">Review</a>
         <a href="../html/regon.html">Sign Up</a>
         <a href="../html/logon.html">Login</a>
+       
+       <?php
+            if(isset($_SESSION["user"])) {?>
+                <a href="../html/logon.html">Login</a>
+            <?}?>
+        ?>
     </nav>
 
     <div class="social-media">
