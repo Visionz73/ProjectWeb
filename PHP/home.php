@@ -58,7 +58,7 @@
                     // for logged in 
                 
                     echo "<welcome>";
-                    ("Welcome $user to OwnCloud!");
+                    echo ("Welcome $user to OwnCloud!");
                     echo "</welcome>";
                 ?>
                     <h3>Your Data? Your Storage!</h3>
