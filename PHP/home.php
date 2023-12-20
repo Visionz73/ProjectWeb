@@ -29,7 +29,9 @@
                         <a href="../PHP/fileshare.php">FileShare</a>
                         <a href="../PHP/logout.php">Logout</a>
                     <?php
-                    } else {
+                    } 
+                    
+                    else {
                         echo("no user in SESSION"); //TEST PHASE
                     }
                 ?>
