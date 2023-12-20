@@ -19,7 +19,7 @@ class Authentication {
         if ($result->num_rows == 1) {
             $row = $result->fetch_assoc();
             var_dump($row);
-            $hash = $row['Passwort'];
+            $hash = $row['passwort'];
             if($password == $hash){
                 return true;
             }
