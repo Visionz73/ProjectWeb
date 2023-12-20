@@ -23,6 +23,7 @@
 
             
                 <?php
+                    session_start();
                     if(isset($_SESSION["user"])) {
                     ?>
                         <a href="../PHP/fileshare.php">FileShare</a>
