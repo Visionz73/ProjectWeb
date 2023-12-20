@@ -58,7 +58,7 @@
         
                     
             
-            <a href="#"><i class='bx bxs-invader'></i><?php echo ("$user")?></a>
+            <a href="#"><i class='bx bxs-invader'></i>USER</a>
             <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
             <a href="#"><i class='bx bxl-meta' ></i></a>
             <a href="#"><i class='bx bxl-reddit' ></i></a>
