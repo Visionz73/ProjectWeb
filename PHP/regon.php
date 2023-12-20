@@ -1,27 +1,22 @@
 <?php
 // Verbindung zur Datenbank herstellen
+require_once('Authentication.php');
 $servername = "localhost";
 $username = "root";
 $password = "neues-passwort";
 $dbname = "BenutzerDatenbank";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verbindung überprüfen
-if ($conn->connect_error) {
-    die("Verbindung fehlgeschlagen: " . $conn->connect_error);
-}
 
 // Formulardaten abrufen
 $username = $_POST['username'];
 $passwort = $_POST['passwort']; 
 $email = $_POST['email'];
 
+$coonector = new Authentication($servername, $username, $password, $dbname);
+if ($coonector->register($username, $passwort, $email) == true){
 // SQL-Befehl zum Einfügen der Daten in die Tabelle
-$sql = "INSERT INTO Benutzer (Benutzername, Passwort, Email) VALUES ('$username', '$passwort', '$email')"; 
 
-if ($conn->query($sql) === TRUE) {
-    
 
     
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -49,9 +44,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     
-    echo "Benutzer erfolgreich registriert";
-} else {
+    // echo "Benutzer erfolgreich registriert";
+else {
     echo "Fehler bei der Registrierung: " . $conn->error;
+}
 }
 
 $conn->close();

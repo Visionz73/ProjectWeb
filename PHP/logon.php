@@ -18,7 +18,7 @@ if($coonector->login($benutzername, $passwort) == true){
 }
 
 
- else {
+else {
     echo "Login fehlgeschlagen. Benutzerdaten nicht gefunden.";
 }
 
