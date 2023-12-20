@@ -32,7 +32,7 @@ class Authentication {
     public function register($username, $password, $email){
         $username = $this->conn->real_escape_string($username);
         $hash = password_hash($password, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO Benutzer (Benutzername, Passwort, Email) VALUES ('$username', '$hash', '$email')";
+        $sql = "INSERT INTO Benutzer (username, passwort, email) VALUES ('$username', '$hash', '$email')";
         if ($this->conn->query($sql) === TRUE) {
             return true;
         } else {
