@@ -26,14 +26,14 @@
                     session_start();
                     if (isset($_SESSION["user"])) {
                 ?>
-                        <a href="../html/home.html" class="active">Home</a>
+                        <a href="../PHP/home.php" class="active">Home</a>
                         <a href="../PHP/fileshare.php">FileShare</a>
                         <a href="../PHP/logout.php">Logout</a>
                 <?php
                     } else {
                 ?>
-                        <a href="../PHP/home.PHP" class="active">Home</a>
-                        <a href="../html/logon.html">Login</a>
+                        <a href="../PHP/home." class="active">Home</a>
+                        <a href="../PHP/logon.php">Login</a>
                 <?php
                     }
                 ?>
