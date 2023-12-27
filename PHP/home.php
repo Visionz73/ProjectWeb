@@ -28,7 +28,7 @@
                 <?php
                     } else {
                 ?>
-                        <a href="../html/home.html" class="active">Home</a>
+                        <a href="../PHP/home.PHP" class="active">Home</a>
                         <a href="../html/logon.html">Login</a>
                 <?php
                     }
