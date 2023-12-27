@@ -1,9 +1,10 @@
 <?php
 // Verbindung zur Datenbank herstellen
 require_once('Authentication.php');
+
 $servername = "localhost";
-$username = "root";
-$password = "neues-passwort";
+$username = "con_admin"; //root _> delicated admin (con_admin)
+$password = "12345";
 $dbname = "BenutzerDatenbank";
 
 
