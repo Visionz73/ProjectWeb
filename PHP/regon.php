@@ -150,9 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     // echo "Benutzer erfolgreich registriert";
-else {
-    echo "Fehler bei der Registrierung: ";
-}
+
 
 
 $connector->close();
