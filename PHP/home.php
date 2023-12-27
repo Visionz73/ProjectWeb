@@ -14,8 +14,11 @@
     <header class="header">
         <a href="#" class="logo">OwnCloud<i class='bx bx-cloud' ></i> </a>
 
+        
+
                 <nav class="navbar">
                 <?php
+                     
                     session_start();
                     if (isset($_SESSION["user"])) {
                 ?>
@@ -33,27 +36,25 @@
 </nav>
 
 
-            <div class="social-media">
-                <?php
-                    // Stellen Sie sicher, dass session_start() nur einmal aufgerufen wird
-                    if(!isset($_SESSION)) {
-                        session_start();
-                    }
+<div class="social-media">
 
-                    // Annahme: $user wurde zuvor initialisiert und korrekt zugewiesen
-                    echo htmlspecialchars($user);
+        <?php
+            session_start();
 
-                    if(isset($_SESSION["user"])) {
-                ?>
-                        <a href=""><i class='bx bxs-invader'></i><?php echo htmlspecialchars($user); ?></a>
-                <?php
-                    } else {
-                ?>
-                        <a href="../html/regon.html">Sign Up</a>
-                <?php
-                    }
-                ?>
-            </div>
+            if (isset($_SESSION["user"])) {
+                $user = htmlspecialchars($_SESSION["user"]); // Sicherstellen, vor cross side scripting (htmlspecialchars)
+                echo $user;
+        ?>
+                <a href=""><i class='bx bxs-invader'></i><?php echo $user; ?></a>
+        <?php
+            } else {
+        ?>
+                <a href="../html/regon.html">Sign Up</a>
+        <?php
+            }
+        ?>
+
+</div>
 
     </header>
 
