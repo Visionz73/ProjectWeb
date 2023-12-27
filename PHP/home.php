@@ -15,25 +15,23 @@
         <a href="#" class="logo">OwnCloud<i class='bx bx-cloud' ></i> </a>
 
         <nav class="navbar">
-            <a href="../html/home.html" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="#">Review</a>
-            <a href="../html/regon.html">Sign Up</a>
-            <a href="../html/logon.html">Login</a>
-
             
                 <?php
                     session_start();
                     if(isset($_SESSION["user"])) {
                     ?>
+                        <a href="../html/home.html" class="active">Home</a>
                         <a href="../PHP/fileshare.php">FileShare</a>
                         <a href="../PHP/logout.php">Logout</a>
                     <?php
                     } 
 
                     else {
-                        echo("no user in SESSION"); //TEST PHASE
-                    }
+                    ?>
+                        <a href="../html/home.html" class="active">Home</a>
+                        <a href="../html/regon.html">Sign Up</a>
+                        <a href="../html/logon.html">Login</a>
+                    <?php}
                 ?>
                 
                 
