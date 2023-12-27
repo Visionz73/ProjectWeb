@@ -17,22 +17,51 @@
 
 <body>
 
-    <header class="header">
+<header class="header">
         <a href="#" class="logo">OwnCloud<i class='bx bx-cloud' ></i> </a>
 
-        <nav class="navbar">
-            <a href="../PHP/home.php" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="#">Review</a>
-            <a href="../html/regon.html">Sign Up</a>
-            <a href="../html/logon.html">Login</a>
-        </nav>
+        
 
-        <div class="social-media">
-            <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
-            <a href="#"><i class='bx bxl-meta' ></i></a>
-            <a href="#"><i class='bx bxl-reddit' ></i></a>
-        </div>
+                <nav class="navbar">
+                <?php
+                     
+                    session_start();
+                    if (isset($_SESSION["user"])) {
+                ?>
+                        <a href="../html/home.html" class="active">Home</a>
+                        <a href="../PHP/fileshare.php">FileShare</a>
+                        <a href="../PHP/logout.php">Logout</a>
+                <?php
+                    } else {
+                ?>
+                        <a href="../PHP/home.PHP" class="active">Home</a>
+                        <a href="../html/logon.html">Login</a>
+                <?php
+                    }
+                ?>
+</nav>
+
+
+<div class="social-media">
+
+        <?php
+            session_start();
+
+            if (isset($_SESSION["user"])) {
+                $user = htmlspecialchars($_SESSION["user"]); // Sicherstellen, vor cross side scripting (htmlspecialchars)
+                
+        ?>
+                <a href=""><i class='bx bxs-invader'></i><?php echo $user; ?></a>
+        <?php
+            } else {
+        ?>
+                <a href="../html/regon.html">Sign Up</a>
+        <?php
+            }
+        ?>
+
+</div>
+
     </header>
 
     <div class="wrapper">
