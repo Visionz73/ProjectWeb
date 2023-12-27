@@ -26,7 +26,6 @@
                     } else {
                 ?>
                         <a href="../html/home.html" class="active">Home</a>
-                        <a href="../html/regon.html">Sign Up</a>
                         <a href="../html/logon.html">Login</a>
                 <?php
                     }
@@ -34,23 +33,28 @@
 </nav>
 
 
-        <div class="social-media">
-
-                    <?php
+            <div class="social-media">
+                <?php
+                    // Stellen Sie sicher, dass session_start() nur einmal aufgerufen wird
+                    if(!isset($_SESSION)) {
                         session_start();
-                        echo ("$user");
-                        if(isset($_SESSION["user"])) {
-                    ?>
-                            <a href=""><i class='bx bxs-invader'></i><?php echo ("$user");?></a>
-                    <?php
-                        } 
-                        
-                        else {
-                            echo("no user in SESSION"); //TEST PHASE
-                        }
-                    ?>
+                    }
 
-        </div>
+                    // Annahme: $user wurde zuvor initialisiert und korrekt zugewiesen
+                    echo htmlspecialchars($user);
+
+                    if(isset($_SESSION["user"])) {
+                ?>
+                        <a href=""><i class='bx bxs-invader'></i><?php echo htmlspecialchars($user); ?></a>
+                <?php
+                    } else {
+                ?>
+                        <a href="../html/regon.html">Sign Up</a>
+                <?php
+                    }
+                ?>
+            </div>
+
     </header>
 
     <section class="home">
