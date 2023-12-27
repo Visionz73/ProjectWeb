@@ -8,7 +8,7 @@ session_destroy();
 
 // Umleitung zur Anmeldeseite oder einer anderen Seite
 
-header("Location: ../html/logon.html"); 
+header("Location: ../PHP/logon.php"); 
 exit();
 
 ?>
