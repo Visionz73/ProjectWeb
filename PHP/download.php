@@ -22,6 +22,6 @@ if (file_exists($file)) {
     exit;
 } else {
     // File not found
-    echo 'File not found.';
+    header("Location: ../PHP/error.php");
 }
 ?>
