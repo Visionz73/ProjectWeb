@@ -32,7 +32,7 @@
                 <?php
                     } else {
                 ?>
-                        <a href="../PHP/home." class="active">Home</a>
+                        <a href="../PHP/home.php" class="active">Home</a>
                         <a href="../PHP/logon.php">Login</a>
                 <?php
                     }
