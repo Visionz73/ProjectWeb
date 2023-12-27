@@ -43,7 +43,7 @@
 
             if (isset($_SESSION["user"])) {
                 $user = htmlspecialchars($_SESSION["user"]); // Sicherstellen, vor cross side scripting (htmlspecialchars)
-                echo $user;
+                
         ?>
                 <a href=""><i class='bx bxs-invader'></i><?php echo $user; ?></a>
         <?php
