@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Script 1: Installieren von Nginx, PHP, MySQL, PHP-FPM und PHPMyAdmin
+
+sudo apt-get update
+sudo apt-get install -y nginx php mysql-server php-fpm php-mysql phpmyadmin
+
+# Hier können Sie ggf. zusätzliche Konfigurationen vornehmen
+
+# Textausgabe nach erfolgreicher Installation
+echo "Alle grundlegenden Konfigurationen wurden installiert und aktualisiert."
+
+# Script 2: Konfigurationsdateien aus dem Git-Repo überschreiben
+
+# Annahme: Ihr Git-Repo enthält die Konfigurationsdateien für Nginx und MySQL
+# Ersetzen Sie die folgenden Pfade durch die tatsächlichen Pfade zu Ihren Konfigurationsdateien.
+
+git_repo_url="https://github.com/IhrBenutzer/IhrRepo.git"
+nginx_config_path="/Pfad/zur/nginx.conf"
+mysql_config_path="/Pfad/zur/my.cnf"
+
+# Git-Repo klonen
+git clone $git_repo_url temp_repo
+
+# Nginx-Konfiguration überschreiben
+cp temp_repo/nginx.conf $nginx_config_path
+
+# MySQL-Konfiguration überschreiben
+cp temp_repo/my.cnf $mysql_config_path
+
+# Script 3: Datenbank mit neuen Konfigurationen aktualisieren
+
+# Annahme: Ihr Git-Repo enthält SQL-Skripte für die Datenbankaktualisierung
+# Ersetzen Sie den folgenden Pfad durch den tatsächlichen Pfad zu Ihrem SQL-Skript.
+
+sql_script_path="temp_repo/update_database.sql"
+
+# MySQL-Datenbank aktualisieren
+mysql -u root -p < $sql_script_path
+
+# Bereinigen
+rm -rf temp_repo
+
+# Erfolgsmeldung
+echo "Konfigurationsdateien wurden erfolgreich überschrieben und die Datenbank wurde aktualisiert."
