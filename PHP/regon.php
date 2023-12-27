@@ -85,7 +85,7 @@
             <button type="submit" class="btn">Sign Up</button>
 
             <div class="register-link">
-                <p>Already have an account? <a href="../html/logon.html">Login</a></p>
+                <p>Already have an account? <a href="../PHP/regon.php">Login</a></p>
             </div>
 
         </form>
