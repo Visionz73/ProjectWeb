@@ -27,49 +27,51 @@
             $user = $_SESSION["user"];     
             ?>
 
-    <header class="header">
+<header class="header">
         <a href="#" class="logo">OwnCloud<i class='bx bx-cloud' ></i> </a>
 
-        <nav class="navbar">
-            <a href="../PHP/home.php" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="#">Review</a>
-            <a href="../html/regon.html">Sign Up</a>
-            <a href="../html/logon.html">Login</a>
-           
+        
 
-            <?php
+                <nav class="navbar">
+                <?php
+                     
                     session_start();
-                    if(isset($_SESSION["user"])) {
-                    ?>
+                    if (isset($_SESSION["user"])) {
+                ?>
+                        <a href="../html/home.html" class="active">Home</a>
                         <a href="../PHP/fileshare.php">FileShare</a>
                         <a href="../PHP/logout.php">Logout</a>
-                    <?php
-                    } 
-                    
-                    else {
-                        echo("no user in SESSION"); //TEST PHASE
+                <?php
+                    } else {
+                ?>
+                        <a href="../PHP/home.PHP" class="active">Home</a>
+                        <a href="../html/logon.html">Login</a>
+                <?php
                     }
                 ?>
+</nav>
 
-        </nav>
 
-        <div class="social-media">
+<div class="social-media">
 
-                    <?php
-                        session_start();
-                        if(isset($_SESSION["user"])) {
-                    ?>
-                            <a href="../PHP/profile.php"><i class='bx bxs-invader'></i><?php echo ("$user")?></a>
-                    <?php
-                        } 
-                        
-                        else {
-                            echo("no user in SESSION"); //TEST PHASE
-                        }
-                    ?>
+        <?php
+            session_start();
 
-        </div>
+            if (isset($_SESSION["user"])) {
+                $user = htmlspecialchars($_SESSION["user"]); // Sicherstellen, vor cross side scripting (htmlspecialchars)
+                
+        ?>
+                <a href=""><i class='bx bxs-invader'></i><?php echo $user; ?></a>
+        <?php
+            } else {
+        ?>
+                <a href="../html/regon.html">Sign Up</a>
+        <?php
+            }
+        ?>
+
+</div>
+
     </header>
 
 
