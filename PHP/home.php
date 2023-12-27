@@ -49,7 +49,7 @@
         <?php
             } else {
         ?>
-                <a href="../html/regon.html">Sign Up</a>
+                <a href="../PHP/regon.php">Sign Up</a>
         <?php
             }
         ?>
