@@ -53,7 +53,7 @@
         <?php
             } else {
         ?>
-                <a href="../PHP/regon.php">Sign Up</a>
+                <a href="../html/regon.html">Sign Up</a>
         <?php
             }
         ?>
