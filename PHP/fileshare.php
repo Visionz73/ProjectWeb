@@ -118,7 +118,8 @@ if (isset($_SESSION["user"])) {
 
         <div class="current-user">
          
-                <?php
+            <?php
+
                 function getDirSize($dir) {
                     $size = 0;
                     foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir)) as $file) {
@@ -129,18 +130,26 @@ if (isset($_SESSION["user"])) {
                     return $size;
                 }
 
+
                 // Pfad zum Verzeichnis
+                $user = $_SESSION["user"]; // Stellen Sie sicher, dass die Session gestartet wurde und $user definiert ist
                 $verzeichnis = "/home/$user";
 
                 // Größe des Verzeichnisses in GB berechnen
                 $groesseInBytes = getDirSize($verzeichnis);
                 $groesseInGB = $groesseInBytes / 1024 / 1024 / 1024;
-                ?>
+
+                // Größe formatieren und ausgeben
+                $gerundeteGroesseInGB = round($groesseInGB, 2); // Rundet auf zwei Dezimalstellen
+                echo "Die Größe des Verzeichnisses beträgt: " . $gerundeteGroesseInGB . " GB";
+            ?>
+
 
                     <?php
-                            echo "You logged in as $user";
-                            echo "currently using $groesseInGB";
-                        ?>
+                        echo "<p>You logged in as $user</p>";
+                        echo "<p>Currently using $gerundeteGroesseInGB GB</p>";
+                    ?>
+
         
         </div>
 
