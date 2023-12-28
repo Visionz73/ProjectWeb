@@ -21,7 +21,7 @@ if (isset($_SESSION["user"])) {
 
         if(!isset($_SESSION["user"])) {                     // user ? no, go back to login bruv
                     
-            header("Location: ../html/logon.html"); 
+            header("Location: ../PHP/logon.php"); 
                     
         } 
                     
