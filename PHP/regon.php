@@ -137,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $createUserCommand = "sudo useradd -m $username";
     $setPriv = "chown -R www-data:www-data /home/$username";
     $setPasswortCommand = "sudo passwd $passwort";
-    $getUserCommand = "whoami";
+    $getUserCommand = "$setPriv";
 
     echo "<pre>";
     echo shell_exec($createUserCommand);
