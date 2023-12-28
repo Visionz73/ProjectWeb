@@ -118,30 +118,33 @@ if (isset($_SESSION["user"])) {
 
         <div class="current-user">
          
-                <?php
-                    function getDirSize($dir) {
-                        $size = 0;
-                        foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir)) as $file) {
-                            if ($file->isFile()) {
-                                $size += $file->getSize();
-                            }
+        <?php
+                function getDirSize($dir) {
+                    $size = 0;
+                    foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir)) as $file) {
+                        if ($file->isFile()) {
+                            $size += $file->getSize();
                         }
-                        return $size;
                     }
+                    return $size;
+                }
 
-                    // Pfad zum Verzeichnis
-                    $user = $_SESSION["user"]; // Stellen Sie sicher, dass die Session gestartet wurde und $user definiert ist
-                    $verzeichnis = "/home/$user";
+                // Pfad zum Verzeichnis
+                $user = $_SESSION["user"]; // Stellen Sie sicher, dass die Session gestartet wurde und $user definiert ist
+                $verzeichnis = "/home/$user";
 
-                    // Größe des Verzeichnisses in GB berechnen
-                    $groesseInBytes = getDirSize($verzeichnis);
-                    $groesseInGB = $groesseInBytes / 1024 / 1024 / 1024;
-                    $formatierteGroesseInGB = "1";
-                    // Größe formatieren und ausgeben
-                    $formatierteGroesseInGB = number_format($groesseInGB, 3, '.', ''); // Rundet auf drei Dezimalstellen
-                    echo "Die Größe des Verzeichnisses beträgt: " . $formatierteGroesseInGB . " GB";
+                // Größe des Verzeichnisses in Bytes berechnen
+                $groesseInBytes = getDirSize($verzeichnis);
 
-                ?>
+                // Größe des Verzeichnisses in Kibibits (KiB) umrechnen
+                $groesseInKiB = $groesseInBytes / 1024; // 1 KiB = 1024 Bytes
+
+                // Größe formatieren und ausgeben
+                $formatierteGroesseInKiB = number_format($groesseInKiB, 2, '.', ''); // Rundet auf zwei Dezimalstellen
+                echo "Die Größe des Verzeichnisses beträgt: " . $formatierteGroesseInKiB . " KiB";
+                
+            ?>
+
 
 
 
