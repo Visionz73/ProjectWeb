@@ -1,4 +1,22 @@
 <?php
+session_start();
+
+if (isset($_SESSION["user"])) {
+    $user = $_SESSION["user"];
+    $userDir = "/home/$user";
+
+    // Stellen Sie sicher, dass der Pfad sicher ist und keine Benutzereingaben direkt enthält
+    if (preg_match('/^[a-zA-Z0-9_]+$/', $user)) {
+        // Ändern der Gruppenzugehörigkeit des Verzeichnisses
+        shell_exec("sudo chgrp -R www-data $userDir");
+
+        // Ändern der Berechtigungen des Verzeichnisses
+        shell_exec("sudo chmod -R 750 $userDir");
+    }
+}
+?>
+
+<?php
     session_start();
 
         if(!isset($_SESSION["user"])) {                     // user ? no, go back to login bruv

@@ -1,16 +1,8 @@
 #Notes for structure
 
-CSS
-    
+Current Notes -> Bugfixing
 
-HTML
-
-
-PHP (Vincent & Tammo)
-
-
-Pictures
-
+1. fileshare.php (Home dir www-data:www-data besitzer rechte) mit shell excec
 <<<<<<< Updated upstream
 
 Datenbank (Vincent & Tammo)
