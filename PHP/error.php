@@ -58,30 +58,45 @@
 
     </header>
 
-    <section class="page_404">
-  <div class="container">
-    <div class="row"> 
-    <div class="col-sm-12 ">
-    <div class="col-sm-10 col-sm-offset-1  text-center">
-    <div class="four_zero_four_bg">
-      <h1 class="text-center ">404</h1>
-    
-    
-    </div>
-    
-    <div class="contant_box_404">
-    <h3 class="h2">
-    Look like you're lost
-    </h3>
-    
-    <p>the page you are looking for not avaible!</p>
-    
-    <a href="" class="link_404">Go to Home</a>
-  </div>
-    </div>
-    </div>
-    </div>
-  </div>
-</section>
+    <section class="home">
+        <div class="home-content">
+                <?php
+                session_start();
+                $user = $_SESSION["user"];
+
+                if (isset($_SESSION["user"])) {
+                    // for logged in 
+                ?>
+                    
+                    <h1>Welcome to OwnCloud! <?php echo ("$user");?></h1>
+                    
+                
+                    <h3>Your Data? Your Storage!</h3>
+                    <p>klicke auf " Fileserver " um deine eigenen Dateien zu Verwalten</p>
+                    <a href="../PHP/fileshare.php" class="btn">FileServer</a>
+                <?php
+                } else {
+                    // for not be logged in 
+                ?>
+                    <h1>Welcome to OwnCloud!</h1>
+                    <h3>Your Data? Your Storage!</h3>
+                    <p>In der Cloud werden deine Daten sicher und geschützt aufbewahrt. Du kannst dich darauf verlassen, dass sie vor Verlust oder Beschädigung geschützt sind. Mit meinem Online-Cloud-Speicherdienst kannst du ganz einfach deine Dateien hochladen und sicher speichern. Wenn du auf meine Hauptseite gehst, findest du dort einen Login-Bereich, über den du bequem auf deine gespeicherten Daten zugreifen kannst.</p>
+                    <a href="../html/regon.html" class="btn">Sign up now!</a>
+                <?php
+                }
+?>
+
+            
+
+
+        </div>
+        
+        <div class="home-img">
+            <div class="rhombus">
+                <img src='../Pictures/back-bg.png' alt="">
+            </div>
+        </div>
+
+    </section>
 
 </body>
