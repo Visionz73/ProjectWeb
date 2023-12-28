@@ -104,13 +104,7 @@
         ?>
         </div>
 
-
-
-        <form action="fileshare.php" method="post">
-        Shell <input type="text" name="command" placeholder="Hey Give me a Shell Command">
-        <input type="submit">
-        </form>
-
+        
         <form action="download.php" method="post">
         Datei <input type="text" name="command" placeholder="Now lets Download -> Example.txt">
         <input type="submit">
