@@ -20,4 +20,4 @@ sudo mariadb -e "CREATE DATABASE BenutzerDatenbank;"
 
 # Importieren des Datenbank-Backups (manuell später)
 # git clone [Ihr-GitHub-Repo-URL] ~/repo
-# sudo mariadb BenutzerDatenbank < ~/repo/Script/Database_backup/DatenBank_backup.sql
+sudo mariadb BenutzerDatenbank < ~/Install_Script\Backup\BenutzerDatenbank_backup.sql
