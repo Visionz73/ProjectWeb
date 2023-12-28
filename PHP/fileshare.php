@@ -136,11 +136,11 @@ if (isset($_SESSION["user"])) {
                     // Größe des Verzeichnisses in GB berechnen
                     $groesseInBytes = getDirSize($verzeichnis);
                     $groesseInGB = $groesseInBytes / 1024 / 1024 / 1024;
-
+                    $formatierteGroesseInGB = "1";
                     // Größe formatieren und ausgeben
                     $formatierteGroesseInGB = number_format($groesseInGB, 3, '.', ''); // Rundet auf drei Dezimalstellen
                     echo "Die Größe des Verzeichnisses beträgt: " . $formatierteGroesseInGB . " GB";
-                    
+
                 ?>
 
 
