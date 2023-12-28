@@ -81,7 +81,7 @@
                     <h1>Welcome to OwnCloud!</h1>
                     <h3>Your Data? Your Storage!</h3>
                     <p>In der Cloud werden deine Daten sicher und geschützt aufbewahrt. Du kannst dich darauf verlassen, dass sie vor Verlust oder Beschädigung geschützt sind. Mit meinem Online-Cloud-Speicherdienst kannst du ganz einfach deine Dateien hochladen und sicher speichern. Wenn du auf meine Hauptseite gehst, findest du dort einen Login-Bereich, über den du bequem auf deine gespeicherten Daten zugreifen kannst.</p>
-                    <a href="../html/regon.html" class="btn">Sign up now!</a>
+                    <a href="../PHP/regon.php" class="btn">Sign up now!</a>
                 <?php
                 }
 ?>

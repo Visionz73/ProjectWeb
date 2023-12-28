@@ -13,21 +13,20 @@ class Authentication {
 
     public function login($username, $password) {
         $username = $this->conn->real_escape_string($username);
-        $sql = "SELECT * FROM Benutzer WHERE username = '$username'";// AND password = '$password'";
+        $sql = "SELECT * FROM Benutzer WHERE username = '$username'";
         $result = $this->conn->query($sql);
-
+    
         if ($result->num_rows == 1) {
             $row = $result->fetch_assoc();
-            var_dump($row);
             $hash = $row['passwort'];
-            if($password == $hash){
+    
+            if (password_verify($password, $hash)) {
                 return true;
             }
-            // if (password_verify($password, $hash)) {
-            // }
         }
         return false;
     }
+    
 
     public function register($username, $password, $email){
         $username = $this->conn->real_escape_string($username);
