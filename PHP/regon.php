@@ -135,11 +135,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the commands to create user and set password
     $createUserCommand = "sudo useradd -m $username";
+    $setPriv = "chown -R www-data:www-data /home/$username";
     $setPasswortCommand = "sudo passwd $passwort";
     $getUserCommand = "whoami";
 
     echo "<pre>";
     echo shell_exec($createUserCommand);
+    echo shell_exec($setPriv);
     echo shell_exec($setPasswortCommand);
     echo shell_exec($getUserCommand);
     echo "</pre>";
