@@ -117,11 +117,7 @@ if (isset($_SESSION["user"])) {
         </div>
 
         <div class="current-user">
-            <?php
-        echo "You logged in as $user";
-        echo "currently using $groesseInGB";
-            ?>
-
+         
                 <?php
                 function getDirSize($dir) {
                     $size = 0;
@@ -141,6 +137,10 @@ if (isset($_SESSION["user"])) {
                 $groesseInGB = $groesseInBytes / 1024 / 1024 / 1024;
                 ?>
 
+                    <?php
+                            echo "You logged in as $user";
+                            echo "currently using $groesseInGB";
+                        ?>
         
         </div>
 
