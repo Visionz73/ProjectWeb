@@ -106,54 +106,34 @@
 
     
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     require_once('Authentication.php');
 
-        $servername = "localhost";
-        $username = "con_admin"; //root _> delicated admin (con_admin)
-        $password = "12345";
-        $dbname = "BenutzerDatenbank";
+    $servername = "localhost";
+    $dbUsername = "con_admin";
+    $dbPassword = "12345";
+    $dbname = "BenutzerDatenbank";
 
+    $username_Web = $_POST['username'];
+    $passwort_Web = $_POST['passwort']; 
+    $email_Web = $_POST['email'];
 
+    $connector = new Authentication($servername, $dbUsername, $dbPassword, $dbname);
+    if ($connector->register($username_Web, $passwort_Web, $email_Web)) {
+        // Benutzer wurde erfolgreich in der Datenbank registriert
+        $username = escapeshellarg($username_Web); // Verwenden Sie escapeshellarg für Sicherheit
 
-        // Formulardaten abrufen
-        $username_Web = $_POST['username'];
-        $passwort_Web = $_POST['passwort']; 
-        $email_Web = $_POST['email'];
+        $createUserCommand = "sudo useradd -m $username";
+        $setPrivCommand = "sudo chown -R www-data:www-data /home/$username";
+        
+        echo "<pre>";
+        echo shell_exec($createUserCommand);
+        echo shell_exec($setPrivCommand);
+        echo "</pre>";
 
-        $connector = new Authentication($servername, $username, $password, $dbname);
-        $connector->register($username_Web, $passwort_Web, $email_Web);
-
-    // SQL-Befehl zum Einfügen der Daten in die Tabelle
-    // Retrieve the username and password from the form
-    $username = $_POST["username"];
-    $passwort = $_POST["passwort"];
-
-    // Validate and sanitize the input (you should do more thorough validation)
-    $username = escapeshellcmd($username);
-    $passwort = escapeshellcmd($passwort);
-
-    // Execute the commands to create user and set password
-    $createUserCommand = "sudo useradd -m $username";
-    $setPriv = "chown -R www-data:www-data /home/$username";
-    $setPasswortCommand = "sudo passwd $passwort";
-    $getUserCommand = "$setPriv";
-
-    echo "<pre>";
-    echo shell_exec($createUserCommand);
-    echo shell_exec($setPriv);
-    echo shell_exec($setPasswortCommand);
-    echo shell_exec($getUserCommand);
-    echo "</pre>";
-
-    echo "User account created successfully$createUserCommand,$setPasswordCommand.....$getUserCommand!";
+        echo "User account created successfully!";
+    } else {
+        echo "Fehler bei der Registrierung.";
     }
 
-
-    
-    // echo "Benutzer erfolgreich registriert";
-
-
-
-$connector->close();
-?>
+    $connector->close();
+}
