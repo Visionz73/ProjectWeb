@@ -20,7 +20,8 @@ class Authentication {
             $row = $result->fetch_assoc();
             var_dump($row);
             $hash = $row['passwort'];
-            if($password == $hash){
+
+            if (password_verify($password, $hash)) {
                 return true;
             }
             // if (password_verify($password, $hash)) {
