@@ -82,7 +82,7 @@
             <button type="submit" class="btn">Login</button>
 
             <div class="register-link">
-                <p>Dont have an account? <a href="../html/regon.html">Register</a></p>
+                <p>Dont have an account? <a href="../PHP/regon.php">Register</a></p>
             </div>
 
         </form>
