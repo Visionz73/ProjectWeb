@@ -160,6 +160,9 @@ input[type="submit" i]:hover {
     margin: 53px 5px 5px 5px;
 }
 
+.playground_fileshare .background {
+    background-color: #1743e3;
+}
 .playground_fileshare .mac {
     background: #a9aaaa;
     background: url(../Pictures/macintosh-back.png) no-repeat;
