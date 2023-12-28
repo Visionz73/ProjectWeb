@@ -120,6 +120,8 @@
 
     <div class="ausgabe">
 
+    <div class="background">
+
                 <?php
             session_start(); // Starten der Session
 
@@ -149,7 +151,7 @@
 
 
 
-        
+        </div>
 
 
     </div>
