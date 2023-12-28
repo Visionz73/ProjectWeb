@@ -71,17 +71,16 @@
                     <h1>Welcome to OwnCloud! <?php echo ("$user");?></h1>
                     
                 
-                    <h3>Your Data? Your Storage!</h3>
-                    <p>klicke auf " Fileserver " um deine eigenen Dateien zu Verwalten</p>
-                    <a href="../PHP/fileshare.php" class="btn">FileServer</a>
+                    <h3>ERROR 404</h3>
+                    <h3>Da ist was schief gelaufen</h3>
+                    <a href="../PHP/home.php" class="btn">Back Home</a>
                 <?php
                 } else {
                     // for not be logged in 
                 ?>
-                    <h1>Welcome to OwnCloud!</h1>
-                    <h3>Your Data? Your Storage!</h3>
-                    <p>In der Cloud werden deine Daten sicher und geschützt aufbewahrt. Du kannst dich darauf verlassen, dass sie vor Verlust oder Beschädigung geschützt sind. Mit meinem Online-Cloud-Speicherdienst kannst du ganz einfach deine Dateien hochladen und sicher speichern. Wenn du auf meine Hauptseite gehst, findest du dort einen Login-Bereich, über den du bequem auf deine gespeicherten Daten zugreifen kannst.</p>
-                    <a href="../html/regon.html" class="btn">Sign up now!</a>
+                    <h1>ERROR 404</h1>
+                    <h3>Da ist was schief gelaufen</h3>
+                    <a href="../PHP/home.php" class="btn">Back Home!</a>
                 <?php
                 }
 ?>
