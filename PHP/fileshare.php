@@ -120,21 +120,33 @@
 
     <div class="ausgabe">
 
-        <?php
-       
-        $command = $_POST["command"];
-        $user = $_SESSION["user"];
+                <?php
+            session_start(); // Starten der Session
 
-        $file_user = $user;
-        echo "<pre>";
-        // echo shell_exec("cd home/$file_user ; ls");
-        echo shell_exec("cd /home");
-        echo shell_exec("ls");
-        echo shell_exec("$command");
-        //echo shell_exec("$command");
-        echo "</pre>";
+            if (!isset($_SESSION['user'])) {
+                // Benutzer ist nicht eingeloggt
+                header("Location: login.php"); // Umleitung zur Login-Seite
+                exit();
+            }
 
-        ?>
+            $user = $_SESSION["user"];
+            $userDir = "/home/$user"; // Pfad zum Benutzerverzeichnis
+
+            if (file_exists($userDir) && is_dir($userDir)) {
+                $files = scandir($userDir);
+
+                echo "<pre>";
+                foreach ($files as $file) {
+                    if ($file != "." && $file != "..") {
+                        echo htmlspecialchars($file) . "\n";
+                    }
+                }
+                echo "</pre>";
+            } else {
+                echo "Verzeichnis nicht gefunden.";
+            }
+            ?>
+
 
 
         
