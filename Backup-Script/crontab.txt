@@ -1,8 +1,0 @@
-#in der Console
-crontab -e
-
-#im crontab Editor 
-0 18 * * 1 /home/backup/backup.sh  #Führt das Backup automatisch jeden Montag um 18 Uhr aus
-
-#in der Console, um zu prüfen ob ein cron Job läuft
-crontab -l
