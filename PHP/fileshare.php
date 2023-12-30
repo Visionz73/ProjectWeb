@@ -141,8 +141,8 @@ if (isset($_SESSION["user"])) {
 
                 // Größe formatieren und ausgeben
                 $formatierteGroesseInKiB = number_format($groesseInKiB, 2, '.', ''); // Rundet auf zwei Dezimalstellen
-                echo "Die Größe des Verzeichnisses beträgt: " . $formatierteGroesseInKiB . " KiB";
-                
+                echo "Currently using: " . $formatierteGroesseInKiB . " KiB";
+
             ?>
 
 
@@ -150,7 +150,6 @@ if (isset($_SESSION["user"])) {
 
                     <?php
                         echo "<p>You logged in as $user</p>";
-                        echo "<p>Currently using $gerundeteGroesseInGB GB</p>";
                     ?>
 
         

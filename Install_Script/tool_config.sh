@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Aktualisieren der Paketquellen und Upgrade der vorhandenen Pakete
-sudo apt-get update && sudo apt-get upgrade -y
+#sudo apt-get update && sudo apt-get upgrade -y
 
 # Installation der benötigten Pakete
 sudo apt-get install -y nginx php php-fpm phpmyadmin mariadb-server
@@ -16,8 +16,9 @@ sudo nginx -t && sudo systemctl restart nginx
 echo "www-data ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/www-data
 
 # Erstellen einer leeren Datenbank namens "BenutzerDatenbank"
-sudo mariadb -e "CREATE DATABASE BenutzerDatenbank;"
+#sudo mariadb -e "CREATE DATABASE BenutzerDatenbank;"
 
 # Importieren des Datenbank-Backups (manuell später)
 # git clone [Ihr-GitHub-Repo-URL] ~/repo
-sudo mariadb BenutzerDatenbank < ~/Install_Script\Backup\BenutzerDatenbank_backup.sql
+sudo mariadb  < /home/IhrBenutzername/Backup/alldatabases.sql
+
