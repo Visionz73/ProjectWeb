@@ -19,7 +19,7 @@ sudo cp ../configs/config.inc.php /etc/phpmyadmin/config.inc.php
 echo "www-data ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/www-data
 
 # Erstellen eines symbolischen Links für phpMyAdmin
-sudo ln -s /etc/phpmyadmin /var/www/html/phpmyadmin
+sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 
 # Importieren des Datenbank-Backups
 sudo mariadb < ../Database/alldatabases.sql
