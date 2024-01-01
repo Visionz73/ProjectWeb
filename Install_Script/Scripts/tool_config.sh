@@ -22,4 +22,6 @@ echo "www-data ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/www-data
 sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 
 # Importieren des Datenbank-Backups
+sed -e 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g' -i ../Database/alldatabases.sql
 sudo mariadb < ../Database/alldatabases.sql
+
