@@ -3,6 +3,16 @@
 # Aktualisieren der Paketquellen und Upgrade der vorhandenen Pakete
 #sudo apt-get update && sudo apt-get upgrade -y
 
+#Stop installed Apache
+sudo systemctl stop apache2
+
+#Disable
+sudo systemctl disable apache2
+
+#Deinstall Apache 
+sudo apt-get remove apache2
+
+
 # Installation der benötigten Pakete
 sudo apt-get install -y nginx php php-fpm phpmyadmin mariadb-server
 
