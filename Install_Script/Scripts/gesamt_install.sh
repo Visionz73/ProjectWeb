@@ -14,6 +14,15 @@ else
 fi
 
 # Ausführen von Skript 2
+if ./sql_user.sh; then
+    echo "Die Basis Programme wurden installiert und erfolgreich abgeschlossen."
+else
+    echo "Fehler bei der Ausführung von sql_user."
+    exit 1
+fi
+
+
+# Ausführen von Skript 3
 if ./benutzer_importieren.sh; then
     echo "Die Basis user wurden eingerichtet und erfolgreich abgeschlossen."
 else

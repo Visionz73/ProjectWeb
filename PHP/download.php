@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <form action="download.php" method="post">
 Datei? <input type="text" name="command">
@@ -6,22 +5,34 @@ Datei? <input type="text" name="command">
 </form>
 
 <?php
+session_start();
 
+// Stellen Sie sicher, dass der Benutzer authentifiziert ist und eine Session-Variable 'user' hat
+if (!isset($_SESSION["user"])) {
+    // Nicht authentifizierter Benutzer
+    header("Location: ../PHP/login.php");
+    exit;
+}
 
 $file = $_POST["command"];
 
-// Check if the file exists
-if (file_exists($file)) {
-    // Set appropriate headers
+// Basispfad setzen, abhängig von der Session-Variable 'user'
+$basePath = "/home/" . $_SESSION["user"] . "/";
+
+$fullPath = realpath($basePath . basename($file));
+
+// Überprüfen, ob die Datei im erlaubten Verzeichnis existiert und kein Path Traversal vorliegt
+if (file_exists($fullPath) && is_readable($fullPath) && strpos($fullPath, realpath($basePath)) === 0) {
+    // Setzen Sie die entsprechenden Header, um die Datei herunterzuladen
     header('Content-Type: application/octet-stream');
     header('Content-Disposition: attachment; filename=' . basename($file));
-    header('Content-Length: ' . filesize($file));
+    header('Content-Length: ' . filesize($fullPath));
 
-    // Read the file and output it to the browser 
-    readfile($file);
+    // Lesen Sie die Datei und geben Sie sie an den Browser aus
+    readfile($fullPath);
     exit;
 } else {
-    // File not found
+    // Datei nicht gefunden oder Zugriff verweigert
     header("Location: ../PHP/error.php");
 }
 ?>
