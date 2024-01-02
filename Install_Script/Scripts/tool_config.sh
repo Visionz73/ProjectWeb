@@ -31,7 +31,9 @@ echo "www-data ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/www-data
 # Erstellen eines symbolischen Links für phpMyAdmin
 sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 
-# Unicode change für MariaDB Raspi & Importieren des Datenbank-Backups
-sed -e 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g' -i ../Database/BenutzerDatenbank.sql
-sudo mariadb < ../Database/BenutzerDatenbank.sql
+
+
+
+
+
 
