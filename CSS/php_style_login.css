@@ -72,17 +72,16 @@ input {
 }
 
 input[type="file" i] {
-    appearance: none;
-    background-color: initial;
-    cursor: default;
-    align-items: baseline;
-    color: inherit;
-    text-overflow: ellipsis;
-    text-align: start !important;
-    padding: initial;
-    border: initial;
-    white-space: pre;
-    overflow: hidden !important;
+    writing-mode: horizontal-tb !important;
+    padding-block: 1px;
+    padding-inline: 2px;
+    margin: 0px 20px 0px 20px;
+    padding: 9px 129px 8px 12px;
+    margin: 17px 40px 23px 61px;
+    border-radius: 5px;
+    background: #ffffff7a;
+    border-color: #fff;
+    border: 0px;
 }
 
 input[type="text" i] {
