@@ -70,6 +70,7 @@ input {
     border-image: initial;
     padding-block: 1px;
     padding-inline: 2px;
+    width: 400px;
 }
 
 input[type="file" i] {
