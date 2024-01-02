@@ -3,6 +3,9 @@
 # Aktualisieren der Paketquellen und Upgrade der vorhandenen Pakete
 #sudo apt-get update && sudo apt-get upgrade -y
 
+# Installation der benötigten Pakete
+sudo apt-get install -y nginx php php-fpm phpmyadmin mariadb-server
+
 #Stop installed Apache
 sudo systemctl stop apache2
 
@@ -11,10 +14,6 @@ sudo systemctl disable apache2
 
 #Deinstall Apache 
 sudo apt-get remove apache2
-
-
-# Installation der benötigten Pakete
-sudo apt-get install -y nginx php php-fpm phpmyadmin mariadb-server
 
 # Kopieren der Nginx-Konfigurationsdatei aus dem "configs/" Verzeichnis
 sudo cp ../configs/default /etc/nginx/sites-available/default
