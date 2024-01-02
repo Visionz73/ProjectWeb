@@ -41,6 +41,15 @@ else
     exit 1
 fi
 
+# Ausführen von Skript 5
+if ./root_dir.sh; then
+    echo -e "\e[32mDer Webserver ist eingerichtet und erfolgreich abgeschlossen.\e[0m"
+    sleep 5
+else
+    echo -e "\e[32mFehler bei der Ausführung von root_dir.\e[0m"
+    exit 1
+fi
+
 # Weitere Skripte können hier in ähnlicher Weise hinzugefügt werden...
 
 echo -e "\e[32mAlle Skripte wurden erfolgreich ausgeführt.\e[0m"
