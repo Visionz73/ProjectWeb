@@ -157,12 +157,12 @@ if (isset($_SESSION["user"])) {
 
         
         <form action="download.php" method="post">
-        Datei <input type="text" name="command" placeholder="Now lets Download -> Example.txt">
+        Download <input type="text" name="command" placeholder="Now lets Download -> Example.txt">
         <input type="submit">
         </form>
 
         <form action="upload.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="fileToUpload" id="fileToUpload" Placeholder="Now lets Upload -> Example.txt">
+        Upload <input type="file" name="fileToUpload" id="fileToUpload" Placeholder="Now lets Upload -> Example.txt">
         <input type="submit" value="Hochladen" name="submit">
         </form>
 
