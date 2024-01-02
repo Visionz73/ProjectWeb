@@ -3,7 +3,7 @@
 # MySQL-Benutzer und Passwort
 MYSQL_USER="root"
 MYSQL_PASS="12345"  # Ersetzen Sie dies durch Ihr MySQL-Root-Passwort
-NEW_USER="conn_admin"
+NEW_USER="con_admin"
 NEW_PASS="12345"           # Verwenden Sie hier ein stärkeres Passwort
 
 # MySQL-Befehl zum Erstellen eines neuen Benutzers

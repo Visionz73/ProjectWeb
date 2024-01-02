@@ -19,7 +19,7 @@ sudo apt-get install -y nginx php php-fpm phpmyadmin mariadb-server
 # Kopieren der Nginx-Konfigurationsdatei aus dem "configs/" Verzeichnis
 sudo cp ../configs/default /etc/nginx/sites-available/default
 
-# Aktivieren der neuen Konfiguration und Neustart von Nginx
+# Überprüfung von der Konfig und Neustart von Nginx
 sudo nginx -t && sudo systemctl restart nginx
 
 # Kopieren der phpmyadmin-Konfigurationsdatei aus dem "configs/" Verzeichnis
@@ -31,6 +31,7 @@ echo "www-data ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/www-data
 # Erstellen eines symbolischen Links für phpMyAdmin
 sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 
-# Importieren des Datenbank-Backups
+# Unicode change für MariaDB Raspi & Importieren des Datenbank-Backups
+sed -e 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g' -i ../Database/BenutzerDatenbank.sql
 sudo mariadb < ../Database/BenutzerDatenbank.sql
 
