@@ -33,5 +33,7 @@ sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 
 # Importieren des Datenbank-Backups
 sed -e 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g' -i ../Database/alldatabases.sql
+mysql -u root -p -e "DROP TABLE IF EXISTS mysql.user;"
+
 sudo mariadb < ../Database/alldatabases.sql
 
