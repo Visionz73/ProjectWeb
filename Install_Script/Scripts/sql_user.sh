@@ -4,12 +4,16 @@
 NEW_USER="con_admin"
 NEW_PASS="12345"           # Verwenden Sie hier ein stärkeres Passwort
 
-# MySQL-Befehl zum Erstellen eines neuen Benutzers
-sudo mysql "CREATE USER '$NEW_USER'@'localhost' IDENTIFIED BY '$NEW_PASS';"
+# Verbindung zu MySQL als root und Ausführen der Befehle
+sudo mysql <<EOF
+-- Erstellen eines neuen Benutzers
+CREATE USER '$NEW_USER'@'localhost' IDENTIFIED BY '$NEW_PASS';
 
-# Gewähren Sie dem neuen Benutzer erforderliche Berechtigungen
-# Beispiel: Gewähren Sie alle Berechtigungen auf einer bestimmten Datenbank
-sudo mysql "GRANT ALL PRIVILEGES ON *.* TO '$NEW_USER'@'localhost';"
+-- Gewähren von Berechtigungen
+GRANT ALL PRIVILEGES ON *.* TO '$NEW_USER'@'localhost';
 
-# Flush Privileges
-sudo mysql "FLUSH PRIVILEGES;"
+-- Anwenden der neuen Berechtigungen
+FLUSH PRIVILEGES;
+EOF
+
+echo "Benutzer '$NEW_USER' wurde erstellt und Berechtigungen wurden gesetzt."
