@@ -96,6 +96,9 @@ body {
     align-items: center;
     padding: 27px 8% 0;
     overflow: hidden;
+    height: 40%;
+    width: 110%;
+    padding: 5% 2% 2% 7%;
 }
 
 .home-content {
@@ -159,7 +162,7 @@ body {
 .home-img .rhombus img {
         /* position: absolute; */
         height: 10%;
-        width: 101%;
+        width: 80%;
 }
 
 
