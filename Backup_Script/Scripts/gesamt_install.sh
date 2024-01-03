@@ -3,6 +3,8 @@
 echo "Starte Skriptprozess..."
 chmod +x Backup/benutzer_importieren.sh
 chmod +x ./tool_config.sh
+chmod +x ./tool_config.sh
+chmod +x ./tool_config.sh
 
 
 # Ausführen von Skript 1

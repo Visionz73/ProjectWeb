@@ -4,6 +4,9 @@ echo -e "\e[32mStarte Skriptprozess...\e[0m"
 sleep 5
 chmod +x ./benutzer_importieren.sh
 chmod +x ./tool_config.sh
+chmod +x ./sql_database_import.sh
+chmod +x ./sql_user.sh
+chmod +x ./root_dir.sh
 
 # Ausführen von Skript 1
 if ./tool_config.sh; then
