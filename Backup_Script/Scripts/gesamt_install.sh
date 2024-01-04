@@ -3,6 +3,7 @@
 echo "Starte Skriptprozess..."
 chmod +x benutzer_sichern.sh
 chmod +x sql_sichern.sh
+chmod +x ex_to_input.sh
 
 
 
