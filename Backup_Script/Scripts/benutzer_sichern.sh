@@ -7,7 +7,8 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # Zielverzeichnis festlegen
-zielverzeichnis="/home/adminrv/ProjectWeb/Backup_Script\Backup\Export_user"
+zielverzeichnis="/home/adminrv/ProjectWeb/Backup_Script/Backup/Export_user"
+
 
 # Erstellen des Zielverzeichnisses, falls es nicht existiert
 mkdir -p "$zielverzeichnis"

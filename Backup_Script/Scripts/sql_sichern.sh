@@ -7,7 +7,7 @@ echo "SQL-Datenbank wird gebackupt, kleinen Moment bitte..."
 sleep 3
 
 # Ausführen des Backups
-mysqldump -u root -p --all-databases > /home/adminrv/ProjectWeb/Backup_Script/Databases/alldatabases.sql
+mysqldump -u root -p BenutzerDatenbank > /home/adminrv/ProjectWeb/Backup_Script/Databases/BenutzerDatenbank.sql
 
 # Überprüfen, ob der Befehl erfolgreich war
 if [ $? -eq 0 ]; then
