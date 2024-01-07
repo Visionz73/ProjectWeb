@@ -73,13 +73,12 @@ body {
 
 .social-media a:hover {
     background: linear-gradient(30deg, #2e243ca5, #45355c91);
-    transform: scale(1.05);
+    /*transform: scale(1.05);*/
 }
 
 .social-media a i {
     font-size: 24px;
     color: #979191;
-    /* transform: rotate(-45deg); */
     margin: 5px 5px 5px 5px;
 
 }
