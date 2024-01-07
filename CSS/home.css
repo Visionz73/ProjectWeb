@@ -83,7 +83,7 @@ body {
   }
 
 .social-media a:hover {
-    background: linear-gradient(45deg, #a1a1a1, #ffffff);
+    background: linear-gradient(45deg, #ff6e6e, #6dffb6, #9d78fc);
     transform: scale(1.05);
 }
 
