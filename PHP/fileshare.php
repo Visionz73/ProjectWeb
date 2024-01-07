@@ -105,7 +105,7 @@ if (isset($_SESSION["user"])) {
         <div class="titel">
 
             <div>
-                <h3>FileShare/Home ...</h3>
+                <h3>FileShare/Home <?php> "$user" ?></h3>
             </div>
 
                 <div class="loader">
