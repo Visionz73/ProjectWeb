@@ -69,11 +69,10 @@
                     // for logged in 
                 ?>
                     
-                    <h1>Welcome to YourOwnCloud! <?php echo ("$user");?></h1>
-                    
-                
+                    <h1>Welcome <?php echo ("$user");?>!</h1>
                     <h3>Your Data? Your Storage!</h3>
                     <p>klicke auf " Fileserver " um deine eigenen Dateien zu Verwalten</p>
+                    
                     <a href="../PHP/fileshare.php" class="btn">FileServer</a>
                 <?php
                 } else {
