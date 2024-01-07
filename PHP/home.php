@@ -12,7 +12,7 @@
 <body>
 
     <header class="header">
-        <a href="#" class="logo">OwnCloud<i class='bx bx-cloud' ></i> </a>
+        <a href="#" class="logo">YourOwnCloud<i class='bx bx-cloud' ></i> </a>
 
         
 
@@ -58,6 +58,7 @@
 
     </header>
 
+    
     <section class="home">
         <div class="home-content">
                 <?php
@@ -68,7 +69,7 @@
                     // for logged in 
                 ?>
                     
-                    <h1>Welcome to OwnCloud! <?php echo ("$user");?></h1>
+                    <h1>Welcome to YourOwnCloud! <?php echo ("$user");?></h1>
                     
                 
                     <h3>Your Data? Your Storage!</h3>
@@ -78,7 +79,7 @@
                 } else {
                     // for not be logged in 
                 ?>
-                    <h1>Welcome to OwnCloud!</h1>
+                    <h1>Welcome to YourOwnCloud!</h1>
                     <h3>Your Data? Your Storage!</h3>
                     <p>In der Cloud werden deine Daten sicher und geschützt aufbewahrt. Du kannst dich darauf verlassen, dass sie vor Verlust oder Beschädigung geschützt sind. Mit meinem Online-Cloud-Speicherdienst kannst du ganz einfach deine Dateien hochladen und sicher speichern. Wenn du auf meine Hauptseite gehst, findest du dort einen Login-Bereich, über den du bequem auf deine gespeicherten Daten zugreifen kannst.</p>
                     <a href="../PHP/regon.php" class="btn">Sign up now!</a>
@@ -92,7 +93,7 @@
         </div>
         
         <div class="home-img">
-                 <img src='../Pictures/back-bg.png' alt="">
+                 
         </div>
 
     </section>
