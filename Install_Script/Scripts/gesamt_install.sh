@@ -7,6 +7,8 @@ chmod +x ./tool_config.sh
 chmod +x ./sql_database_import.sh
 chmod +x ./sql_user.sh
 chmod +x ./root_dir.sh
+chmod +x ./cronjob.sh
+
 
 # Ausführen von Skript 1
 if ./tool_config.sh; then
@@ -45,6 +47,17 @@ else
 fi
 
 # Ausführen von Skript 5
+if ./cronjob.sh; then
+    echo -e "\e[32mDer Cronjob für das Backup ist eingerichtet und erfolgreich abgeschlossen.\e[0m"
+    sleep 5
+else
+    echo -e "\e[32mFehler bei der Ausführung des Backup Cronjob einrichtung.\e[0m"
+    exit 1
+fi
+
+
+
+# Ausführen von Skript 6
 if ./root_dir.sh; then
     echo -e "\e[32mDer Webserver ist eingerichtet und erfolgreich abgeschlossen.\e[0m"
     sleep 5
@@ -52,6 +65,9 @@ else
     echo -e "\e[32mFehler bei der Ausführung von root_dir.\e[0m"
     exit 1
 fi
+
+
+
 
 # Weitere Skripte können hier in ähnlicher Weise hinzugefügt werden...
 
