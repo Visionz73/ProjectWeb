@@ -84,4 +84,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="username" placeholder="Username" required>
             <i class='bx bxs-user'></i>
         </div>
-        <div
+        <div class="input-box">
+            <input type="password" name="passwort" placeholder="password" required>
+            <i class='bx bxs-lock-alt' ></i>
+        </div>
+        <div class="input-box">
+            <input type="text" name="email" placeholder="Mail" required>
+            <i class='bx bxs-envelope' ></i>
+        </div>
+        <button type="submit" class="btn">Sign Up</button>
+        <div class="register-link">
+            <p>Already have an account? <a href="../PHP/logon.php">Login</a></p>
+            <?php echo $registrationMessage; ?>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
