@@ -170,9 +170,11 @@ if (isset($_SESSION["user"])) {
         </form>
 
         <form action="upload.php" method="post" enctype="multipart/form-data">
-        Upload <input type="file" name="fileToUpload" id="fileToUpload" Placeholder="Now lets Upload -> Example.txt">
-        <input type="submit" value="Hochladen" name="submit">
+            <label for="fileToUpload" class="custom-file-upload">Datei auswählen</label>
+            <input type="file" name="fileToUpload" id="fileToUpload" style="display: none;">
+            <input type="submit" value="Hochladen" name="submit" class="submit-button">
         </form>
+
 
     </div>
 
