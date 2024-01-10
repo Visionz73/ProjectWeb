@@ -15,6 +15,7 @@ if (isset($_POST["submit"])) {
     // Datei-Upload-Vorgang
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "Die Datei ". htmlspecialchars(basename($_FILES["fileToUpload"]["name"])). " wurde hochgeladen.";
+        header("Location: ../PHP/fileshare.php");
     } else {
         echo "Fehler beim Hochladen der Datei.";
     }
