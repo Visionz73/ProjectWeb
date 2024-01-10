@@ -23,13 +23,13 @@
                     if (isset($_SESSION["user"])) {
                 ?>
                         <a href="../PHP/home.php" class="active">Home</a>
-                        <a href="../PHP/fileshare.php">FileShare</a>
-                        <a href="../PHP/logout.php">Logout</a>
+                        <a href="../PHP/fileshare.php" class="active">FileShare</a>
+                        <a href="../PHP/logout.php"class="active" >Logout</a>
                 <?php
                     } else {
                 ?>
                         <a href="../PHP/home.php" class="active">Home</a>
-                        <a href="../PHP/logon.php">Login</a>
+                        <a href="../PHP/logon.php" class="active" >Login</a>
                 <?php
                     }
                 ?>
