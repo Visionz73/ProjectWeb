@@ -16,28 +16,36 @@
 
 
 <header class="header">
-        <a href="#" class="logo">OwnCloud<i class='bx bx-cloud' ></i> </a>
+        <a href="#" class="logo">YourOwnCloud<i class='bx bx-cloud' ></i> </a>
 
         
 
-                <nav class="navbar">
-                <?php
-                     
+        <nav class="navbar">
+            <?php
                     session_start();
+
+                    // Bestimme die aktuelle Seite
+                    $current_page = basename($_SERVER['PHP_SELF']);
+
+                    // Setze die aktive Klasse nur auf den Link der aktuellen Seite
+                    $home_active = $current_page == "home.php" ? "active" : "";
+                    $fileshare_active = $current_page == "fileshare.php" ? "active" : "";
+                    $login_active = $current_page == "logon.php" ? "active" : "";
+
                     if (isset($_SESSION["user"])) {
-                ?>
-                        <a href="../PHP/home.php" class="active">Home</a>
-                        <a href="../PHP/fileshare.php">FileShare</a>
+                        ?>
+                        <a href="../PHP/home.php" class="<?php echo $home_active; ?>">Home</a>
+                        <a href="../PHP/fileshare.php" class="<?php echo $fileshare_active; ?>">FileShare</a>
                         <a href="../PHP/logout.php">Logout</a>
-                <?php
+                        <?php
                     } else {
-                ?>
-                        <a href="../PHP/home.php" class="active">Home</a>
-                        <a href="../PHP/logon.php">Login</a>
-                <?php
+                        ?>
+                        <a href="../PHP/home.php" class="<?php echo $home_active; ?>">Home</a>
+                        <a href="../PHP/logon.php" class="<?php echo $login_active; ?>">Login</a>
+                        <?php
                     }
-                ?>
-</nav>
+            ?>
+        </nav>
 
 
 <div class="social-media">

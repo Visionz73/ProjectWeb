@@ -41,7 +41,7 @@
                         <?php
                     }
             ?>
-</nav>
+        </nav>
 
 
 <div class="social-media">
