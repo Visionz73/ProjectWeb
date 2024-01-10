@@ -426,3 +426,7 @@ input[type="submit" i]:hover {
     max-width: 795px;
     transform: rotate(-45deg);
 }
+
+.success-message {
+    color: #fff;
+}
