@@ -64,42 +64,7 @@
 
     </header>
 
-    <div class="wrapper">
-        <form action="../PHP/regon.php" method="post">
-            <h1>Sign Up</h1>
-            <div class= "input-box">
-                <input type="text" name="username" placeholder="Username" required>
-                <i class='bx bxs-user'></i> 
-            </div>
-            <div class="input-box">
-                <input type="password" name="passwort" placeholder="password" required>
-                <i class='bx bxs-lock-alt' ></i>
-            </div>
-            <div class="input-box">
-                <input type="text" name="email" placeholder="Mail" required>
-                <i class='bx bxs-envelope' ></i>
-            </div>
-
-            
-
-            <button type="submit" class="btn">Sign Up</button>
-
-            <div class="register-link">
-                <p>Already have an account? <a href="../PHP/regon.php">Login</a></p>
-            </div>
-
-        </form>
-    </div>
-
-
-
-        
-    
-</body>
-
-</html>
-
-<?php
+    <?php
 // Verbindung zur Datenbank herstellen
 $registrationMessage = "";
 
@@ -132,6 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         $registrationMessage = "<div class='success-message'>Benutzer erfolgreich registriert.</div>";
+        echo "$registrationMessage";
 
         
     } else {
@@ -140,3 +106,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $connector->close();
 }
+
+
+    <div class="wrapper">
+        <form action="../PHP/regon.php" method="post">
+            <h1>Sign Up</h1>
+            <div class= "input-box">
+                <input type="text" name="username" placeholder="Username" required>
+                <i class='bx bxs-user'></i> 
+            </div>
+            <div class="input-box">
+                <input type="password" name="passwort" placeholder="password" required>
+                <i class='bx bxs-lock-alt' ></i>
+            </div>
+            <div class="input-box">
+                <input type="text" name="email" placeholder="Mail" required>
+                <i class='bx bxs-envelope' ></i>
+            </div>
+
+            
+
+            <button type="submit" class="btn">Sign Up</button>
+
+            <div class="register-link">
+                <p>Already have an account? <a href="../PHP/regon.php">Login</a></p>
+                if {
+                    
+                }
+            </div>
+
+        </form>
+    </div>
+
+
+
+        
+    
+</body>
+
+</html>
+
+
