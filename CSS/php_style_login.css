@@ -31,7 +31,6 @@ pre {
 }
 
 form {
-    /*background: #ebe5c33d; */
     padding: 14px;
     border-radius: 10px;
     display: flex;
@@ -43,7 +42,7 @@ form {
     margin: 5px 20px 30px 20px;
     flex-direction: row;
     box-shadow: 0px 7px 14px 2px #7f7e7e;
-    width: 99%;
+    width: 27vw;
 }
 
 input {
@@ -157,12 +156,12 @@ input[type="submit" i]:hover {
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 165px 5px 248px 5px;
+    margin: 32px 5px 248px 5px;
     padding: 5px 28px 0px 28px;
     border-radius: 30px;
     box-shadow: 1px 20px 14px 14px #9f9f9f;
-    width: 50vw;
-    height: 70vh;
+    width: 30vw;
+    height: 112%;
 }
 
 .playground_fileshare .forms .titel {
@@ -183,7 +182,7 @@ input[type="submit" i]:hover {
 }
 
 .playground_fileshare .forms .current-user {
-    font-size: 14px;
+    font-size: 12px;
     padding: 22px 5px 17px 5px;
 }
 
