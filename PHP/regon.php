@@ -101,7 +101,7 @@
 
 <?php
 // Verbindung zur Datenbank herstellen
-
+$registrationMessage = "";
 
 
     
@@ -130,7 +130,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo shell_exec($setPrivCommand);
         echo "</pre>";
 
-        echo "User account created successfully!";
+
+        $registrationMessage = "<div class='success-message'>Benutzer erfolgreich registriert.</div>";
+
+        
     } else {
         echo "Fehler bei der Registrierung.";
     }
