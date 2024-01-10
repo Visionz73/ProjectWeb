@@ -111,6 +111,10 @@ body {
     text-align: center;
 }
 
+.wrapper .success-message {
+    color: #fff;
+}
+
 .wrapper .input-box {
     width: 100%;
     height: 50px;
