@@ -198,7 +198,7 @@ input[type="submit" i]:hover {
     width: 648px;
     justify-content: space-between;
     flex-direction: column;
-    margin: 53px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
 }
 
 .playground_fileshare .background {
