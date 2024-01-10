@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # PFAD zum Script
-SCRIPT="/home/admirv/ProjectWeb/Backup_Script/Scripts/ex_to_input.sh"
+SCRIPT="/home/adminrv/ProjectWeb/Backup_Script/Scripts/ex_to_input.sh"
 
 # Ausführbarkeit testen
 if [ ! -f "$SCRIPT" ]; then
