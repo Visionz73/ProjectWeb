@@ -184,6 +184,11 @@ input[type="submit" i]:hover {
 .playground_fileshare .forms .current-user {
     font-size: 12px;
     padding: 22px 5px 17px 5px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .playground_fileshare .ausgabe {
