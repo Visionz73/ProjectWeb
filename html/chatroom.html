@@ -3,34 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Chatroom</title>
-    <link rel="stylesheet" href="../CSS/styles.css"> <!-- Verweis auf Ihr CSS-Stylesheet -->
-    <script src="../js/chatroom.js"></script> <!-- Aktualisierter Verweis auf Ihr JavaScript-Script -->
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <script src="../js/chatroom.js" defer></script>
 </head>
 <body>
     <div id="chatroomContainer">
         <h1 id="chatroomTitle">Chatroom Name</h1>
         <div id="messagesContainer">
-            <!-- Nachrichten werden hier angezeigt -->
+            <!-- Nachrichten werden hier dynamisch angezeigt -->
         </div>
         <form id="messageForm">
             <input type="text" id="messageInput" placeholder="Schreibe eine Nachricht...">
             <button type="submit">Senden</button>
         </form>
     </div>
-
-    <script>
-        // JavaScript zum Laden der Nachrichten und Handhaben des Nachrichtenversands
-        document.addEventListener('DOMContentLoaded', function() {
-            // Hier könnten Sie Funktionen zum Laden der Chatroom-Daten und Nachrichten aufrufen.
-        });
-
-        document.getElementById('messageForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Hier könnten Sie die Logik zum Senden der Nachricht implementieren.
-            const message = document.getElementById('messageInput').value;
-            console.log("Nachricht gesendet: " + message);
-            // Sie sollten hier die Nachricht an Ihr Backend senden und das Nachrichtenfeld leeren.
-        });
-    </script>
 </body>
 </html>
