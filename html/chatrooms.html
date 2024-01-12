@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatrooms</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Ihr CSS-Stylesheet -->
+    <script src="chatroom.js"></script> <!-- Ihr JavaScript-Script -->
+</head>
+<body>
+    <div id="chatroomContainer">
+        <h1>Verfügbare Chatrooms</h1>
+        <ul id="chatroomList">
+            <!-- Chatrooms werden hier dynamisch über JavaScript geladen -->
+        </ul>
+    </div>
+
+    <script>
+        // JavaScript, um die Chatrooms beim Laden der Seite zu laden
+        document.addEventListener('DOMContentLoaded', function() {
+            loadChatrooms();
+        });
+    </script>
+</body>
+</html>
