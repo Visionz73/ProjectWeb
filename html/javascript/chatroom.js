@@ -1,5 +1,5 @@
 function loadChatrooms() {
-    fetch('getChatrooms.php')
+    fetch('../../PHP/getChatrooms.php')
     .then(response => response.json())
     .then(chatrooms => {
         const list = document.getElementById('chatroomList');
