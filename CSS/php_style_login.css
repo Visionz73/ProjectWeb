@@ -241,12 +241,14 @@ input[type="submit" i]:hover {
     margin: 5px 5px 5px 5px;
 }
 
-.playground_fileshare .ausgabe .button {
-    color: #1743e3;
-}
+
 
 .playground_fileshare .background {
     background-color: #1743e300;
+}
+
+.playground_fileshare .background .button {
+    background-color: #a8e44900;
 }
 .playground_fileshare .mac {
     background: #a9aaaa;
