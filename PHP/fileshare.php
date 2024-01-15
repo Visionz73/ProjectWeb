@@ -107,31 +107,55 @@ if (!isset($_SESSION["user"])) {
         </form>
     </div>
     <div class="ausgabe">
-        <div class="background">
-            <?php
-            session_start();
-            if (!isset($_SESSION['user'])) {
-                header("Location: login.php");
-                exit();
-            }
-            $user = $_SESSION["user"];
-            $userDir = "/home/$user";
-            if (file_exists($userDir) && is_dir($userDir)) {
-                $files = scandir($userDir);
-                echo "<pre>";
-                foreach ($files as $file) {
-                    if ($file != "." && $file != "..") {
-                        echo htmlspecialchars($file) . "\n";
-                    }
+    <div class="background">
+        <?php
+
+                    // Datei löschen
+                        if (isset($_POST['delete']) && isset($_POST['filename'])) {
+                            $fileToDelete = "/home/$user/" . basename($_POST['filename']);
+                            if (file_exists($fileToDelete)) {
+                                unlink($fileToDelete);
+                                // Hier können Sie eine Bestätigungsnachricht hinzufügen
+                            }
+                        }
+
+                        // Datei herunterladen
+                        if (isset($_POST['download']) && isset($_POST['filename'])) {
+                            $fileToDownload = "/home/$user/" . basename($_POST['filename']);
+                            if (file_exists($fileToDownload)) {
+                                header('Content-Description: File Transfer');
+                                header('Content-Type: application/octet-stream');
+                                header('Content-Disposition: attachment; filename="'.basename($fileToDownload).'"');
+                                header('Expires: 0');
+                                header('Cache-Control: must-revalidate');
+                                header('Pragma: public');
+                                header('Content-Length: ' . filesize($fileToDownload));
+                                readfile($fileToDownload);
+                                exit;
+                            }
+                        }
+
+
+        if (file_exists($userDir) && is_dir($userDir)) {
+            $files = scandir($userDir);
+            foreach ($files as $file) {
+                if ($file != "." && $file != "..") {
+                    // Anzeigen jedes Dateinamens mit Download- und Löschbutton
+                    echo "<form method='post' action=''>";
+                    echo htmlspecialchars($file) . " ";
+                    echo "<button type='submit' name='download' value='download'>Download</button>";
+                    echo "<button type='submit' name='delete' value='delete'>Delete</button>";
+                    echo "<input type='hidden' name='filename' value='". htmlspecialchars($file) ."'>";
+                    echo "</form>";
                 }
-                echo "</pre>";
-            } else {
-                echo "Verzeichnis nicht gefunden.";
             }
-            ?>
-        </div>
+        } else {
+            echo "Verzeichnis nicht gefunden.";
+        }
+        ?>
     </div>
 </div>
+
 
 </body>
 </html>
