@@ -105,37 +105,68 @@ if (!isset($_SESSION["user"])) {
             <input type="file" name="fileToUpload" id="fileToUpload" style="display: none;">
             <input type="submit" value="Hochladen" name="submit" class="submit-button">
         </form>
+        <form action="" method="post">
+            <input type="text" name="selected_file" placeholder="Dateiname">
+            <button type="submit" name="action" value="download">Download</button>
+            <button type="submit" name="action" value="delete">Delete</button>
+        </form>
     </div>
     <div class="ausgabe">
-    <div class="background">
-        <?php
-        session_start();
-        if (!isset($_SESSION['user'])) {
-            header("Location: login.php");
-            exit();
-        }
-        $user = $_SESSION["user"];
-        $userDir = "/home/$user";
-        if (file_exists($userDir) && is_dir($userDir)) {
-            $files = scandir($userDir);
-            echo "<div class='file-list'>";
-            foreach ($files as $file) {
-                if ($file != "." && $file != "..") {
-                    echo "<form method='post' action='' class='file-action-form'>";
-                    echo "<div class='file-info'>";
-                    echo "<input type='checkbox' name='selected_files[]' value='" . htmlspecialchars($file) . "'>";
-                    echo "<span class='file-name'>" . htmlspecialchars($file) . "</span>";
-                    echo "</div>";
-                    echo "<button type='submit' name='download' value='download' class='form-button form-button-download'>Download</button>";
-                    echo "<button type='submit' name='delete' value='delete' class='form-button form-button-delete'>Delete</button>";
-                    echo "</form>";
-                }
+        <div class="background">
+            <?php
+            session_start();
+            if (!isset($_SESSION['user'])) {
+                header("Location: login.php");
+                exit();
             }
-            echo "</div>";
-        } else {
-            echo "Verzeichnis nicht gefunden.";
-        }
-        ?>
+            $user = $_SESSION["user"];
+            $userDir = "/home/$user";
+            if (file_exists($userDir) && is_dir($userDir)) {
+                $files = scandir($userDir);
+                echo "<pre>";
+                foreach ($files as $file) {
+                    if ($file != "." && $file != "..") {
+                        echo htmlspecialchars($file) . "\n";
+                    }
+                }
+                echo "</pre>";
+
+                // Verarbeitung der Download- und Löschaktionen
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                        if (isset($_POST['action'])) {
+                            $selectedFile = $_POST['selected_file'];
+
+                            // Sicherstellen, dass der Dateiname sicher ist
+                            $safeFilename = basename($selectedFile);
+                            $filePath = "/home/$user/" . $safeFilename;
+
+                            if ($_POST['action'] == 'download' && file_exists($filePath)) {
+                                // Code für den Download
+                                header('Content-Description: File Transfer');
+                                header('Content-Type: application/octet-stream');
+                                header('Content-Disposition: attachment; filename="'.$safeFilename.'"');
+                                header('Expires: 0');
+                                header('Cache-Control: must-revalidate');
+                                header('Pragma: public');
+                                header('Content-Length: ' . filesize($filePath));
+                                readfile($filePath);
+                                exit;
+                            } else if ($_POST['action'] == 'delete' && file_exists($filePath)) {
+                                // Code zum Löschen der Datei
+                                unlink($filePath);
+                                // Optional: Bestätigungsnachricht hinzufügen
+                            }
+                        }
+                    }
+
+                
+            } else {
+                echo "Verzeichnis nicht gefunden.";
+            }
+            ?>
+        </div>
     </div>
 </div>
 
+</body>
+</html>
