@@ -110,39 +110,17 @@ if (!isset($_SESSION["user"])) {
     <div class="background">
         <?php
 
-                    // Datei löschen
-                        if (isset($_POST['delete']) && isset($_POST['filename'])) {
-                            $fileToDelete = "/home/$user/" . basename($_POST['filename']);
-                            if (file_exists($fileToDelete)) {
-                                unlink($fileToDelete);
-                                // Hier können Sie eine Bestätigungsnachricht hinzufügen
-                            }
-                        }
-
-                        // Datei herunterladen
-                        if (isset($_POST['download']) && isset($_POST['filename'])) {
-                            $fileToDownload = "/home/$user/" . basename($_POST['filename']);
-                            if (file_exists($fileToDownload)) {
-                                header('Content-Description: File Transfer');
-                                header('Content-Type: application/octet-stream');
-                                header('Content-Disposition: attachment; filename="'.basename($fileToDownload).'"');
-                                header('Expires: 0');
-                                header('Cache-Control: must-revalidate');
-                                header('Pragma: public');
-                                header('Content-Length: ' . filesize($fileToDownload));
-                                readfile($fileToDownload);
-                                exit;
-                            }
-                        }
-
+            
 
         if (file_exists($userDir) && is_dir($userDir)) {
+            $files = scandir($userDir);
             foreach ($files as $file) {
                 if ($file != "." && $file != "..") {
-                    echo "<form method='post' action='' class='form-container'>";
-                    echo "<input type='text' value='". htmlspecialchars($file) ."' readonly>";
-                    echo "<button type='submit' name='download' value='download' class='form-button form-button-download'>Download</button>";
-                    echo "<button type='submit' name='delete' value='delete' class='form-button form-button-delete'>Delete</button>";
+                    // Anzeigen jedes Dateinamens mit Download- und Löschbutton
+                    echo "<form method='post' action=''>";
+                    echo htmlspecialchars($file) . " ";
+                    echo "<button type='submit' name='download' value='download'>Download</button>";
+                    echo "<button type='submit' name='delete' value='delete'>Delete</button>";
                     echo "<input type='hidden' name='filename' value='". htmlspecialchars($file) ."'>";
                     echo "</form>";
                 }
