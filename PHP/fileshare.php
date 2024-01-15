@@ -107,31 +107,31 @@ if (!isset($_SESSION["user"])) {
         </form>
     </div>
     <div class="ausgabe">
-    <div class="background">
-        <?php
-
-            
-
-        if (file_exists($userDir) && is_dir($userDir)) {
-            $files = scandir($userDir);
-            foreach ($files as $file) {
-                if ($file != "." && $file != "..") {
-                    // Anzeigen jedes Dateinamens mit Download- und Löschbutton
-                    echo "<form method='post' action=''>";
-                    echo htmlspecialchars($file) . " ";
-                    echo "<button type='submit' name='download' value='download'>Download</button>";
-                    echo "<button type='submit' name='delete' value='delete'>Delete</button>";
-                    echo "<input type='hidden' name='filename' value='". htmlspecialchars($file) ."'>";
-                    echo "</form>";
-                }
+        <div class="background">
+            <?php
+            session_start();
+            if (!isset($_SESSION['user'])) {
+                header("Location: login.php");
+                exit();
             }
-        } else {
-            echo "Verzeichnis nicht gefunden.";
-        }
-        ?>
+            $user = $_SESSION["user"];
+            $userDir = "/home/$user";
+            if (file_exists($userDir) && is_dir($userDir)) {
+                $files = scandir($userDir);
+                echo "<pre>";
+                foreach ($files as $file) {
+                    if ($file != "." && $file != "..") {
+                        echo htmlspecialchars($file) . "\n";
+                    }
+                }
+                echo "</pre>";
+            } else {
+                echo "Verzeichnis nicht gefunden.";
+            }
+            ?>
+        </div>
     </div>
 </div>
-
 
 </body>
 </html>
