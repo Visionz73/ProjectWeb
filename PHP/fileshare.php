@@ -137,14 +137,12 @@ if (!isset($_SESSION["user"])) {
 
 
         if (file_exists($userDir) && is_dir($userDir)) {
-            $files = scandir($userDir);
             foreach ($files as $file) {
                 if ($file != "." && $file != "..") {
-                    // Anzeigen jedes Dateinamens mit Download- und Löschbutton
-                    echo "<form method='post' action=''>";
-                    echo htmlspecialchars($file) . " ";
-                    echo "<button type='submit' name='download' value='download'>Download</button>";
-                    echo "<button type='submit' name='delete' value='delete'>Delete</button>";
+                    echo "<form method='post' action='' class='form-container'>";
+                    echo "<input type='text' value='". htmlspecialchars($file) ."' readonly>";
+                    echo "<button type='submit' name='download' value='download' class='form-button form-button-download'>Download</button>";
+                    echo "<button type='submit' name='delete' value='delete' class='form-button form-button-delete'>Delete</button>";
                     echo "<input type='hidden' name='filename' value='". htmlspecialchars($file) ."'>";
                     echo "</form>";
                 }
