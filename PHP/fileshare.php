@@ -107,31 +107,35 @@ if (!isset($_SESSION["user"])) {
         </form>
     </div>
     <div class="ausgabe">
-        <div class="background">
-            <?php
-            session_start();
-            if (!isset($_SESSION['user'])) {
-                header("Location: login.php");
-                exit();
-            }
-            $user = $_SESSION["user"];
-            $userDir = "/home/$user";
-            if (file_exists($userDir) && is_dir($userDir)) {
-                $files = scandir($userDir);
-                echo "<pre>";
-                foreach ($files as $file) {
-                    if ($file != "." && $file != "..") {
-                        echo htmlspecialchars($file) . "\n";
-                    }
+    <div class="background">
+        <?php
+        session_start();
+        if (!isset($_SESSION['user'])) {
+            header("Location: login.php");
+            exit();
+        }
+        $user = $_SESSION["user"];
+        $userDir = "/home/$user";
+        if (file_exists($userDir) && is_dir($userDir)) {
+            $files = scandir($userDir);
+            echo "<div class='file-list'>";
+            foreach ($files as $file) {
+                if ($file != "." && $file != "..") {
+                    echo "<form method='post' action='' class='file-action-form'>";
+                    echo "<div class='file-info'>";
+                    echo "<input type='checkbox' name='selected_files[]' value='" . htmlspecialchars($file) . "'>";
+                    echo "<span class='file-name'>" . htmlspecialchars($file) . "</span>";
+                    echo "</div>";
+                    echo "<button type='submit' name='download' value='download' class='form-button form-button-download'>Download</button>";
+                    echo "<button type='submit' name='delete' value='delete' class='form-button form-button-delete'>Delete</button>";
+                    echo "</form>";
                 }
-                echo "</pre>";
-            } else {
-                echo "Verzeichnis nicht gefunden.";
             }
-            ?>
-        </div>
+            echo "</div>";
+        } else {
+            echo "Verzeichnis nicht gefunden.";
+        }
+        ?>
     </div>
 </div>
 
-</body>
-</html>
