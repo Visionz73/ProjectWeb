@@ -54,22 +54,6 @@ class Authentication {
         }
     }
 
-    public function getRollenID($username) {
-        // SQL-Abfrage vorbereiten
-        $stmt = $this->conn->prepare("SELECT RollenID FROM Benutzer WHERE username = ?");
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            return $row['RollenID'];
-        } else {
-            return null; // Keine RollenID gefunden
-        }
-    }
-
-
     // Schließt die Datenbankverbindung
     public function close() {
         $this->conn->close();
