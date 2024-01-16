@@ -113,11 +113,7 @@ HeaderClass::displayHeader();
             <input type="file" name="fileToUpload" id="fileToUpload" style="display: none;">
             <input type="submit" value="Hochladen" name="submit" class="submit-button">
         </form>
-        <form action="" method="post">
-            <input type="text" name="selected_file" placeholder="Dateiname">
-            <button type="submit" name="action" value="download">Download</button>
-            <button type="submit" name="action" value="delete">Delete</button>
-        </form>
+        
     </div>
     <div class="ausgabe">
         <div class="background">
