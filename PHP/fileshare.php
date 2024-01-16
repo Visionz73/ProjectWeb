@@ -50,8 +50,12 @@ HeaderClass::displayHeader();
     <div class="forms">
         <!-- Titel und Benutzerinfo -->
         <div class="titel">
-            <h3>FileShare/Home <?php echo $user ?></h3>
-            <div class="loader"></div>
+            <h3>FileShare/Home<?php echo $user?></h3>
+            <div class="loader">
+                    <div class="inner one"></div>
+                    <div class="inner two"></div>
+                    <div class="inner three"></div>
+                </div>
         </div>
         <div class="current-user">
             <?php
@@ -102,6 +106,7 @@ HeaderClass::displayHeader();
                 echo "Currently using: $formatierteGroesseInKiB KiB";
             ?>
             <?php echo "<p>You logged in as $user</p>"; ?>
+                
         </div>
         <!-- Formulare für Download und Upload -->
         <form action="download.php" method="post">
