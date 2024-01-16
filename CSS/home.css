@@ -113,7 +113,7 @@ th, td {
 }
 
 tr {
-    color:#fff;
+    color: #8d8585;
 }
 
 
@@ -144,19 +144,17 @@ tr {
 }
 
 .admin-home-content {
-    
-        font-size: 12px;
-        display: flex;
-        margin: 5px;
-        padding: 5px 0px 0px 1px;
-        max-height: 80%;
-        width: 80%;
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: wrap;
-        align-content: center;
-        justify-content: center;
-    
+    font-size: 1.5vw;
+    display: flex;
+    margin: 2vw;
+    padding: 5px 0px 0px 1px;
+    max-height: 80%;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
 
 .home-content h1 {
