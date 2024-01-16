@@ -90,19 +90,24 @@
 
                         // Überprüfen, ob die Abfrage erfolgreich war
                         if ($result->num_rows > 0) {
-                            // Erstellen einer Tabelle zur Anzeige der Benutzerdaten
+                            // Container für die Tabelle
+                            echo "<div class='table-container'>"; 
+                        
+                            // Tabelle
                             echo "<table>";
                             echo "<tr><th>Benutzername</th><th>E-Mail</th></tr>";
-
-                            // Daten aus jedem Zeile holen und in der Tabelle anzeigen
+                        
+                            // Daten aus jeder Zeile holen und anzeigen
                             while($row = $result->fetch_assoc()) {
                                 echo "<tr>";
                                 echo "<td>".$row['username']."</td>"; // Ersetzen Sie 'username' durch den tatsächlichen Spaltennamen
                                 echo "<td>".$row['email']."</td>"; // Ersetzen Sie 'email' durch den tatsächlichen Spaltennamen
-                                // Weitere Spalten hinzufügen...
                                 echo "</tr>";
                             }
                             echo "</table>";
+                        
+                            // Schließen des Containers
+                            echo "</div>"; 
                         } else {
                             echo "Keine Benutzer gefunden.";
                         }

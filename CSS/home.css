@@ -95,6 +95,26 @@ body {
     padding: 5% 2% 2% 7%;
 }
 
+.table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    /* Weitere Stilregeln für Ihre Tabelle */
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    /* Weitere Stilregeln für Ihre Tabellenzellen */
+}
+
+
+
 .admin-home {
     position: relative;
     width: 100%;
