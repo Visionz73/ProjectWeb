@@ -61,7 +61,7 @@
     <section class="admin-home">
         <div class="admin-home-content">
            
-                    <h1>Lets Administrate!/h1>
+                    <h1>Lets Administrate!</h1>
                     <h3>Benutzerliste</h3>
 
                    
