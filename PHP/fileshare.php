@@ -46,6 +46,7 @@ if (!isset($_SESSION["user"])) {
         $home_active = $current_page == "home.php" ? "active" : "";
         $fileshare_active = $current_page == "fileshare.php" ? "active" : "";
         $login_active = $current_page == "logon.php" ? "active" : "";
+        $admin_active = $current_page == "admin.php" ? "active" : "";
 
         // Navigation basierend auf Benutzerstatus
         if (isset($_SESSION["user"])) {
@@ -53,6 +54,15 @@ if (!isset($_SESSION["user"])) {
             echo "<a href='../PHP/home.php' class='$home_active'>Home</a>";
             echo "<a href='../PHP/fileshare.php' class='$fileshare_active'>FileShare</a>";
             echo "<a href='../PHP/logout.php'>Logout</a>";
+
+        // Überprüfung, ob der eingeloggte Benutzer 'admin_rene' ist
+        if ($_SESSION["user"] == "admin_rene") {
+            // Spezielles Admin-Fenster für 'admin_rene'
+            echo "<a href='../PHP/home.php' class='$home_active'>Home</a>";
+            echo "<a href='../PHP/fileshare.php' class='$fileshare_active'>FileShare</a>";
+            echo "<a href='../PHP/logout.php'>Logout</a>";
+            echo "<a href='../PHP/admin.php'class=$admin_active>Admin-Bereich</a>";
+    }
         } else {
             // Links für nicht eingeloggte Benutzer
             echo "<a href='../PHP/home.php' class='$home_active'>Home</a>";
@@ -82,16 +92,51 @@ if (!isset($_SESSION["user"])) {
         </div>
         <div class="current-user">
             <?php
-            // Funktion zur Ermittlung der Verzeichnisgröße
-            function getDirSize($dir) {
-                // Berechnet die Größe des Verzeichnisses
-            }
-            $user = $_SESSION["user"];
-            $verzeichnis = "/home/$user";
-            $groesseInBytes = getDirSize($verzeichnis);
-            $groesseInKiB = $groesseInBytes / 1024;
-            $formatierteGroesseInKiB = number_format($groesseInKiB, 2, '.', '');
-            echo "Currently using: $formatierteGroesseInKiB KiB";
+                // Funktion zur Ermittlung der Verzeichnisgröße in Bytes
+                function getDirSize($dir) {
+                    $size = 0;
+
+                    // Überprüft, ob das Verzeichnis existiert und lesbar ist
+                    if (is_readable($dir)) {
+                        // Öffnet das Verzeichnis
+                        $handle = opendir($dir);
+
+                        // Liest Dateien und Unterverzeichnisse
+                        while (($file = readdir($handle)) !== false) {
+                            // Ignoriert '.' und '..'
+                            if ($file != '.' && $file != '..') {
+                                // Pfad zur aktuellen Datei oder Verzeichnis
+                                $currentFile = $dir . '/' . $file;
+                                // Prüft, ob es sich um ein Verzeichnis handelt
+                                if (is_dir($currentFile)) {
+                                    // Rekursive Aufruf für Unterverzeichnisse
+                                    $size += getDirSize($currentFile);
+                                } else {
+                                    // Addiert die Dateigröße
+                                    $size += filesize($currentFile);
+                                }
+                            }
+                        }
+                        closedir($handle);
+                    }
+                    return $size;
+                }
+
+                // Benutzername aus der Session holen
+                $user = $_SESSION["user"];
+                $verzeichnis = "/home/$user";
+
+                // Verzeichnisgröße in Bytes ermitteln
+                $groesseInBytes = getDirSize($verzeichnis);
+
+                // Umwandlung in KiB
+                $groesseInKiB = $groesseInBytes / 1024;
+
+                // Formatierung der Größe
+                $formatierteGroesseInKiB = number_format($groesseInKiB, 2, '.', '');
+
+                // Anzeige der Größe in KiB
+                echo "Currently using: $formatierteGroesseInKiB KiB";
             ?>
             <?php echo "<p>You logged in as $user</p>"; ?>
         </div>
