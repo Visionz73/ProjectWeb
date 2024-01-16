@@ -3,6 +3,24 @@ class HeaderClass {
     public static function displayHeader() {
         session_start();
 
+        // Erstellen Sie eine Instanz der RollenVerwaltung Klasse
+        $rollenVerwaltung = new RollenVerwaltung("localhost", "con_admin", "12345", "BenutzerDatenbank");
+
+        // Stellen Sie sicher, dass ein Benutzername in der Session gespeichert ist
+        if (isset($_SESSION["user"])) {
+            $user = $_SESSION["user"];
+
+            // Abrufen der RollenID für den Benutzer
+            $rollenID = $rollenVerwaltung->getRollenID($user);
+
+            // Speichern der RollenID in der Session
+            $_SESSION["RollenID"] = $rollenID;
+
+            // Schließen der Datenbankverbindung
+            $rollenVerwaltung->close();
+        }
+
+
         // Bestimmung der aktiven Seite für die Navigation
         $current_page = basename($_SERVER['PHP_SELF']);
         $home_active = $current_page == "home.php" ? "active" : "";
@@ -10,25 +28,7 @@ class HeaderClass {
         $login_active = $current_page == "logon.php" ? "active" : "";
         $admin_active = $current_page == "admin.php" ? "active" : "";
 
-        $user = $_SESSION["user"];
-        // SQL-Abfrage vorbereiten und ausführen
-            $sql = "SELECT RollenID FROM Benutzer WHERE username = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("s", $user);
-            $stmt->execute();
-            $result = $stmt->get_result();
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                $_SESSION["RollenID"] = $row['RollenID'];
-            } else {
-                echo "Benutzer nicht gefunden.";
-            }
-
-            // Schließen der Verbindung
-            $stmt->close();
-            $conn->close();
-
+        
         // Header-HTML
         echo "<header class='header'>";
         echo "<a href='#' class='logo'>YourOwnCloud<i class='bx bx-cloud'></i></a>";
