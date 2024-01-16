@@ -63,7 +63,7 @@
            
                     <h1>Welcome to Administrate YourOwnCloud! <?php echo $user; ?>!</h1>
                     <h3>Your Data? Your Storage!</h3>
-                    
+
                     <?php
                         // Datenbankverbindungsinformationen
                         $servername = "localhost";
@@ -87,7 +87,7 @@
                         if ($result->num_rows > 0) {
                             // Erstellen einer Tabelle zur Anzeige der Benutzerdaten
                             echo "<table>";
-                            echo "<tr><th>Benutzername</th><th>E-Mail</th><th>Weitere Spalten...</th></tr>";
+                            echo "<tr><th>Benutzername</th><th>E-Mail</th></tr>";
 
                             // Daten aus jedem Zeile holen und in der Tabelle anzeigen
                             while($row = $result->fetch_assoc()) {
@@ -110,8 +110,48 @@
         </div>
         
         <!-- Bildbereich -->
-        <div class="home-img">
-            <!-- Bild in CSS -->
+        <div class="admin_ausgabe">
+        <?php
+                        // Datenbankverbindungsinformationen
+                        $servername = "localhost";
+                        $username = "con_admin";
+                        $password = "12345";
+                        $dbname = "BenutzerDatenbank";
+
+                        // Erstellen der Verbindung
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+
+                        // Überprüfen der Verbindung
+                        if ($conn->connect_error) {
+                            die("Verbindung fehlgeschlagen: " . $conn->connect_error);
+                        }
+
+                        // SQL-Abfrage, um alle Benutzer aus der Tabelle 'Benutzer' zu holen
+                        $query = "SELECT * FROM Benutzer";
+                        $result = $conn->query($query);
+
+                        // Überprüfen, ob die Abfrage erfolgreich war
+                        if ($result->num_rows > 0) {
+                            // Erstellen einer Tabelle zur Anzeige der Benutzerdaten
+                            echo "<table>";
+                            echo "<tr><th>Benutzername</th><th>E-Mail</th></tr>";
+
+                            // Daten aus jedem Zeile holen und in der Tabelle anzeigen
+                            while($row = $result->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>".$row['username']."</td>"; // Ersetzen Sie 'username' durch den tatsächlichen Spaltennamen
+                                echo "<td>".$row['email']."</td>"; // Ersetzen Sie 'email' durch den tatsächlichen Spaltennamen
+                                // Weitere Spalten hinzufügen...
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                        } else {
+                            echo "Keine Benutzer gefunden.";
+                        }
+
+                        // Schließen der Datenbankverbindung
+                        $conn->close();
+                        ?>
         </div>
     </section>
 
