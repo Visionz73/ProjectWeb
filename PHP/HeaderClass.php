@@ -11,7 +11,23 @@ class HeaderClass {
         $admin_active = $current_page == "admin.php" ? "active" : "";
 
         $user = $_SESSION["user"];
-        $RollenID = $_SESSION["RollenID"] = "SELECT RollenID FROM Benutzer WHERE username = $user";
+        // SQL-Abfrage vorbereiten und ausführen
+            $sql = "SELECT RollenID FROM Benutzer WHERE username = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("s", $user);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $_SESSION["RollenID"] = $row['RollenID'];
+            } else {
+                echo "Benutzer nicht gefunden.";
+            }
+
+            // Schließen der Verbindung
+            $stmt->close();
+            $conn->close();
 
         // Header-HTML
         echo "<header class='header'>";
