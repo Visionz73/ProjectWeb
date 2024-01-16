@@ -40,25 +40,26 @@ HeaderClass::displayHeader();
 
         // Registrierungsfunktion
         $connector = new Authentication($servername, $dbUsername, $dbPassword, $dbname);
-        if ($connector->register($username_Web, $passwort_Web, $email_Web)) {
 
-            // Benutzererstellung im System
-            $username = escapeshellarg($username_Web);
-            $createUserCommand = "sudo useradd -m $username";
-            $setPrivCommand = "sudo chown -R www-data:www-data /home/$username";
-            shell_exec($createUserCommand);
-            shell_exec($setPrivCommand);
+            $registerResult = $connector->register($username_Web, $passwort_Web, $email_Web);
+            if ($registerResult === true) {
+                // Benutzererstellung im System
+                $username = escapeshellarg($username_Web);
+                $createUserCommand = "sudo useradd -m $username";
+                $setPrivCommand = "sudo chown -R www-data:www-data /home/$username";
+                shell_exec($createUserCommand);
+                shell_exec($setPrivCommand);
 
-            // Erfolgsmeldung
-            $registrationMessage = "<div class='success-message'>Benutzer erfolgreich registriert.</div>";
+                // Erfolgsmeldung
+                $registrationMessage = "<div class='success-message'>Benutzer erfolgreich registriert.</div>";
+            } else {
+                // Fehlermeldung
+                $registrationMessage = "<div class='error-message'>Benutzer konnte nicht erstellt werden: $registerResult</div>";
+            }
 
-        } else {
-            // Fehlermeldung
-            $registrationMessage = "<div class='error-message'>Fehler bei der Registrierung.</div>";
-        }
+            // Schließen der Datenbankverbindung
+            $connector->close();
 
-        // Schließen der Datenbankverbindung
-        $connector->close();
     }
 ?>
 
