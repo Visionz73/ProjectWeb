@@ -1,3 +1,8 @@
+<!-- Ausführung von Header Klasse -->
+<?php
+include "HeaderClass.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,54 +16,10 @@
 
 <body>
 
-<header class="header">
-    <!-- Logo-Bereich -->
-    <a href="#" class="logo">YourOwnCloud<i class='bx bx-cloud'></i></a>
-
-    <!-- Navigationsleiste -->
-    <nav class="navbar">
-        <?php
-            session_start(); // Start der Session
-
-            // Ermittlung der aktuellen Seite für die Navigationsleiste
-            $current_page = basename($_SERVER['PHP_SELF']);
-            $home_active = $current_page == "home.php" ? "active" : "";
-            $fileshare_active = $current_page == "fileshare.php" ? "active" : "";
-            $login_active = $current_page == "logon.php" ? "active" : "";
-
-            // Anzeige der Navigationslinks abhängig vom Anmeldestatus
-            if (isset($_SESSION["user"])) {
-        ?>
-                <a href="../PHP/home.php" class="<?php echo $home_active; ?>">Home</a>
-                <a href="../PHP/fileshare.php" class="<?php echo $fileshare_active; ?>">FileShare</a>
-                <a href="../PHP/logout.php">Logout</a>
-        <?php
-            } else {
-        ?>
-                <a href="../PHP/home.php" class="<?php echo $home_active; ?>">Home</a>
-                <a href="../PHP/logon.php" class="<?php echo $login_active; ?>">Login</a>
-        <?php
-            }
-        ?>
-    </nav>
-
-    <!-- Benutzerinformationen -->
-    <div class="social-media">
-        <?php
-            // Anzeige des Benutzernamens oder Registrierungslink
-            if (isset($_SESSION["user"])) {
-                $user = htmlspecialchars($_SESSION["user"]); // XSS-Schutz
-        ?>
-                <a href=""><i class='bx bxs-invader'></i><?php echo $user; ?></a>
-        <?php
-            } else {
-        ?>
-                <a href="../PHP/regon.php">Sign Up</a>
-        <?php
-            }
-        ?>
-    </div>
-</header>
+<!-- Ausführung von Header Klasse -->
+<?php
+HeaderClass::displayHeader();
+?>
 
 <!-- PHP-Logik zur Verarbeitung der Registrierung -->
 <?php
