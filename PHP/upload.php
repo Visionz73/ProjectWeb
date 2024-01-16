@@ -17,7 +17,7 @@ if (isset($_POST["submit"])) {
         echo "Die Datei ". htmlspecialchars(basename($_FILES["fileToUpload"]["name"])). " wurde hochgeladen.";
         header("Location: ../PHP/fileshare.php");
     } else {
-        echo "Fehler beim Hochladen der Datei.";
+        header("Location: ../PHP/error.php"); 
     }
 }
 ?>
