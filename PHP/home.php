@@ -18,8 +18,9 @@ include "HeaderClass.php";
 
 <body>
 
+<?php
 HeaderClass::displayHeader();
-
+?>
     <section class="home">
         <div class="home-content">
     <?php
