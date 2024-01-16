@@ -4,7 +4,7 @@ class HeaderClass {
         session_start();
 
         // Erstellen Sie eine Instanz der RollenVerwaltung Klasse
-        $rollenVerwaltung = new RollenVerwaltung("localhost", "con_admin", "12345", "BenutzerDatenbank");
+        /*$rollenVerwaltung = new RollenVerwaltung("localhost", "con_admin", "12345", "BenutzerDatenbank");
 
         // Stellen Sie sicher, dass ein Benutzername in der Session gespeichert ist
         if (isset($_SESSION["user"])) {
@@ -18,7 +18,7 @@ class HeaderClass {
 
             // Schließen der Datenbankverbindung
             $rollenVerwaltung->close();
-        }
+        }*/
 
 
         // Bestimmung der aktiven Seite für die Navigation
