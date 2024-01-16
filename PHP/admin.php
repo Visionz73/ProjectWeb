@@ -61,8 +61,8 @@
     <section class="admin-home">
         <div class="admin-home-content">
            
-                    <h1>Welcome to Administrate YourOwnCloud! <?php echo $user; ?>!</h1>
-                    <h3>Your Data? Your Storage!</h3>
+                    <h1>Lets Administrate! Hello<?php echo $user; ?>!</h1>
+                    <h3>Benutzerliste</h3>
 
                    
         </div>
