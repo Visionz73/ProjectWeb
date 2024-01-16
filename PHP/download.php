@@ -18,6 +18,7 @@ $fullPath = realpath($basePath . basename($file));
 // Überprüfen, ob der Dateiname mit einem Punkt beginnt (versteckte Datei)
 if (basename($file)[0] == '.') {
     echo "Fehler: Zugriff auf versteckte Dateien ist nicht erlaubt.";
+    header("Location: ../PHP/fileshare.php");
     exit;
 }
 

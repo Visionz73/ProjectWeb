@@ -139,33 +139,7 @@ HeaderClass::displayHeader();
                 }
                 echo "</pre>";
 
-                // Verarbeitung der Download- und Löschaktionen
-                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                        if (isset($_POST['action'])) {
-                            $selectedFile = $_POST['selected_file'];
-
-                            // Sicherstellen, dass der Dateiname sicher ist
-                            $safeFilename = basename($selectedFile);
-                            $filePath = "/home/$user/" . $safeFilename;
-
-                            if ($_POST['action'] == 'download' && file_exists($filePath)) {
-                                // Code für den Download
-                                header('Content-Description: File Transfer');
-                                header('Content-Type: application/octet-stream');
-                                header('Content-Disposition: attachment; filename="'.$safeFilename.'"');
-                                header('Expires: 0');
-                                header('Cache-Control: must-revalidate');
-                                header('Pragma: public');
-                                header('Content-Length: ' . filesize($filePath));
-                                readfile($filePath);
-                                exit;
-                            } else if ($_POST['action'] == 'delete' && file_exists($filePath)) {
-                                // Code zum Löschen der Datei
-                                unlink($filePath);
-                                // Optional: Bestätigungsnachricht hinzufügen
-                            }
-                        }
-                    }
+                
 
                 
             } else {
