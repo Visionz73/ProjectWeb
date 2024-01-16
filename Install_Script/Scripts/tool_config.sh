@@ -4,16 +4,30 @@
 sudo apt-get update && sudo apt-get upgrade -y
 
 # Installation der benötigten Pakete
-sudo apt-get install -y nginx php php-fpm phpmyadmin mariadb-server
+sudo apt-get install -y nginx php php-fpm phpmyadmin mariadb-server openssh-server ufw htop
 
 #Stop installed Apache
 sudo systemctl stop apache2
 
 #Disable
-sudo systemctl disable apache2
+sudo systemctl disable apache2 
 
 #Deinstall Apache 
-sudo apt-get remove apache2
+sudo apt-get remove apache2 -y
+
+#UFW
+sudo ufw enable
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw deny 23 , 20 , 21 , 139 , 445 #Riskante Ports schließen, Telnet, FTP, SMB
+
+
+#Start SSH
+sudo systemctl start ssh
+
+#enable SSH
+sudo systemctl enable ssh
 
 # Kopieren der Nginx-Konfigurationsdatei aus dem "configs/" Verzeichnis
 sudo cp ../configs/default /etc/nginx/sites-available/default

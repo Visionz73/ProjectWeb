@@ -3,6 +3,7 @@
 echo -e "\e[32mStarte Skriptprozess...\e[0m"
 sleep 5
 chmod +x /home/adminrv/ProjectWeb/Backup_Script/Scripts/gesamt_install.sh
+chmod +x ./update_ssh_set.sh
 chmod +x ./benutzer_importieren.sh
 chmod +x ./tool_config.sh
 chmod +x ./sql_database_import.sh
@@ -67,6 +68,14 @@ else
     exit 1
 fi
 
+# Ausführen von Skript 7
+if ./update_ssh_set.sh; then
+    echo -e "\e[32mDSSH ist eingerichtet und erfolgreich abgeschlossen.\e[0m"
+    sleep 5
+else
+    echo -e "\e[32mFehler bei der Ausführung von update_ssh.\e[0m"
+    exit 1
+fi
 
 
 
