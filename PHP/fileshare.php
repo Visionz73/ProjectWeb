@@ -50,7 +50,7 @@ HeaderClass::displayHeader();
     <div class="forms">
         <!-- Titel und Benutzerinfo -->
         <div class="titel">
-            <h3>FileShare/Home<?php echo $user?></h3>
+            <h3>FileShare/Home <?php echo $user?></h3>
             <div class="loader">
                     <div class="inner one"></div>
                     <div class="inner two"></div>
