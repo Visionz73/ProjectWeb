@@ -10,6 +10,9 @@ class HeaderClass {
         $login_active = $current_page == "logon.php" ? "active" : "";
         $admin_active = $current_page == "admin.php" ? "active" : "";
 
+        $user = $_SESSION["user"];
+        $RollenID = $_SESSION["RollenID"] = "SELECT RollenID FROM Benutzer WHERE username = $user";
+
         // Header-HTML
         echo "<header class='header'>";
         echo "<a href='#' class='logo'>YourOwnCloud<i class='bx bx-cloud'></i></a>";
@@ -23,7 +26,8 @@ class HeaderClass {
             echo "<a href='../PHP/logout.php'>Logout</a>";
 
             // Überprüfung, ob der eingeloggte Benutzer 'admin_rene' ist
-            if ($_SESSION["user"] == "admin_rene") {
+            if (isset($_SESSION['RollenID']) && $_SESSION['RollenID'] == 1) {
+                // Logik für Admin-Benutzer           
                 echo "<a href='../PHP/admin.php'class='$admin_active'>Admin-Bereich</a>";
             }
         } else {
