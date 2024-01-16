@@ -113,6 +113,10 @@ th, td {
     /* Weitere Stilregeln für Ihre Tabellenzellen */
 }
 
+tr {
+    color:#fff;
+}
+
 
 
 .admin-home {
