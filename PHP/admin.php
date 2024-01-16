@@ -59,7 +59,7 @@
 </header>
 
     <section class="home">
-        <div class="home-content">
+        <div class="admin-home-content">
            
                     <h1>Welcome to Administrate YourOwnCloud! <?php echo $user; ?>!</h1>
                     <h3>Your Data? Your Storage!</h3>
