@@ -61,8 +61,7 @@
     <section class="admin-home">
         <div class="admin-home-content">
            
-                    <h1>Lets Administrate! Hello </h1>
-                    <h3>Hello <?php echo $user; ?></h3>
+                    <h1>Lets Administrate!/h1>
                     <h3>Benutzerliste</h3>
 
                    
