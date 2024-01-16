@@ -105,8 +105,8 @@ input[type="text" i]::placeholder
 {
     color: #c0c0c0;
     border-color: #c0c0c0;
-    font-size: 14px;
-    padding: 0.5vw;
+    font-size: 13px;
+    padding: 0.7vw;
 }
 
 input[type="submit" i] {
