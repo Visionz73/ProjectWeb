@@ -110,8 +110,8 @@ HeaderClass::displayHeader();
         </div>
         <!-- Formulare für Download und Upload -->
         <form action="download.php" method="post">
-            Download <input type="text" name="command" placeholder="lets Download -> Example.txt">
-            <input type="submit">
+            <input type="text" name="command" placeholder="lets Download -> Example.txt">
+            <input type="submit" value="Download">
         </form>
         <form action="upload.php" method="post" enctype="multipart/form-data">
             <label for="fileToUpload" class="custom-file-upload">Datei auswählen</label>
