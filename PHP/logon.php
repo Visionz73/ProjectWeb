@@ -1,4 +1,4 @@
-<!-- Einbindung von Header Klasse -->
+<!-- Include von Header Klasse -->
 <?php
 include "HeaderClass.php";
 ?>

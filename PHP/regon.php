@@ -1,4 +1,4 @@
-<!-- Ausführung von Header Klasse -->
+<!-- Include von Header Klasse -->
 <?php
 include "HeaderClass.php";
 ?>
@@ -23,7 +23,7 @@ HeaderClass::displayHeader();
 
 <!-- PHP-Logik zur Verarbeitung der Registrierung -->
 <?php
-    $registrationMessage = "";
+    $registrationMessage = ""; //Register Message 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once('Authentication.php');
 
@@ -41,6 +41,7 @@ HeaderClass::displayHeader();
         // Registrierungsfunktion
         $connector = new Authentication($servername, $dbUsername, $dbPassword, $dbname);
         if ($connector->register($username_Web, $passwort_Web, $email_Web)) {
+
             // Benutzererstellung im System
             $username = escapeshellarg($username_Web);
             $createUserCommand = "sudo useradd -m $username";
@@ -50,6 +51,7 @@ HeaderClass::displayHeader();
 
             // Erfolgsmeldung
             $registrationMessage = "<div class='success-message'>Benutzer erfolgreich registriert.</div>";
+
         } else {
             // Fehlermeldung
             $registrationMessage = "<div class='error-message'>Fehler bei der Registrierung.</div>";
@@ -81,6 +83,7 @@ HeaderClass::displayHeader();
         <button type="submit" class="btn">Sign Up</button>
         <div class="register-link">
             <p>Already have an account? <a href="../PHP/logon.php">Login</a></p>
+            <!-- Registrierungsnachricht nach dem Register -->
             <?php echo $registrationMessage; ?>
         </div>
     </form>

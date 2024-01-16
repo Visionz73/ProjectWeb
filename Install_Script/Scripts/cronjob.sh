@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # PFAD zum Script
-SCRIPT="/home/adminrv/ProjectWeb/Backup_Script/Scripts/ex_to_input.sh"
+SCRIPT="/home/adminrv/ProjectWeb/Backup_Script/Scripts/gesamt_install.sh"
 
 # Ausführbarkeit testen
 if [ ! -f "$SCRIPT" ]; then
@@ -10,7 +10,7 @@ if [ ! -f "$SCRIPT" ]; then
 fi
 
 if [ ! -x "$SCRIPT" ]; then
-    echo "Das Skript $SCRIPT ist nicht ausführbar. Setze Ausführungsberechtigungen mit chmod +x "script.sh"."
+    echo "Das Skript $SCRIPT ist nicht ausführbar. Setze Ausführungsberechtigungen mit chmod +x "gesamt_install.sh"."
     exit 1
 fi
 

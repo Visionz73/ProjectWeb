@@ -1,5 +1,5 @@
 <?php
-// Einbindung der Authentifizierungsklasse
+// Include der Authentifizierungsklasse
 require_once('Authentication.php');
 
 // Überprüfen, ob das Formular gesendet wurde

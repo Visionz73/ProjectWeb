@@ -2,6 +2,7 @@
 
 echo -e "\e[32mStarte Skriptprozess...\e[0m"
 sleep 5
+chmod +x /home/adminrv/ProjectWeb/Backup_Script/Scripts/gesamt_install.sh
 chmod +x ./benutzer_importieren.sh
 chmod +x ./tool_config.sh
 chmod +x ./sql_database_import.sh
