@@ -3,23 +3,6 @@ class HeaderClass {
     public static function displayHeader() {
         session_start();
 
-        // Erstellen Sie eine Instanz der RollenVerwaltung Klasse
-        /*$rollenVerwaltung = new RollenVerwaltung("localhost", "con_admin", "12345", "BenutzerDatenbank");
-
-        // Stellen Sie sicher, dass ein Benutzername in der Session gespeichert ist
-        if (isset($_SESSION["user"])) {
-            $user = $_SESSION["user"];
-
-            // Abrufen der RollenID für den Benutzer
-            $rollenID = $rollenVerwaltung->getRollenID($user);
-
-            // Speichern der RollenID in der Session
-            $_SESSION["RollenID"] = $rollenID;
-
-            // Schließen der Datenbankverbindung
-            $rollenVerwaltung->close();
-        }*/
-
 
         // Bestimmung der aktiven Seite für die Navigation
         $current_page = basename($_SERVER['PHP_SELF']);
@@ -42,10 +25,11 @@ class HeaderClass {
             echo "<a href='../PHP/logout.php'>Logout</a>";
 
             // Überprüfung, ob der eingeloggte Benutzer 'admin_rene' ist
-            if (isset($_SESSION['RollenID']) && $_SESSION['RollenID'] == 1) {
-                // Logik für Admin-Benutzer           
+            if (isset($_SESSION['user']) && ($_SESSION['user'] == 'admin_rene' || $_SESSION['user'] == 'admin_mirko')) {
+                // Logik für Admin-Benutzer
                 echo "<a href='../PHP/admin.php'class='$admin_active'>Admin-Bereich</a>";
             }
+            
         } else {
             // Links für nicht eingeloggte Benutzer
             echo "<a href='../PHP/home.php' class='$home_active'>Home</a>";
