@@ -90,8 +90,10 @@ input[type="text" i] {
     padding-block: 1px;
     padding-inline: 2px;
     margin: 0px 20px 0px 20px;
-    padding: 9px 129px 8px 12px;
-    margin: 17px 40px 23px 61px;
+    /* padding: 9px 129px 8px 12px; */
+    /* margin: 17px 40px 23px 61px; */
+    width: 100vw;
+    height: 3vw;
     border-radius: 5px;
     background: #ffffff7a;
     border-color: #fff;
@@ -103,7 +105,8 @@ input[type="text" i]::placeholder
 {
     color: #c0c0c0;
     border-color: #c0c0c0;
-    font-size: 10px;
+    font-size: 14px;
+    padding: 0.5vw;
 }
 
 input[type="submit" i] {
