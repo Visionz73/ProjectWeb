@@ -58,7 +58,7 @@
     </div>
 </header>
 
-    <section class="home">
+    <section class="admin-home">
         <div class="admin-home-content">
            
                     <h1>Welcome to Administrate YourOwnCloud! <?php echo $user; ?>!</h1>
