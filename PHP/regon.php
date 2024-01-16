@@ -77,7 +77,7 @@ HeaderClass::displayHeader();
             <i class='bx bxs-lock-alt'></i>
         </div>
         <div class="input-box">
-            <input type="text" name="email" placeholder="Mail" required>
+            <input type="email" name="email" placeholder="Mail" required>
             <i class='bx bxs-envelope'></i>
         </div>
         <!-- Registrierungsbutton und Link zum Login-Bereich -->
