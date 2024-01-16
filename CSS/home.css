@@ -107,10 +107,9 @@ table {
 }
 
 th, td {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 8px;
     text-align: left;
-    /* Weitere Stilregeln für Ihre Tabellenzellen */
 }
 
 tr {
@@ -212,13 +211,13 @@ tr {
 }
 
 .admin_ausgabe {
-    color: #1743e3;
+    color: #676a76;
     display: flex;
     font-family: monospace;
-    font-size: 1vw;
+    font-size: 0.7vw;
     padding: 1vw;
-    /* margin: 5vw; */
-    width: 70vw;
+    margin: 5vw;
+    width: 40vw;
     height: 100vw;
     border-radius: 10vw;
     flex-direction: column;
