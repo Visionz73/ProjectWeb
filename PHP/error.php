@@ -92,9 +92,7 @@
         </div>
         
         <div class="home-img">
-            <div class="rhombus">
-                <img src='../Pictures/back-bg.png' alt="">
-            </div>
+            
         </div>
 
     </section>
