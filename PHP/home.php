@@ -52,7 +52,7 @@
             $user = htmlspecialchars($_SESSION["user"]); // XSS-Schutz
             echo "<a href=''><i class='bx bxs-invader'></i>$user</a>";
         } else {
-            echo "<a href='../html/regon.html'>Sign Up</a>";
+            echo "<a href='../PHP/regon.php'>Sign Up</a>";
         }
         ?>
     </div>
