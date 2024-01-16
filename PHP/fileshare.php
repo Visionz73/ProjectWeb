@@ -110,7 +110,7 @@ HeaderClass::displayHeader();
         </div>
         <!-- Formulare für Download und Upload -->
         <form action="download.php" method="post">
-            Download <input type="text" name="command" placeholder="Now lets Download -> Example.txt">
+            Download <input type="text" name="command" placeholder="lets Download -> Example.txt">
             <input type="submit">
         </form>
         <form action="upload.php" method="post" enctype="multipart/form-data">

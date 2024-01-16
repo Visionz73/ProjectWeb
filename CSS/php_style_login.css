@@ -34,7 +34,7 @@ form {
     padding: 14px;
     border-radius: 10px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
     align-items: center;
@@ -127,7 +127,7 @@ input[type="submit" i] {
     -webkit-user-select: none;
     touch-action: manipulation;
     white-space: pre;
-    width: max-content;
+    width: 10vw;
     word-break: normal;
     word-spacing: normal;
 }
@@ -145,6 +145,7 @@ input[type="submit" i]:hover {
     background-color: #f8f8f8;
     border-radius: 10px;
     margin: 1vw;
+    width: 100vw;
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
@@ -200,7 +201,7 @@ input[type="submit" i]:hover {
 }
 
 .playground_fileshare .forms .titel {
-    /*background: linear-gradient(178deg, #c1b98d, #ffffffc7); */
+    /* background: linear-gradient(178deg, #c1b98d, #ffffffc7); */
     padding: 8px 11px 11px 32px;
     margin: 19px 5px 5px 5px;
     border-radius: 10px;
@@ -208,6 +209,9 @@ input[type="submit" i]:hover {
     justify-content: center;
     align-items: center;
     box-shadow: -3px 7px 18px 0px #bdbdbd;
+    flex-wrap: nowrap;
+    align-content: center;
+    flex-direction: row-reverse;
 }
 
 .playground_fileshare .forms .titel h3 {
