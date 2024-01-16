@@ -39,20 +39,36 @@ class Authentication {
     public function register($username, $password, $email){
         // Schützt vor SQL-Injection
         $username = $this->conn->real_escape_string($username);
-
+        $email = $this->conn->real_escape_string($email);
+    
+        // Überprüfen, ob Benutzername oder E-Mail bereits existieren
+        $checkSql = "SELECT * FROM Benutzer WHERE username = ? OR email = ?";
+        $checkStmt = $this->conn->prepare($checkSql);
+        $checkStmt->bind_param("ss", $username, $email);
+        $checkStmt->execute();
+        $result = $checkStmt->get_result();
+        if ($result->num_rows > 0) {
+            // Benutzername oder E-Mail bereits vorhanden
+            return "Benutzername oder E-Mail bereits vorhanden";
+        }
+    
         // Verschlüsselt das Passwort
         $hash = password_hash($password, PASSWORD_DEFAULT);
-
+    
         // Fügt den neuen Benutzer in die Datenbank ein
-        $sql = "INSERT INTO Benutzer (username, passwort, email) VALUES ('$username', '$hash', '$email')";
-        if ($this->conn->query($sql) === TRUE) {
+        $insertSql = "INSERT INTO Benutzer (username, passwort, email) VALUES (?, ?, ?)";
+        $insertStmt = $this->conn->prepare($insertSql);
+        $insertStmt->bind_param("sss", $username, $hash, $email);
+    
+        if ($insertStmt->execute()) {
             return true;
         } else {
             // Gibt einen sicheren Fehler zurück
             $safe_error = $this->conn->error;
-            return  $safe_error;
+            return $safe_error;
         }
     }
+    
 
     // Schließt die Datenbankverbindung
     public function close() {
