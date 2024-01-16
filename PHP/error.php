@@ -80,7 +80,8 @@
                 ?>
                     <h1>ERROR 404</h1>
                     <h3>Da ist was schief gelaufen</h3>
-                    <a href="../PHP/home.php" class="btn">Back Home!</a>
+                    
+                    <a href="../PHP/logon.php" class="btn">login</a>
                 <?php
                 }
 ?>

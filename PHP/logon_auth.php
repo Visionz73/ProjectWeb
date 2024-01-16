@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         // Ausgabe einer Fehlermeldung, falls die Anmeldung fehlschlägt
         echo "Login fehlgeschlagen. Benutzerdaten nicht gefunden.";
+        header("Location: ../PHP/error.php");
     }
 
     // Schließen der Datenbankverbindung
