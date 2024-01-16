@@ -15,6 +15,12 @@ $basePath = "/home/" . $_SESSION["user"] . "/";
 
 $fullPath = realpath($basePath . basename($file));
 
+// Überprüfen, ob der Dateiname mit einem Punkt beginnt (versteckte Datei)
+if (basename($file)[0] == '.') {
+    echo "Fehler: Zugriff auf versteckte Dateien ist nicht erlaubt.";
+    exit;
+}
+
 // Überprüfen, ob die Datei im erlaubten Verzeichnis existiert und kein Path Traversal vorliegt
 if (file_exists($fullPath) && is_readable($fullPath) && strpos($fullPath, realpath($basePath)) === 0) {
     // Setzen Sie die entsprechenden Header, um die Datei herunterzuladen
@@ -27,10 +33,6 @@ if (file_exists($fullPath) && is_readable($fullPath) && strpos($fullPath, realpa
     exit;
 } else {
     // Datei nicht gefunden oder Zugriff verweigert
-    // Ausgabe der Variablen zur Überprüfung
-    echo "Fehler: Datei nicht gefunden oder Zugriff verweigert. <br/>";
-    echo "Eingegebener Dateiname: " . htmlspecialchars($file) . "<br/>";
-    echo "Basispfad: " . htmlspecialchars($basePath) . "<br/>";
-    echo "Vollständiger Pfad: " . htmlspecialchars($fullPath) . "<br/>";
+    echo "Fehler: Datei nicht gefunden oder Zugriff verweigert.";
 }
 ?>
