@@ -14,52 +14,52 @@
 
 <body>
 
-    <header class="header">
-        <!-- Logo-Bereich -->
-        <a href="#" class="logo">YourOwnCloud<i class='bx bx-cloud'></i></a>
+<header class="header">
+    <!-- Logo und Navigation -->
+    <a href="#" class="logo">YourOwnCloud<i class='bx bx-cloud'></i></a>
+    <nav class="navbar">
+        <?php
+        session_start();
+        // Bestimmung der aktiven Seite für die Navigation
+        $current_page = basename($_SERVER['PHP_SELF']);
+        $home_active = $current_page == "home.php" ? "active" : "";
+        $fileshare_active = $current_page == "fileshare.php" ? "active" : "";
+        $login_active = $current_page == "logon.php" ? "active" : "";
+        $admin_active = $current_page == "admin.php" ? "active" : "";
 
-        <!-- Navigationsleiste -->
-        <nav class="navbar">
-            <?php
-                session_start(); // Session-Start
-                $current_page = basename($_SERVER['PHP_SELF']); // Ermitteln der aktuellen Seite
+        // Navigation basierend auf Benutzerstatus
+        if (isset($_SESSION["user"])) {
+            // Links für eingeloggte Benutzer
+            echo "<a href='../PHP/home.php' class='$home_active'>Home</a>";
+            echo "<a href='../PHP/fileshare.php' class='$fileshare_active'>FileShare</a>";
+            echo "<a href='../PHP/logout.php'>Logout</a>";
 
-                // Bestimmen der aktiven Navigationslinks
-                $home_active = $current_page == "home.php" ? "active" : "";
-                $fileshare_active = $current_page == "fileshare.php" ? "active" : "";
-                $login_active = $current_page == "logon.php" ? "active" : "";
-
-                if (isset($_SESSION["user"])) { // Navigation für eingeloggte Benutzer
-            ?>
-                    <a href="../PHP/home.php" class="<?php echo $home_active; ?>">Home</a>
-                    <a href="../PHP/fileshare.php" class="<?php echo $fileshare_active; ?>">FileShare</a>
-                    <a href="../PHP/logout.php">Logout</a>
-            <?php
-                } else { // Navigation für Gäste
-            ?>
-                    <a href="../PHP/home.php" class="<?php echo $home_active; ?>">Home</a>
-                    <a href="../PHP/logon.php" class="<?php echo $login_active; ?>">Login</a>
-            <?php
-                }
-            ?>
-        </nav>
-
-        <!--  Benutzer-Informationen -->
-        <div class="social-media">
-            <?php
-                if (isset($_SESSION["user"])) { // Anzeigen des Benutzernamens, wenn eingeloggt
-                    $user = htmlspecialchars($_SESSION["user"]); // XSS-Schutz
-            ?>
-                    <a href=""><i class='bx bxs-invader'></i><?php echo $user; ?></a>
-            <?php
-                } else { // Link zur Registrierungsseite für Gäste
-            ?>
-                    <a href="../PHP/regon.php">Sign Up</a>
-            <?php
-                }
-            ?>
-        </div>
-    </header>
+        // Überprüfung, ob der eingeloggte Benutzer 'admin_rene' ist
+        if ($_SESSION["user"] == "admin_rene") {
+            // Spezielles Admin-Fenster für 'admin_rene'
+            echo "<a href='../PHP/home.php' class='$home_active'>Home</a>";
+            echo "<a href='../PHP/fileshare.php' class='$fileshare_active'>FileShare</a>";
+            echo "<a href='../PHP/logout.php'>Logout</a>";
+            echo "<a href='../PHP/admin.php'class=$admin_active>Admin-Bereich</a>";
+    }
+        } else {
+            // Links für nicht eingeloggte Benutzer
+            echo "<a href='../PHP/home.php' class='$home_active'>Home</a>";
+            echo "<a href='../PHP/logon.php' class='$login_active'>Login</a>";
+        }
+        ?>
+    </nav>
+    <div class="social-media">
+        <?php
+        if (isset($_SESSION["user"])) {
+            $user = htmlspecialchars($_SESSION["user"]); // XSS-Schutz
+            echo "<a href=''><i class='bx bxs-invader'></i>$user</a>";
+        } else {
+            echo "<a href='../html/regon.html'>Sign Up</a>";
+        }
+        ?>
+    </div>
+</header>
 
     <section class="home">
         <div class="home-content">
@@ -72,6 +72,7 @@
                 <h1>Admin Dashboard</h1>
                 <p>Willkommen im Admin-Bereich, <?php echo $user; ?>!</p>
                 <!-- Hier können Sie weitere Inhalte für admin_rene hinzufügen -->
+                <a href="../PHP/admin.php" class="btn">Admin-Konsole</a>
                 <?php
             } else { // Allgemeiner Inhalt für andere Benutzer
                 ?>
