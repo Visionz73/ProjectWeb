@@ -37,9 +37,6 @@
         // Überprüfung, ob der eingeloggte Benutzer 'admin_rene' ist
         if ($_SESSION["user"] == "admin_rene") {
             // Spezielles Admin-Fenster für 'admin_rene'
-            echo "<a href='../PHP/home.php' class='$home_active'>Home</a>";
-            echo "<a href='../PHP/fileshare.php' class='$fileshare_active'>FileShare</a>";
-            echo "<a href='../PHP/logout.php'>Logout</a>";
             echo "<a href='../PHP/admin.php'class=$admin_active>Admin-Bereich</a>";
     }
         } else {
