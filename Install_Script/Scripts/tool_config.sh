@@ -20,7 +20,7 @@ sudo ufw enable
 sudo ufw allow ssh
 sudo ufw allow http
 sudo ufw allow https
-sudo ufw deny 23 , 20 , 21 , 139 , 445 #Riskante Ports schließen, Telnet, FTP, SMB
+sudo ufw deny telnet
 
 
 #Start SSH
