@@ -16,11 +16,8 @@ sudo systemctl disable apache2
 sudo apt-get remove apache2 -y
 
 #UFW
-sudo ufw enable
-sudo ufw allow ssh
-sudo ufw allow http
-sudo ufw allow https
-sudo ufw deny telnet
+sudo ufw enable && sudo ufw default deny incoming && sudo ufw default allow outgoing && sudo ufw allow ssh && sudo ufw allow http && sudo ufw allow https && sudo ufw allow 3306 #MariaDB/MySQL(3306)
+
 
 
 #Start SSH
